@@ -11,11 +11,16 @@ export default function Navbar() {
         <NavigationMenu className="bg-transparent p-3 rounded-xl mx-auto bg-linear-to-b from-[#54C0F100] to-[#54C0F133] relative before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:rounded-xl before:bg-gradient-to-b before:from-[#54C0F133] before:to-[#54C0F100] before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] lg:py-3 lg:px-6 [&_[data-state='open']]:border-0">
             <NavigationMenuList className="w-[18.063rem] justify-between items-center md:w-auto md:gap-4">
                 <NavigationMenuItem className="lg:w-[7.25rem] lg:h-8 mb-2">
-                    {/* TODO: img links to home page? */}
-                    <SalosLogo />
+                    <Link
+                        href={route('home')}
+                        prefetch={['hover', 'click']}
+                        cacheFor="1m"
+                    >
+                        <SalosLogo />
+                    </Link>
                 </NavigationMenuItem>
                 <div className="hidden md:flex md:justify-center md:items-center md:gap-4 text-md w-fit text-primary-700">
-                    {/* TODO: update Link routes | create a file to pull these from and loop over to build here */}
+                    {/* TODO: update Link routes | create a file or service to pull these from and loop over to build here */}
                     <NavigationMenuItem>
                         <Button
                             asChild
@@ -78,7 +83,18 @@ export default function Navbar() {
                     </NavigationMenuItem>
                 </div>
                 <NavigationMenuItem className='hidden md:block'>
-                    <Button size={'salosNav'}>Ask SALOS</Button>
+                    <Button
+                        asChild
+                        size={'salosNav'}
+                    >
+                        <Link
+                            href={route('chat')}
+                            prefetch={['hover', 'click']}
+                            cacheFor="1m"
+                        >
+                            Ask SALOS
+                        </Link>
+                    </Button>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="md:hidden w-7 h-7 p-0.5">
                     <NavigationMenuTrigger className="[&>svg]:hidden p-0 h-auto bg-transparent">
@@ -124,8 +140,17 @@ export default function Navbar() {
                                 Pricing
                             </Link>
                         </div>
-                        <Button size={'salosDropdown'}>
-                            Ask SALOS
+                        <Button
+                            asChild
+                            size={'salosDropdown'}
+                        >
+                            <Link
+                                href={route('chat')}
+                                prefetch={['hover', 'click']}
+                                cacheFor="1m"
+                            >
+                                Ask SALOS
+                            </Link>
                         </Button>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
