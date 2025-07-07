@@ -1,0 +1,284 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@source "../views";
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'DM Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /**
+    * SALOS
+    *
+    */
+    /* OKLCH Color Space */                               /* Original HEX values */
+    --color-primary-50: oklch(97.95% 0.0109 225.98);      /* #f1fafe; */
+    --color-primary-100: oklch(95.92% 0.0219 226.13);     /* #e3f5fd; */
+    --color-primary-200: oklch(90.43% 0.0508 227.12);     /* #bde7fa; */
+    --color-primary-300: oklch(84.10% 0.0831 228.44);     /* #90d6f6; */
+    --color-primary-400: oklch(80.15% 0.1026 229.11);     /* #72cbf3; */
+    --color-primary-500: oklch(76.46% 0.1205 230.94);     /* #54c0f1; */
+    --color-primary-600: oklch(76.46% 0.1205 230.94);     /* #54c0f1; */
+    --color-primary-700: oklch(69.87% 0.1462 236.20);     /* #18aaec; */
+    --color-primary-800: oklch(63.76% 0.1349 236.57);     /* #1196d2; */
+    --color-primary-900: oklch(57.09% 0.1193 236.01);     /* #0f81b4; */
+    --color-primary-950: oklch(42.84% 0.0871 235.13);     /* #0a5678; */
+    --color-primary-gradient: oklch(85.14% 0.1324 210.94);/* #45E5FF; */
+    --color-secondary-50: oklch(91.81% 0.0314 306.18);    /* #e9dff5; */
+    --color-secondary-100: oklch(81.77% 0.0707 306.6);    /* #cfb8e8; */
+    --color-secondary-200: oklch(71.6% 0.1113 305.45);    /* #b491db; */
+    --color-secondary-300: oklch(61.63% 0.1524 304.48);   /* #9a6ace; */
+    --color-secondary-400: oklch(56.72% 0.1702 303.23);   /* #8c57c7; */
+    --color-secondary-500: oklch(52.02% 0.1892 302.07);   /* #7f43c1; */
+    --color-secondary-600: oklch(52.02% 0.1892 302.07);   /* #7f43c1; */
+    --color-secondary-700: oklch(44.39% 0.1624 302.27);   /* #66349c; */
+    --color-secondary-800: oklch(40.42% 0.1471 302.18);   /* #592d89; */
+    --color-secondary-900: oklch(36.43% 0.1288 302.2);    /* #4c2775; */
+    --color-secondary-950: oklch(28.15% 0.0929 303.05);   /* #331a4e; */
+    --color-secondary-gradient: oklch(51.88% 0.1905 302.22);/* #7F42C1; */
+    --color-support: oklch(53.24% 0.181 298.29);          /* #7c4cc5; */
+    --color-neutral: oklch(100% 0 0);                     /* #ffffff; */
+    --color-neutral-50: oklch(98.51% 0 0);                /* #fafafa; */
+    --color-neutral-100: oklch(96.72% 0 0);               /* #f4f4f4; */
+    --color-neutral-200: oklch(94.91% 0 0);               /* #eeeeee; */
+    --color-neutral-300: oklch(90.67% 0 0);               /* #e0e0e0; */
+    --color-neutral-400: oklch(79.84% 0 0);               /* #bdbdbd; */
+    --color-neutral-500: oklch(69.93% 0 0);               /* #9e9e9e; */
+    --color-neutral-600: oklch(56.24% 0 0);               /* #757575; */
+    --color-neutral-700: oklch(49.26% 0 0);               /* #616161; */
+    --color-neutral-800: oklch(37.91% 0 0);               /* #424242; */
+    --color-neutral-900: oklch(24.78% 0 0);               /* #212121; */
+    --color-state-50-orange: oklch(94.52% 0.0274 17.65);  /* #ffe6e6; */
+    --color-state-500-orange: oklch(64.89% 0.237 26.97);  /* #ff3333; */
+    --color-state-50-green: oklch(96.33% 0.0266 166.78);  /* #e3f9ef; */
+    --color-state-500-green: oklch(73.16% 0.1782 152.82); /* #28c76f; */
+
+    --shadow-label: 0px 16px 28px 0px oklch(13.33% 0.0467 308.02 / 30.2%);
+}
+
+/**
+ * Custom variables that reference other variables
+ *
+ */
+@theme inline {
+    --shadow-light-shadow: var(--shadow-sm);
+    --shadow-medium-shadow: var(--shadow-md);
+    --shadow-dark-shadow: var(--shadow-lg);
+    --shadow-inner-light: var(--inset-shadow-2xs);
+    --shadow-inner-small: var(--inset-shadow-xs);
+    --shadow-inner-medium: var(--inset-shadow-sm);
+    --shadow-inner-large: var(--shadow-inner);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+:root {
+    /* --background: oklch(1 0 0); */ /* default */
+    --background: var(--salos-background);
+    /* --foreground: oklch(0.145 0 0); */
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    /* --border: oklch(0.922 0 0); */
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.87 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.87 0 0);
+
+    /* TODO: clean up */
+    /* --salos-background: oklch(0.17 0.0266 223.43); */
+    /* --salos-background: oklch(0.31 0.0444 230.01); */
+    --salos-background: oklch(0.17 0.0262 229.32);
+    /* --salos-background: oklch(0.24 0.0438 232.68); */
+    /* --salos-background: oklch(0.24 0.0433 233.42); */
+    /* --salos-background: oklch(0.21 0.0374 230.73); */
+    /* --salos-background: oklch(0.28 0.0509 232.84); */
+    /* --salos-background: oklch(0.17 0.0283 226.12); */
+    /* --salos-background: oklch(0.2 0.035 229.94); */
+}
+
+.dark {
+    /* --background: oklch(0.145 0 0); */ /* default */
+    --background: var(--salos-background);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.269 0 0);
+    --ring: oklch(0.439 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.985 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.269 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .gradient-border-mask::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 68px;
+      border: 1px solid transparent;
+      background: linear-gradient(-50deg, #45E5FF, #7F42C1) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }  
+
+div[role="tablist"] button {
+    padding: 0;
+}
+
+div[role="tablist"] button[data-state="active"] {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: var(--color-primary-200);
+
+    & span[data-slot="badge"] {
+        color: var(--color-primary-200);
+        box-shadow: none;
+        box-shadow: 0 4px 15px -3px black;
+    }
+}
+
+div[role="tablist"] button[data-state="inactive"] {
+    border: none;
+    box-shadow: none;
+
+    & span[data-slot="badge"] {
+        box-shadow: none;
+        background-image: none;
+    }
+
+    & ::before {
+        content: none;
+    }
+}
