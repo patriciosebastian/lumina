@@ -11,7 +11,7 @@ class ChatController extends Controller
     {
         $initialMode = $request->has('journal') ? 'journal' : 'chat';
 
-        return Inertia::render('ChatPage', [
+        return Inertia::render('mainApp', [
             'initialMode' => $initialMode,
         ]);
     }
