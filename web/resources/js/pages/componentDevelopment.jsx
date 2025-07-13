@@ -14,6 +14,7 @@ import SalosSwitch from "@/components/ui/salosSwitch";
 import MessageCard from "@/components/messageCard";
 import SendMessageButton from "@/components/ui/sendMessageButton";
 import VoiceButton from "@/components/ui/voiceButton";
+import ContentBubble from "@/components/ui/contentBubble";
 
 {/*
     TODO:
@@ -121,6 +122,13 @@ export default function ComponentDevelopment() {
                         onMessageChange={handleMessageChange}
                         showVoiceButton={true}
                     />
+                </div>
+
+                <h2 className="text-3xl font-bold mb-4">Content Bubble</h2>
+                <div className="w-fit flex flex-wrap justify-start items-center gap-4">
+                    <ContentBubble>
+                        Welcome, child of God. How can I guide you today?
+                    </ContentBubble>
                 </div>
 
                 <h2 className="text-3xl font-bold mb-4">Tabs</h2>
