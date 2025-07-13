@@ -238,23 +238,6 @@
     }
 }
 
-@layer utilities {
-    .gradient-border-mask::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 68px;
-      border: 1px solid transparent;
-      background: linear-gradient(-50deg, #45E5FF, #7F42C1) border-box;
-      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: destination-out;
-      mask-composite: exclude;
-      pointer-events: none;
-      z-index: 1;
-    }
-  }  
-
 div[role="tablist"] button {
     padding: 0;
 }
