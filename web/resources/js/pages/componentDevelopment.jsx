@@ -11,6 +11,9 @@ import { TabsContent } from "@/components/ui/tabs";
 import WideBannerCard from "@/components/wideBannerCard";
 import { useState } from "react";
 import SalosSwitch from "@/components/ui/salosSwitch";
+import MessageCard from "@/components/messageCard";
+import SendMessageButton from "@/components/ui/sendMessageButton";
+import VoiceButton from "@/components/ui/voiceButton";
 
 {/*
     TODO:
@@ -21,12 +24,25 @@ import SalosSwitch from "@/components/ui/salosSwitch";
 
 export default function ComponentDevelopment() {
     const [enabled, setEnabled] = useState(false);
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([]);
 
     const handleCheckedChange = (updatedMode) => {
       setEnabled(updatedMode);
 
       const url = updatedMode ? '?enabled=true' : '/component-development';
       window.history.pushState(null, '', url);
+    };
+
+    const handleSendMessage = () => {
+        if (message.trim()) {
+          setMessages(prev => [...prev, { text: message, role: 'user' }]);
+          setMessage('');
+        }
+    };
+
+    const handleMessageChange = (e) => {
+        setMessage(e.target.value);
     };
 
   return (
@@ -45,6 +61,8 @@ export default function ComponentDevelopment() {
                     <Button variant={'salosPrimaryAlt'}>Ask SALOS</Button>
                     <Button variant={'salosSecondary'}>Ask SALOS 2</Button>
                     <Button variant={'salosSecondaryAlt'}>Ask SALOS</Button>
+                    <SendMessageButton />
+                    <VoiceButton />
                 </div>
 
                 <h2 className="text-3xl font-bold mb-4">Badges</h2>
@@ -95,7 +113,14 @@ export default function ComponentDevelopment() {
 
                 <h2 className="text-3xl font-bold mb-4">Chatboxes</h2>
                 <div className="w-fit flex flex-wrap justify-start items-center gap-4">
-                    <Chatbox />
+                    <Chatbox className="ml-0" />
+                    <MessageCard
+                        currentMessage={message}
+                        messages={messages}
+                        onSendMessage={handleSendMessage}
+                        onMessageChange={handleMessageChange}
+                        showVoiceButton={true}
+                    />
                 </div>
 
                 <h2 className="text-3xl font-bold mb-4">Tabs</h2>
