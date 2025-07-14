@@ -268,3 +268,42 @@ div[role="tablist"] button[data-state="inactive"] {
         content: none;
     }
 }
+
+@layer components {
+    .transparent-scrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .transparent-scrollbar::-webkit-scrollbar {
+      display: none;
+      background: transparent;
+    }
+
+    @media (min-width: 1024px) {
+        .transparent-scrollbar::-webkit-scrollbar {
+          width: 8px;
+          background: transparent;
+        }
+
+        .transparent-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(0,0,0,0.25);
+          border-radius: 6px;
+        }
+
+        .transparent-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .transparent-scrollbar {
+          scrollbar-color: var(--color-primary-800) transparent;
+          scrollbar-width: thin;
+        }
+
+        .transparent-scrollbar::-webkit-scrollbar-button {
+            display: none;
+            height: 0;
+            width: 0;
+        }
+    }
+}
