@@ -17,13 +17,11 @@ export default function Chat() {
     };
 
   return (
-    <>
-        <MessageCard
-            currentMessage={message}
-            messages={messages}
-            onSendMessage={handleSendMessage}
-            onMessageChange={handleMessageChange}
-        />
-    </>
+    <MessageCard
+        currentMessage={message}
+        messages={messages}
+        onSendMessage={handleSendMessage}
+        onMessageChange={handleMessageChange}
+    />
   );
 }
