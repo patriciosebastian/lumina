@@ -24,7 +24,6 @@ export default function MessageCard({
         const textarea = textareaRef.current;
         if (textarea) {
             textarea.style.height = 'auto';
-            textarea.style.minHeight = '4.5rem';
             textarea.style.height = (textarea.scrollHeight) + 'px';
         }
     }, [currentMessage]);
@@ -47,34 +46,61 @@ export default function MessageCard({
               style={{ backgroundImage: `url(${SALOSCross})` }}
             />
         )}
-        <SalosCard.Footer className="w-full max-h-52 flex items-center gap-4 lg:max-h-96">
-            <div className="relative size-full z-0 before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:rounded-2xl before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box]">
-                <textarea
-                    id="message-card-input"
-                    name="message-card-input"
-                    ref={textareaRef}
-                    placeholder={placeholder}
-                    value={currentMessage}
-                    onChange={onMessageChange}
-                    onKeyDown={handleKeyDown}
-                    className="relative w-full !min-h-full max-h-52 rounded-2xl px-5 py-4 !text-lg font-medium text-primary-700 border-none placeholder:text-primary-400/70 selection:bg-primary-900 selection:text-primary-100 bg-linear-to-b from-[#54C0F100] to-[#54C0F133] transition-all duration-200 lg:max-h-96 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
-                    autoComplete="off"
-                    rows={1}
-                />
+        <SalosCard.Footer className="w-full max-h-52 flex items-end gap-4 lg:max-h-96">
+            <div className="relative size-full bg-linear-to-b from-[#54C0F100] to-[#54C0F133] rounded-2xl z-0 before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:rounded-2xl before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box]">
+                {!isMobile && (
+                    <textarea
+                        id="message-card-input"
+                        name="message-card-input"
+                        ref={textareaRef}
+                        placeholder={placeholder}
+                        value={currentMessage}
+                        onChange={onMessageChange}
+                        onKeyDown={handleKeyDown}
+                        className="relative w-full h-[4.5rem] rounded-2xl px-5 py-4 !text-lg font-medium text-primary-700 border-none placeholder:text-primary-400/70 selection:bg-primary-900 selection:text-primary-100 transition-all duration-200 lg:max-h-96 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
+                        autoComplete="off"
+                        rows={1}
+                    />
+                )}
                 {isMobile && (
-                    <div className="absolute bottom-0 left-0 h-4 flex items-center gap-4 p-2 pb-6 -x-translate-1/2">
-                        <SendMessageButton onSendMessage={onSendMessage} />
-                        <VoiceButton />
+                    <div className="w-full flex flex-col rounded-2xl max-h-52">
+                        <textarea
+                            id="message-card-input"
+                            name="message-card-input"
+                            ref={textareaRef}
+                            placeholder={placeholder}
+                            value={currentMessage}
+                            onChange={onMessageChange}
+                            onKeyDown={handleKeyDown}
+                            className="w-full flex-grow !min-h-full max-h-43 rounded-t-2xl px-5 py-4 !text-lg font-medium text-primary-700 border-none placeholder:text-primary-400/70 selection:bg-primary-900 selection:text-primary-100 transition-all duration-200 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
+                            autoComplete="off"
+                            rows={1}
+                        />
+                        <div className="w-full h-9 flex justify-end items-center gap-4 px-2.5 pb-2.5 rounded-2xl z-10">
+                            <VoiceButton
+                                className="!size-7.5 rounded-[.5rem] px-2 py-2.5 !before:size-7.5 before:rounded-[.5rem] z-10"
+                                iconClasses="!size-4"
+                            />
+                            <SendMessageButton
+                                onSendMessage={onSendMessage}
+                                className="!size-7.5 rounded-[.5rem] px-2 py-2.5 !before:size-7.5 before:rounded-[.5rem] z-10"
+                                iconClasses="!size-4"
+                                disabled={!currentMessage}
+                            />
+                        </div>
                     </div>
                 )}
             </div>
             {!isMobile && (
                 <>
-                    {showSendButton && (
-                        <SendMessageButton onSendMessage={onSendMessage} />
-                    )}
                     {showVoiceButton && (
                         <VoiceButton />
+                    )}
+                    {showSendButton && (
+                        <SendMessageButton
+                            onSendMessage={onSendMessage}
+                            disabled={!currentMessage}
+                        />
                     )}
                 </>
             )}
