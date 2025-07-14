@@ -239,7 +239,7 @@ function Sidebar({
       >
         <div
           data-sidebar="sidebar"
-          className="bg-sidebar-salos group-data-[variant=floating]:border-sidebar-border group-data-[variant=salos]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=salos]:rounded-lg group-data-[variant=floating]:border group-data-[variant=salos]:border group-data-[variant=floating]:shadow-sm group-data-[variant=salos]:shadow-sm"
+          className={`bg-sidebar-salos group-data-[variant=floating]:border-sidebar-border group-data-[variant=salos]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=salos]:rounded-lg group-data-[variant=floating]:border group-data-[variant=salos]:border group-data-[variant=floating]:shadow-sm group-data-[variant=salos]:shadow-sm ${className}`}
         >
           {children}
         </div>
@@ -332,7 +332,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-header"
       data-sidebar="header"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("flex flex-col gap-2 p-2 bg-[#00AFFF14] rounded-t-2xl", className)}
       {...props}
     />
   )
@@ -343,7 +343,7 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-footer"
       data-sidebar="footer"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("flex flex-col gap-2 p-2 bg-[#00AFFF14] rounded-b-2xl", className)}
       {...props}
     />
   )
@@ -369,7 +369,7 @@ function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="sidebar-content"
       data-sidebar="content"
       className={cn(
-        "flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden",
+        "flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden bg-[#00AFFF14]",
         className
       )}
       {...props}
