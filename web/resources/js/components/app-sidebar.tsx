@@ -6,6 +6,7 @@ import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
 import SalosLogo from './ui/salosLogo';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const mainNavItems: NavItem[] = [
     {
@@ -29,10 +30,15 @@ const footerNavItems: NavItem[] = [
 ];
 
 export function AppSidebar() {
+    const isMobile = useIsMobile();
+
     return (
         <div className="relative">
-            <div className="bg-transparent rounded-2xl before:rounded-2xl before:content-[''] before:absolute before:z-[1] before:inset-2 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box]">
-                <Sidebar className="border-none">
+            <div className={`${!isMobile ? "bg-transparent rounded-2xl before:rounded-2xl before:content-[''] before:absolute before:z-[1] before:inset-2 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box]" : ''}`}>
+                <Sidebar
+                    className="border-none"
+                    mobileClasses="border-none border-r-0 bg-background rounded-2xl before:rounded-2xl before:content-[''] before:absolute before:z-[1] before:inset-0 before:p-[0px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box]"
+                >
                     <SidebarHeader>
                         <SidebarMenu>
                             <SidebarMenuItem>

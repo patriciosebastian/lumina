@@ -154,12 +154,14 @@ function Sidebar({
   variant = "salos",
   collapsible = "icon",
   className,
+  mobileClasses = "",
   children,
   ...props
 }: React.ComponentProps<"div"> & {
   side?: "left" | "right"
   variant?: "sidebar" | "floating" | "inset" | "salos"
   collapsible?: "offcanvas" | "icon" | "none"
+  mobileClasses?: string
 }) {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
 
@@ -180,26 +182,30 @@ function Sidebar({
 
   if (isMobile) {
     return (
-      <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
-        <SheetHeader className="sr-only">
-          <SheetTitle>Sidebar</SheetTitle>
-          <SheetDescription>Displays the mobile sidebar.</SheetDescription>
-        </SheetHeader>
-        <SheetContent
-          data-sidebar="sidebar"
-          data-slot="sidebar"
-          data-mobile="true"
-          className="bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
-          style={
-            {
-              "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
-            } as React.CSSProperties
-          }
-          side={side}
-        >
-          <div className="flex h-full w-full flex-col">{children}</div>
-        </SheetContent>
-      </Sheet>
+      <div className="relative">
+        <div className={mobileClasses}>
+            <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
+              <SheetHeader className="sr-only">
+                <SheetTitle>Sidebar</SheetTitle>
+                <SheetDescription>Displays the mobile sidebar.</SheetDescription>
+              </SheetHeader>
+              <SheetContent
+                data-sidebar="sidebar"
+                data-slot="sidebar"
+                data-mobile="true"
+                className={`text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden border-none rounded-2xl`}
+                style={
+                  {
+                    "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
+                  } as React.CSSProperties
+                }
+                side={side}
+              >
+                <div className="flex h-full w-full flex-col">{children}</div>
+              </SheetContent>
+            </Sheet>
+        </div>
+      </div>
     )
   }
 
@@ -232,7 +238,7 @@ function Sidebar({
           // Adjust the padding for floating, inset and salos variants.
           variant === "floating" || variant === "inset" || variant === "salos"
             ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
-            : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l",
+            : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)", // defaults removed from this line "group-data-[side=left]:border-r group-data-[side=right]:border-l"
           className
         )}
         {...props}
