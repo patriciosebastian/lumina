@@ -10,7 +10,7 @@ class ChatController extends Controller
     public function index(Request $request)
     {
         $initialMode = $request->has('journal') ? 'journal' : 'chat';
-        $data = $request->user()->load('chats', 'journals');
+        $data = $request->user() ? $request->user()->load('chats', 'journals') : [];
 
         return Inertia::render('mainApp', [
             'initialMode' => $initialMode,
