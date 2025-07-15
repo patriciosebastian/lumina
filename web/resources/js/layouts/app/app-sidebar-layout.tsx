@@ -8,6 +8,7 @@ import { type PropsWithChildren } from 'react';
 interface AppSidebarLayout {
     breadcrumbs?: BreadcrumbItem[];
     enabled: boolean;
+    onCheckedChange: (updatedMode: boolean) => void;
 }
 
 export default function AppSidebarLayout({ children, breadcrumbs = [], ...props }: PropsWithChildren<AppSidebarLayout>) {

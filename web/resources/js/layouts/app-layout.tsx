@@ -6,6 +6,7 @@ interface AppLayoutProps {
     children: ReactNode;
     breadcrumbs?: BreadcrumbItem[];
     enabled: boolean;
+    onCheckedChange: (updatedMode: boolean) => void;
 }
 
 export default ({ children, breadcrumbs, ...props }: AppLayoutProps) => (
