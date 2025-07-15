@@ -7,10 +7,11 @@ interface AppLayoutProps {
     breadcrumbs?: BreadcrumbItem[];
     enabled: boolean;
     onCheckedChange: (updatedMode: boolean) => void;
+    data: [];
 }
 
-export default ({ children, breadcrumbs, ...props }: AppLayoutProps) => (
-    <AppLayoutTemplate breadcrumbs={breadcrumbs} {...props}>
+export default ({ children, breadcrumbs, data = [], ...props }: AppLayoutProps) => (
+    <AppLayoutTemplate breadcrumbs={breadcrumbs} data={data} {...props}>
         {children}
     </AppLayoutTemplate>
 );

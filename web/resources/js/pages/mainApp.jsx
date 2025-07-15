@@ -2,14 +2,24 @@ import Chat from '@/components/chat';
 import MiracleJournal from '@/components/miracleJournal';
 import AppLayout from '@/layouts/app-layout';
 import { Head, usePage } from '@inertiajs/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MainApp() {
-    const { initialMode } = usePage().props;
+    const { initialMode, data } = usePage().props;
     const [isJournalMode, setIsJournalMode] = useState(initialMode === 'journal');
+    const [dataToShow, setDataToShow] = useState([]);
+
+    useEffect(() => {
+        updateDataToShow();
+    })
+
+    const updateDataToShow = () => {
+        isJournalMode ? setDataToShow(data.journals) : setDataToShow(data.chats);
+    }
 
     const handleCheckedChange = (updatedMode) => {
       setIsJournalMode(updatedMode);
+      updateDataToShow();
 
       const url = updatedMode ? '/chat?journal=true' : '/chat';
       window.history.pushState(null, '', url);
@@ -19,6 +29,7 @@ export default function MainApp() {
     <AppLayout
         enabled={isJournalMode}
         onCheckedChange={handleCheckedChange}
+        data={dataToShow}
     >
         <Head title="Chat with SALOS" />
         <div className="flex h-full flex-1 flex-col justify-center gap-4 rounded-xl p-1">

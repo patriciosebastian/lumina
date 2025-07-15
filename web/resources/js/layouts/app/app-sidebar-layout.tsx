@@ -9,12 +9,13 @@ interface AppSidebarLayout {
     breadcrumbs?: BreadcrumbItem[];
     enabled: boolean;
     onCheckedChange: (updatedMode: boolean) => void;
+    data: [];
 }
 
-export default function AppSidebarLayout({ children, breadcrumbs = [], ...props }: PropsWithChildren<AppSidebarLayout>) {
+export default function AppSidebarLayout({ children, breadcrumbs = [], data = [], ...props }: PropsWithChildren<AppSidebarLayout>) {
     return (
         <AppShell variant="sidebar">
-            <AppSidebar />
+            <AppSidebar data={data} {...props} />
             <AppContent variant="sidebar">
                 <AppSidebarHeader breadcrumbs={breadcrumbs} {...props} />
                 {children}
