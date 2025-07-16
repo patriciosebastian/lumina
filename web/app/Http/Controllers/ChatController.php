@@ -25,7 +25,13 @@ class ChatController extends Controller
             'message' => 'required|string|max:500',
         ]);
 
-        \Log::info('ChatController@store called with message. Message: ' . $request->input('message'));
+        $user = $request->user();
+
+        if (!$user) {
+            $guestMessages = session('guest_messages', []);
+            $guestMessages[] = $request->input('message');
+            session(['guest_messages' => $guestMessages]);
+        }
 
         return Redirect::route('chat')->with('success', 'Message sent successfully');
     }
