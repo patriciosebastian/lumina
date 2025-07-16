@@ -85,7 +85,7 @@ export default function MessageCard({
                                 onSendMessage={onSendMessage}
                                 className="!size-7.5 rounded-[.5rem] px-2 py-2.5 !before:size-7.5 before:rounded-[.5rem] z-10"
                                 iconClasses="!size-4"
-                                disabled={!currentMessage}
+                                disabled={!currentMessage.trim()}
                             />
                         </div>
                     </div>
@@ -99,7 +99,7 @@ export default function MessageCard({
                     {showSendButton && (
                         <SendMessageButton
                             onSendMessage={onSendMessage}
-                            disabled={!currentMessage}
+                            disabled={!currentMessage.trim()}
                         />
                     )}
                 </>
