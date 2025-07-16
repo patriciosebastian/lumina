@@ -1,11 +1,10 @@
 import Chat from '@/components/chat';
 import MiracleJournal from '@/components/miracleJournal';
 import AppLayout from '@/layouts/app-layout';
-import { Head, usePage } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 
-export default function MainApp() {
-    const { initialMode, data } = usePage().props;
+export default function MainApp({ initialMode, data }) {
     const [isJournalMode, setIsJournalMode] = useState(initialMode === 'journal');
     const [dataToShow, setDataToShow] = useState([]);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class ChatController extends Controller
@@ -16,5 +17,16 @@ class ChatController extends Controller
             'initialMode' => $initialMode,
             'data' => $data,
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'message' => 'required|string|max:500',
+        ]);
+
+        \Log::info('ChatController@store called with message. Message: ' . $request->input('message'));
+
+        return Redirect::route('chat')->with('success', 'Message sent successfully');
     }
 }

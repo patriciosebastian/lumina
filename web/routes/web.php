@@ -9,6 +9,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/chat', [ChatController::class, 'index'])->name('chat');
+Route::post('/chat/message', [ChatController::class, 'store'])->name('chat.message');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
