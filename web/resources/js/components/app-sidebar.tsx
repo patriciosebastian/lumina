@@ -21,7 +21,7 @@ const footerNavItems: NavItem[] = [
     },
 ];
 
-export function AppSidebar({data = []}: { data?: [] }) {
+export function AppSidebar({ data = [] }: { data?: [] }) {
     const isMobile = useIsMobile();
 
     return (
@@ -34,7 +34,10 @@ export function AppSidebar({data = []}: { data?: [] }) {
                     <SidebarHeader>
                         <SidebarMenu>
                             <SidebarMenuItem>
-                                <SidebarMenuButton size="lg" asChild>
+                                <SidebarMenuButton
+                                    size="lg"
+                                    asChild
+                                >
                                     <Link href="/chat" prefetch>
                                         <SalosLogo />
                                     </Link>
@@ -48,7 +51,10 @@ export function AppSidebar({data = []}: { data?: [] }) {
                     </SidebarContent>
 
                     <SidebarFooter>
-                        <NavFooter items={footerNavItems} className="mt-auto" />
+                        <NavFooter
+                            items={footerNavItems}
+                            className="mt-auto"
+                        />
                         <NavUser />
                     </SidebarFooter>
                 </Sidebar>
