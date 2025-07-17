@@ -30,10 +30,9 @@ class ChatController extends Controller
         $message = $request->input('message');
 
         if (!$user) {
-            $guestMessages = session('guest_messages', []);
-            // \Log::info('Storing guest message in session. Message: ' . $message);
-            $guestMessages[] = $message;
-            session(['guest_messages' => $guestMessages]);
+            $request->session()->push('guest_messages', $message);
+
+            return Redirect::route('chat');
         } else {
             // Account for saving to existing chats: I need to receive the chat information if the message is being sent from within an existing chat. (ref to my notes)
 
@@ -46,6 +45,9 @@ class ChatController extends Controller
             ]);
         }
 
-        return Redirect::route('chat')->with('success', 'Message sent successfully');
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Message sent successfully',
+        ], 200, ['X-Inertia' => 'true',]);
     }
 }
