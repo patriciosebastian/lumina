@@ -28,22 +28,31 @@ class ChatController extends Controller
 
         $user = $request->user();
         $message = $request->input('message');
+        $isMiracleJournal = $request->has('journal');
 
-        if (!$user) {
+        if (!$user && $isMiracleJournal) {
+            $request->session()->push('guest_messages', $message);
+
+            return redirect()->route('chat', ['journal' => true]);
+        }
+
+        if (!$user && !$isMiracleJournal) {
             $request->session()->push('guest_messages', $message);
 
             return Redirect::route('chat');
-        } else {
-            // Account for saving to existing chats: I need to receive the chat information if the message is being sent from within an existing chat. (ref to my notes)
-
-            $user->chats()->create([
-                'name' => substr($message, 0, 30), // TODO: Change this to a more meaningful name
-                'user_id' => $user->id,
-            ])->messages()->create([
-                'content' => $message,
-                'role' => MessageRole::USER,
-            ]);
         }
+
+        if ($user && $isMiracleJournal) {
+            // 
+        }
+
+        $user->chats()->create([
+            'name' => substr($message, 0, 30), // TODO: Change this to a more meaningful name
+            'user_id' => $user->id,
+        ])->messages()->create([
+            'content' => $message,
+            'role' => MessageRole::USER,
+        ]);
 
         return response()->json([
             'status' => 'success',

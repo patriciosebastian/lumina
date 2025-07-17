@@ -1,15 +1,35 @@
 import { useState } from 'react';
 import MessageCard from './messageCard';
+import { router } from '@inertiajs/react';
 
 export default function MiracleJournal() {
     const [journalEntry, setJournalEntry] = useState('');
     const [journalEntries, setJournalEntries] = useState([]);
 
     const handleSendJournalEntry = () => {
-        if (journalEntry.trim()) {
-          setJournalEntries(prev => [...prev, { text: journalEntry, role: 'user' }]);
-          setJournalEntry('');
+        const cleanJournalEntry = journalEntry.trim();
+
+        if (!cleanJournalEntry) {
+            console.warn('Empty journal entry, not sending.');
+            return;
         }
+
+        setJournalEntries(prev => [...prev, { message: cleanJournalEntry, role: 'user' }]);
+        setJournalEntry('');
+
+        router.post('/chat/message', {
+            message: cleanJournalEntry,
+        }, {
+            onFinish: () => {
+                console.log('Finished sending message');
+            },
+            onSuccess: (response) => {
+                console.log('Message sent successfully. Response: ', response);
+            },
+            onError: (errors) => {
+                console.error('Error sending message: ', errors);
+            },
+        });
     };
 
     const handleJournalEntryChange = (e) => {
