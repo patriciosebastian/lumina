@@ -17,19 +17,17 @@ export default function Chat() {
         setMessages(prev => [...prev, { message: cleanMessage, role: 'user' }]);
         setMessage('');
 
-        router.visit('/chat/message', {
-            method: 'post',
-            data: {
-                message: cleanMessage
-            },
+        router.post('/chat/message', {
+            message: cleanMessage,
+        }, {
             onFinish: () => {
                 console.log('Finished sending message');
             },
-            onSuccess: () => {
-                console.log('Message sent successfully');
+            onSuccess: (response) => {
+                console.log('Message sent successfully. Response: ', response);
             },
-            onError: (error) => {
-                console.error('Error sending message: ', error);
+            onError: (errors) => {
+                console.error('Error sending message: ', errors);
             },
         });
     };
