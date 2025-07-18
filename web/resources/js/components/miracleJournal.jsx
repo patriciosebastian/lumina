@@ -18,7 +18,9 @@ export default function MiracleJournal() {
         setJournalEntry('');
 
         router.post('/chat/message', {
-            message: cleanJournalEntry,
+            content: cleanJournalEntry,
+            role: 'user',
+            journal: true,
         }, {
             onFinish: () => {
                 console.log('Finished sending message');

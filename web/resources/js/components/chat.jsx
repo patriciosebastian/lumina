@@ -18,7 +18,9 @@ export default function Chat() {
         setMessage('');
 
         router.post('/chat/message', {
-            message: cleanMessage,
+            content: cleanMessage,
+            role: 'user',
+            journal: false,
         }, {
             onFinish: () => {
                 console.log('Finished sending message');

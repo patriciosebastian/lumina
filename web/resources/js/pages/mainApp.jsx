@@ -10,15 +10,16 @@ export default function MainApp({ initialMode, data }) {
 
     useEffect(() => {
         updateDataToShow();
-    })
+    }, [data, isJournalMode]);
 
     const updateDataToShow = () => {
-        isJournalMode ? setDataToShow(data.journals) : setDataToShow(data.chats);
+        isJournalMode ?
+            setDataToShow(data.journals || []) :
+            setDataToShow(data.chats || []);
     }
 
     const handleCheckedChange = (updatedMode) => {
       setIsJournalMode(updatedMode);
-      updateDataToShow();
 
       const url = updatedMode ? '/chat?journal=true' : '/chat';
       window.history.pushState(null, '', url);
