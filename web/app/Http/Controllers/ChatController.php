@@ -6,7 +6,6 @@ use App\Enums\MessageRole;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -43,15 +42,18 @@ class ChatController extends Controller
         $user = $request->user();
         $content = $request->input('content');
         $role = $request->input('role');
-        $isMiracleJournal = $request->boolean('journal') || $request->has('journal');
+        $isMiracleJournal = $request->boolean('journal');
 
         if (!$user && $isMiracleJournal) {
+            $journalId = $request->input('journalId') ?: uniqid(more_entropy: true);
+
             $messageData = [
                 'id' => uniqid('id_', true),
-                'journalId' => $request->input('journalId', uniqid('guest_journal_', true)),
+                'journalId' => $journalId,
                 'name' => substr($content, 0, 30),
                 'content' => $content,
                 'role' => $role,
+                'params' => ['journal' => 'true', 'journalId' => $journalId],
                 'created_at' => now()->toISOString(),
             ];
 
@@ -60,17 +62,20 @@ class ChatController extends Controller
         }
 
         if (!$user && !$isMiracleJournal) {
+            $chatId = $request->input('chatId') ?: uniqid(more_entropy: true);
+
             $messageData = [
                 'id' => uniqid('id_', true),
-                'chatId' => $request->input('chatId', uniqid('guest_chat_', true)),
+                'chatId' => $chatId,
                 'name' => substr($content, 0, 30),
                 'content' => $content,
                 'role' => $role,
+                'params' => ['chatId' => $chatId],
                 'created_at' => now()->toISOString(),
             ];
 
             $request->session()->push('guest_messages', $messageData);
-            return Redirect::route('chat');
+            return redirect()->route('chat');
         }
 
         if ($user && $isMiracleJournal) {

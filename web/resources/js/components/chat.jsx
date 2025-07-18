@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import MessageCard from './messageCard';
 import { router } from '@inertiajs/react';
+import { useRoute } from 'ziggy-js';
 
 export default function Chat() {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const route = useRoute();
 
     const handleSendMessage = () => {
         const cleanMessage = message.trim();
@@ -17,10 +19,11 @@ export default function Chat() {
         setMessages(prev => [...prev, { message: cleanMessage, role: 'user' }]);
         setMessage('');
 
-        router.post('/chat/message', {
+        router.post(route('chat.store'), {
             content: cleanMessage,
             role: 'user',
             journal: false,
+            chatId: route().params.chatId || null,
         }, {
             onFinish: () => {
                 console.log('Finished sending message');

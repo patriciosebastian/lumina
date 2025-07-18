@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import MessageCard from './messageCard';
 import { router } from '@inertiajs/react';
+import { useRoute } from 'ziggy-js';
 
 export default function MiracleJournal() {
     const [journalEntry, setJournalEntry] = useState('');
     const [journalEntries, setJournalEntries] = useState([]);
+    const route = useRoute();
 
     const handleSendJournalEntry = () => {
         const cleanJournalEntry = journalEntry.trim();
@@ -17,10 +19,11 @@ export default function MiracleJournal() {
         setJournalEntries(prev => [...prev, { message: cleanJournalEntry, role: 'user' }]);
         setJournalEntry('');
 
-        router.post('/chat/message', {
+        router.post(route('chat.store'), {
             content: cleanJournalEntry,
             role: 'user',
             journal: true,
+            journalId: route().params.journalId || null,
         }, {
             onFinish: () => {
                 console.log('Finished sending message');
