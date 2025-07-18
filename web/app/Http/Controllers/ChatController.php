@@ -20,8 +20,8 @@ class ChatController extends Controller
         } else {
             $guestMessages = $request->session()->get('guest_messages', []);
             $data = [
-                'chats' => collect($guestMessages)->where('chatId', '!=', null)->values(),
-                'journals' => collect($guestMessages)->where('journalId', '!=', null)->values(),
+                'chats' => collect($guestMessages)->where('chat_id', '!=', null)->values(),
+                'journals' => collect($guestMessages)->where('journal_id', '!=', null)->values(),
             ];
         }
 
@@ -49,11 +49,11 @@ class ChatController extends Controller
 
             $messageData = [
                 'id' => uniqid('id_', true),
-                'journalId' => $journalId,
+                'journal_id' => $journalId,
                 'name' => substr($content, 0, 30),
                 'content' => $content,
                 'role' => $role,
-                'params' => ['journal' => 'true', 'journalId' => $journalId],
+                'params' => ['journal' => 'true', 'journal_id' => $journalId],
                 'created_at' => now()->toISOString(),
             ];
 
@@ -66,11 +66,11 @@ class ChatController extends Controller
 
             $messageData = [
                 'id' => uniqid('id_', true),
-                'chatId' => $chatId,
+                'chat_id' => $chatId,
                 'name' => substr($content, 0, 30),
                 'content' => $content,
                 'role' => $role,
-                'params' => ['chatId' => $chatId],
+                'params' => ['chat_id' => $chatId],
                 'created_at' => now()->toISOString(),
             ];
 
