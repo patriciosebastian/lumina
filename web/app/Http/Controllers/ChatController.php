@@ -13,24 +13,24 @@ class ChatController extends Controller
 {
     public function index(Request $request): Response
     {
-        $initialMode = $request->has('journal') ? 'journal' : 'chat';
-
         if ($request->user()) {
-            $data = $request->user()->load('chats', 'journals');
+            $data = $request->user()->load('chats');
         } else {
             $guestMessages = $request->session()->get('guest_messages', []);
             $data = [
                 'chats' => collect($guestMessages)->where('chat_id', '!=', null)->values(),
-                'journals' => collect($guestMessages)->where('journal_id', '!=', null)->values(),
             ];
         }
 
-        // $request->session()->forget('guest_messages');
-
         return Inertia::render('mainApp', [
-            'initialMode' => $initialMode,
+            'initialMode' => 'chat',
             'data' => $data,
         ]);
+    }
+
+    public function show(Request $request, $id)
+    {
+        // Logic to show a specific chat message
     }
 
     public function store(Request $request): JsonResponse|RedirectResponse
@@ -48,13 +48,13 @@ class ChatController extends Controller
             $journalId = $request->input('journalId') ?: uniqid(more_entropy: true);
 
             $messageData = [
-                'id' => uniqid('id_', true),
+                'session_id' => uniqid('id_', true),
                 'journal_id' => $journalId,
                 'name' => substr($content, 0, 30),
                 'content' => $content,
                 'role' => $role,
                 'params' => ['journal' => 'true', 'journal_id' => $journalId],
-                'created_at' => now()->toISOString(),
+                'session_created_at' => now()->toISOString(),
             ];
 
             $request->session()->push('guest_messages', $messageData);
@@ -65,13 +65,13 @@ class ChatController extends Controller
             $chatId = $request->input('chatId') ?: uniqid(more_entropy: true);
 
             $messageData = [
-                'id' => uniqid('id_', true),
+                'session_id' => uniqid('id_', true),
                 'chat_id' => $chatId,
                 'name' => substr($content, 0, 30),
                 'content' => $content,
                 'role' => $role,
                 'params' => ['chat_id' => $chatId],
-                'created_at' => now()->toISOString(),
+                'session_created_at' => now()->toISOString(),
             ];
 
             $request->session()->push('guest_messages', $messageData);

@@ -3,22 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class JournalController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
-        $initialMode = $request->has('journal') ? 'journal' : 'chat';
-
         if ($request->user()) {
             $data = $request->user()->load('journals');
         } else {
-            $guestMessages = $request->session()->get('guest_messages', []);
-            $data = collect($guestMessages)->where('journal_id', '!=', null)->values();
+            $guestJournals = $request->session()->get('guest_messages', []);
+            $data = [
+                'journals' => collect($guestJournals)->where('journal_id', '!=', null)->values(),
+            ];
         }
 
-        return inertia('mainApp', [
-            'initialMode' => $initialMode,
+        return Inertia::render('mainApp', [
+            'initialMode' => 'journal',
             'data' => $data,
         ]);
     }
