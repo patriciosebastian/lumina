@@ -24,7 +24,6 @@ export function NavMain({ items = [] }: { items: [] }) {
             <SidebarGroupLabel>{getSidebarLabel()}</SidebarGroupLabel>
             <SidebarMenu>
                 {items.map((item) => (
-                    console.log('item', item),
                     <SidebarMenuItem key={getItemId(item)}>
                         <SidebarMenuButton asChild isActive={route(getRouteName(), getItemId(item)) === page.url}>
                             <Link

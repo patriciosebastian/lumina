@@ -1,12 +1,14 @@
 import Chat from '@/components/chat';
 import MiracleJournal from '@/components/miracleJournal';
 import AppLayout from '@/layouts/app-layout';
-import { Head } from '@inertiajs/react';
+import { Head, router } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
+import { useRoute } from 'ziggy-js';
 
 export default function MainApp({ initialMode, data }) {
     const [isJournalMode, setIsJournalMode] = useState(initialMode === 'journal');
     const [dataToShow, setDataToShow] = useState([]);
+    const route = useRoute();
 
     useEffect(() => {
         updateDataToShow();
@@ -19,10 +21,10 @@ export default function MainApp({ initialMode, data }) {
     }
 
     const handleCheckedChange = (updatedMode) => {
-      setIsJournalMode(updatedMode);
+        setIsJournalMode(updatedMode);
 
-      const url = updatedMode ? '/chat?journal=true' : '/chat';
-      window.history.pushState(null, '', url);
+        const routeName = updatedMode ? 'journal.index' : 'chat.index';
+        router.visit(route(routeName));
     };
 
   return (
