@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Enums\MessageRole;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -64,7 +63,7 @@ class ChatController extends Controller
         ]);
     }
 
-    public function store(Request $request): JsonResponse|RedirectResponse
+    public function store(Request $request): RedirectResponse|Response
     {
         $request->validate([
             'content' => 'required|string|max:500',
@@ -91,17 +90,42 @@ class ChatController extends Controller
             return redirect()->route('chat.index');
         }
 
-        $user->chats()->create([
-            'name' => substr($content, 0, 30), // TODO: Change this to a more meaningful name
-            'user_id' => $user->id,
-        ])->messages()->create([
+        $id = $request->input('chatId');
+
+        if (!$id) {
+            $user->chats()->create([
+                'name' => substr($content, 0, 30), // TODO: Change this to a more meaningful name
+                'user_id' => $user->id,
+            ]);
+
+            $user->messages()->create([
+                'content' => $content,
+                'role' => MessageRole::USER,
+                'user_id' => $user->id,
+                'chat_id' => $user->chats()->latest()->first()->id,
+            ]);
+
+            return Inertia::render('mainApp', [
+                'initialMode' => 'chat',
+                'data' => [
+                    'chats' => $user->chats()->get()->toArray(),
+                    'id' => $user->chats()->latest()->first()->id,
+                ],
+            ]);
+        }
+
+        $user->chats()->messages()->create([
             'content' => $content,
             'role' => MessageRole::USER,
+            'user_id' => $user->id,
+            'chat_id' => $id,
         ]);
 
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Message sent successfully',
-        ], 200, ['X-Inertia' => 'true',]);
+        return Inertia::render('mainApp', [
+            'data' => [
+                'chats' => $user->chats()->get()->toArray(),
+                'id' => $id,
+            ],
+        ]);
     }
 }
