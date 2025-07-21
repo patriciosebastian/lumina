@@ -28,7 +28,10 @@ export default function Chat() {
                 console.log('Finished sending message');
             },
             onSuccess: (response) => {
-                console.log('Message sent successfully. Response: ', response);
+                // TODO: figure out if I want to do this every time or only when the chat is created
+                router.visit(route('chat.show', { id: response.props.data.id }), {
+                    replace: true,
+                });
             },
             onError: (errors) => {
                 console.error('Error sending message: ', errors);
