@@ -1,9 +1,8 @@
 import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { Link, usePage } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 import { useRoute } from 'ziggy-js';
 
 export function NavMain({ items = [] }: { items: [] }) {
-    const page = usePage();
     const route = useRoute();
     const isChatRoute = route().current('chat.*');
 
@@ -15,8 +14,10 @@ export function NavMain({ items = [] }: { items: [] }) {
         return isChatRoute ? 'chat.show' : 'journal.show';
     }
 
-    const getItemId = (item: object): string | number => {
-        return item.id ? item.id : item.session_id;
+    const getItemId = (item: object) => {
+        if (item.id) return item.id;
+        if (item.chat_id) return item.chat_id;
+        if (item.journal_id) return item.journal_id;
     }
 
     return (
@@ -25,12 +26,11 @@ export function NavMain({ items = [] }: { items: [] }) {
             <SidebarMenu>
                 {items.map((item) => (
                     <SidebarMenuItem key={getItemId(item)}>
-                        <SidebarMenuButton asChild isActive={route(getRouteName(), getItemId(item)) === page.url}>
+                        <SidebarMenuButton asChild isActive={route().current(getRouteName(), { id: getItemId(item) })}>
                             <Link
                                 href={route(getRouteName(), getItemId(item))}
                                 prefetch
                             >
-                                {/* {item.icon && <item.icon />} */}
                                 <span>{item.name}</span>
                             </Link>
                         </SidebarMenuButton>
