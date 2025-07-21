@@ -22,8 +22,7 @@ export default function Chat() {
         router.post(route('chat.store'), {
             content: cleanMessage,
             role: 'user',
-            journal: false,
-            chatId: route().params.chatId || null,
+            chatId: route().params.id || null,
         }, {
             onFinish: () => {
                 console.log('Finished sending message');
