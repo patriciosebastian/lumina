@@ -3,9 +3,9 @@ import MessageCard from './messageCard';
 import { router } from '@inertiajs/react';
 import { useRoute } from 'ziggy-js';
 
-export default function Chat() {
+export default function Chat({ initialMessages = [] }) {
     const [message, setMessage] = useState('');
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState(initialMessages);
     const route = useRoute();
 
     const handleSendMessage = () => {

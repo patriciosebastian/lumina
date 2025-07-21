@@ -37,7 +37,7 @@ export default function MainApp({ initialMode, data }) {
         <div className="flex h-full flex-1 flex-col justify-center gap-4 rounded-xl p-1">
             {isJournalMode ?
                 <MiracleJournal /> :
-                <Chat />
+                <Chat initialMessages={data.messages} />
             }
         </div>
     </AppLayout>

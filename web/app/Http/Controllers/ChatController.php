@@ -114,7 +114,7 @@ class ChatController extends Controller
             ]);
         }
 
-        $user->chats()->messages()->create([
+        $user->messages()->create([
             'content' => $content,
             'role' => MessageRole::USER,
             'user_id' => $user->id,
