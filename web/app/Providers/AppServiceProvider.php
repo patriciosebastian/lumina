@@ -25,7 +25,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         RateLimiter::for('guest_chat', function (Request $request) {
-            return Limit::perDay(3)->by($request->ip());
+            if (!$request->user()) {
+                return Limit::perDay(3)->by($request->ip());
+            }
         });
 
         Testimonial::preventSilentlyDiscardingAttributes();
