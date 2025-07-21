@@ -42,7 +42,7 @@ export default function MessageCard({
         <SalosCard.Content className="w-full h-[41.938rem] flex-1 overflow-y-auto overflow-x-hidden space-y-4">
             {chatMessages.length > 0 && chatMessages.map((message) => (
                 <ContentBubble
-                    key={message.index}
+                    key={message.id}
                     className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'}`}
                 >
                     <p>{message.content}</p>
