@@ -21,9 +21,11 @@ import xtwitterLogo from '../../../public/X_Twitter.svg';
 import instagramLogo from '../../../public/instagram.svg';
 import tiktokLogo from '../../../public/tiktok.svg';
 import SalosLogo from '@/components/ui/salosLogo';
+import { useRoute } from 'ziggy-js';
 
 export default function Home() {
     const isMobile = useIsMobile();
+    const route = useRoute();
 
   return (
     <>
@@ -193,7 +195,7 @@ export default function Home() {
                 <div className="size-full border-x flex justify-center items-center py-4 px-6 lg:p-6">
                     <Button asChild>
                         <Link
-                            href={route('chat')}
+                            href={route('chat.index')}
                             prefetch={['hover', 'click']}
                             cacheFor="1m"
                         >
@@ -387,7 +389,7 @@ export default function Home() {
                             className="block mx-auto"
                         >
                             <Link
-                                href={route('chat')}
+                                href={route('chat.index')}
                                 prefetch={['hover', 'click']}
                                 cacheFor="1m"
                                 className="text-center"

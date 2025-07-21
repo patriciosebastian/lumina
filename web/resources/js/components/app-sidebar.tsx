@@ -7,6 +7,7 @@ import { Link } from '@inertiajs/react';
 import { BookOpen, Folder } from 'lucide-react';
 import SalosLogo from './ui/salosLogo';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useRoute } from 'ziggy-js';
 
 const footerNavItems: NavItem[] = [
     {
@@ -23,6 +24,7 @@ const footerNavItems: NavItem[] = [
 
 export function AppSidebar({ data = [] }: { data?: [] }) {
     const isMobile = useIsMobile();
+    const route = useRoute();
 
     return (
         <div className="relative">
@@ -38,7 +40,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                                     size="lg"
                                     asChild
                                 >
-                                    <Link href="/chat" prefetch>
+                                    <Link href={route('chat.index')} prefetch>
                                         <SalosLogo />
                                     </Link>
                                 </SidebarMenuButton>
