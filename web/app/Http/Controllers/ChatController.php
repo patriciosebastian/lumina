@@ -28,9 +28,40 @@ class ChatController extends Controller
         ]);
     }
 
-    public function show(Request $request, $id)
+    public function show(Request $request, $id): Response
     {
-        // Logic to show a specific chat message
+        if ($request->user()) {
+            $chat = $request->user()->chats()->find($id);
+            $messages = $chat ? $chat->load('messages')->messages->sortByDesc('created_at') : collect();
+            $allChats = $request->user()->chats()->get();
+        } else {
+            $allChats = collect($request->session()->get('guest_messages', []))
+                ->filter(function ($message) {
+                    return isset($message['chat_id']);
+                })
+                ->where('chat_id', $id)
+                ->sortByDesc('session_created_at')
+                ->values();
+
+            $messages = collect($allChats)
+                ->groupBy('chat_id')
+                ->map(function ($message, $chatId) {
+                    return (object) [
+                        'id' => $chatId,
+                        'name' => $message->first()['name'],
+                        'created_at' => $message->first()['session_created_at'],
+                    ];
+                })
+                ->values();
+        }
+
+        return Inertia::render('mainApp', [
+            'initialMode' => 'chat',
+            'data' => [
+                'chats' => $allChats,
+                'messages' => $messages,
+            ]
+        ]);
     }
 
     public function store(Request $request): JsonResponse|RedirectResponse
@@ -42,26 +73,8 @@ class ChatController extends Controller
         $user = $request->user();
         $content = $request->input('content');
         $role = $request->input('role');
-        $isMiracleJournal = $request->boolean('journal');
 
-        if (!$user && $isMiracleJournal) {
-            $journalId = $request->input('journalId') ?: uniqid(more_entropy: true);
-
-            $messageData = [
-                'session_id' => uniqid('id_', true),
-                'journal_id' => $journalId,
-                'name' => substr($content, 0, 30),
-                'content' => $content,
-                'role' => $role,
-                'params' => ['journal' => 'true', 'journal_id' => $journalId],
-                'session_created_at' => now()->toISOString(),
-            ];
-
-            $request->session()->push('guest_messages', $messageData);
-            return redirect()->route('chat', ['journal' => 'true']);
-        }
-
-        if (!$user && !$isMiracleJournal) {
+        if (!$user) {
             $chatId = $request->input('chatId') ?: uniqid(more_entropy: true);
 
             $messageData = [
@@ -75,11 +88,7 @@ class ChatController extends Controller
             ];
 
             $request->session()->push('guest_messages', $messageData);
-            return redirect()->route('chat');
-        }
-
-        if ($user && $isMiracleJournal) {
-            // 
+            return redirect()->route('chat.index');
         }
 
         $user->chats()->create([
