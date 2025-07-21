@@ -26,7 +26,11 @@ export function NavMain({ items = [] }: { items: [] }) {
             <SidebarMenu>
                 {items.map((item) => (
                     <SidebarMenuItem key={getItemId(item)}>
-                        <SidebarMenuButton asChild isActive={route().current(getRouteName(), { id: getItemId(item) })}>
+                        <SidebarMenuButton
+                            asChild
+                            isActive={route().current(getRouteName(), { id: getItemId(item) })}
+                            className="hover:bg-primary-950"
+                        >
                             <Link
                                 href={route(getRouteName(), getItemId(item))}
                                 prefetch

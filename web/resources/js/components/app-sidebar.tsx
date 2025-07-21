@@ -39,6 +39,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                                 <SidebarMenuButton
                                     size="lg"
                                     asChild
+                                    className="hover:bg-transparent"
                                 >
                                     <Link href={route('chat.index')} prefetch>
                                         <SalosLogo />
