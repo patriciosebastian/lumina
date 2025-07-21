@@ -29,7 +29,7 @@ export function NavMain({ items = [] }: { items: [] }) {
                         <SidebarMenuButton
                             asChild
                             isActive={route().current(getRouteName(), { id: getItemId(item) })}
-                            className="hover:bg-primary-950"
+                            className="hover:bg-primary-950/70"
                         >
                             <Link
                                 href={route(getRouteName(), getItemId(item))}
