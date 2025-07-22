@@ -36,7 +36,7 @@ export default function MainApp({ initialMode, data }) {
         <Head title="Chat with SALOS" />
         <div className="flex h-full flex-1 flex-col justify-center gap-4 rounded-xl p-1">
             {isJournalMode ?
-                <MiracleJournal /> :
+                <MiracleJournal initialJournalEntries={data.messages} /> :
                 <Chat initialMessages={data.messages} />
             }
         </div>

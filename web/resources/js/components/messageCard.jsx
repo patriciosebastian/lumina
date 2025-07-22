@@ -43,7 +43,7 @@ export default function MessageCard({
             {chatMessages.length > 0 && chatMessages.map((message) => (
                 <ContentBubble
                     key={message.id}
-                    className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'}`}
+                    className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'} ${message.journal_id ? 'mx-auto !w-[50%] border-none bg-transparent' : ''}`}
                 >
                     <p>{message.content}</p>
                 </ContentBubble>
