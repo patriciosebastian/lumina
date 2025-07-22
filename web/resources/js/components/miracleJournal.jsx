@@ -3,9 +3,9 @@ import MessageCard from './messageCard';
 import { router } from '@inertiajs/react';
 import { useRoute } from 'ziggy-js';
 
-export default function MiracleJournal() {
+export default function MiracleJournal({ initialJournalEntries = [] }) {
     const [journalEntry, setJournalEntry] = useState('');
-    const [journalEntries, setJournalEntries] = useState([]);
+    const [journalEntries, setJournalEntries] = useState(initialJournalEntries);
     const route = useRoute();
 
     const handleSendJournalEntry = () => {
@@ -28,7 +28,9 @@ export default function MiracleJournal() {
                 console.log('Finished sending message');
             },
             onSuccess: (response) => {
-                console.log('Message sent successfully. Response: ', response);
+                router.visit(route('journal.show', { id: response.props.data.id }), {
+                    replace: true,
+                });
             },
             onError: (errors) => {
                 console.error('Error sending message: ', errors);

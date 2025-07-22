@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -61,7 +62,7 @@ class JournalController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse|Response
     {
         $request->validate([
             'content' => 'required|string|max:500',
@@ -69,7 +70,6 @@ class JournalController extends Controller
 
         $user = $request->user();
         $content = $request->input('content');
-        $role = $request->input('role');
 
         if (!$user) {
             $journalId = $request->input('journalId') ?: uniqid(more_entropy: true);
@@ -79,7 +79,6 @@ class JournalController extends Controller
                 'journal_id' => $journalId,
                 'name' => substr($content, 0, 30),
                 'content' => $content,
-                'role' => $role,
                 'params' => ['journal' => 'true', 'journal_id' => $journalId],
                 'session_created_at' => now()->toISOString(),
             ];
@@ -88,6 +87,40 @@ class JournalController extends Controller
             return redirect()->route('journal.index');
         }
 
-        // Save for auth users
+        $id = $request->input('journalId');
+
+        if (!$id) {
+            $user->journals()->create([
+                'name' => substr($content, 0, 30),
+                'user_id' => $user->id,
+            ]);
+
+            $user->journalEntries()->create([
+                'content' => $content,
+                'user_id' => $user->id,
+                'journal_id' => $user->journals()->latest()->first()->id,
+            ]);
+
+            return Inertia::render('mainApp', [
+                'initialMode' => 'journal',
+                'data' => [
+                    'journals' => $user->journals()->get(),
+                    'id' => $user->journals()->latest()->first()->id,
+                ],
+            ]);
+        }
+
+        $user->journalEntries()->create([
+            'content' => $content,
+            'user_id' => $user->id,
+            'journal_id' => $id,
+        ]);
+
+        return Inertia::render('mainApp', [
+            'data' => [
+                'journals' => $user->journals()->get()->toArray(),
+                'id' => $id,
+            ],
+        ]);
     }
 }
