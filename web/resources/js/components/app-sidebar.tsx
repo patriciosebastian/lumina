@@ -4,22 +4,21 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder } from 'lucide-react';
 import SalosLogo from './ui/salosLogo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useRoute } from 'ziggy-js';
 
 const footerNavItems: NavItem[] = [
-    {
-        title: 'Repository',
-        url: 'https://github.com/laravel/react-starter-kit',
-        icon: Folder,
-    },
-    {
-        title: 'Documentation',
-        url: 'https://laravel.com/docs/starter-kits',
-        icon: BookOpen,
-    },
+    // {
+    //     title: '',
+    //     url: '',
+    //     icon: Folder,
+    // },
+    // {
+    //     title: '',
+    //     url: '',
+    //     icon: BookOpen,
+    // },
 ];
 
 export function AppSidebar({ data = [] }: { data?: [] }) {
