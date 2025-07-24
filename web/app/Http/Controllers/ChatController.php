@@ -128,4 +128,22 @@ class ChatController extends Controller
             ],
         ]);
     }
+
+    public function destroy(Request $request, $id): RedirectResponse
+    {
+        $user = $request->user();
+
+        if ($user) {
+            $chat = $user->chats()->findOrFail($id);
+            $chat->delete();
+        } else {
+            $guestMessages = $request->session()->get('guest_messages', []);
+
+            $filteredMessages = array_filter($guestMessages, fn($message) => ($message['chat_id'] ?? null) != $id);
+
+            $request->session()->put('guest_messages', array_values($filteredMessages));
+        }
+
+        return redirect()->route('chat.index')->with('success', 'Chat deleted successfully.');
+    }
 }

@@ -123,4 +123,22 @@ class JournalController extends Controller
             ],
         ]);
     }
+
+    public function destroy(Request $request, $id): RedirectResponse
+    {
+        $user = $request->user();
+
+        if ($user) {
+            $journal = $user->journals()->findOrFail($id);
+            $journal->delete();
+        } else {
+            $guestMessages = $request->session()->get('guest_messages', []);
+
+            $filteredMessages = array_filter($guestMessages, fn($message) => ($message['journal_id'] ?? null) != $id);
+
+            $request->session()->put('guest_messages', array_values($filteredMessages));
+        }
+
+        return redirect()->route('journal.index')->with('success', 'Journal deleted successfully.');
+    }
 }

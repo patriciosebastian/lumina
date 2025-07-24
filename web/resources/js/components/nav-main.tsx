@@ -1,9 +1,8 @@
 import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { Link } from '@inertiajs/react';
+import { Link, router } from '@inertiajs/react';
 import { Ellipsis, Trash2 } from 'lucide-react';
 import { useRoute } from 'ziggy-js';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
-import { Button } from './ui/button';
 import { useState } from 'react';
 
 export function NavMain({ items = [] }: { items: [] }) {
@@ -25,12 +24,31 @@ export function NavMain({ items = [] }: { items: [] }) {
         if (item.journal_id) return item.journal_id;
     }
 
+    const handleDelete = (itemId: number) => {
+        const routeName = isChatRoute ? 'chat.destroy' : 'journal.destroy';
+        const routeNameIndexEndpoint = isChatRoute ? 'chat.index' : 'journal.index';
+
+        router.post(route(routeName, { id: itemId }), {}, {
+            onSuccess: () => {
+                router.visit(route(routeNameIndexEndpoint), {
+                    replace: true,
+                });
+            },
+            onError: (errors) => {
+                console.error('Error deleting message: ', errors);
+            },
+        });
+    }
+
     return (
         <SidebarGroup className="px-2 py-0">
             <SidebarGroupLabel>{getSidebarLabel()}</SidebarGroupLabel>
             <SidebarMenu>
                 {items.map((item) => (
-                    <SidebarMenuItem key={getItemId(item)} className="group/item relative">
+                    <SidebarMenuItem
+                        key={getItemId(item)}
+                        className="group/item relative"
+                    >
                         <SidebarMenuButton
                             asChild
                             isActive={route().current(getRouteName(), { id: getItemId(item) })}
@@ -47,20 +65,20 @@ export function NavMain({ items = [] }: { items: [] }) {
                             open={openDropdown === getItemId(item)}
                             onOpenChange={(open) => setOpenDropdown(open ? getItemId(item) : null)}
                         >
-                            <DropdownMenuTrigger className={`absolute top-0 right-0 opacity-0 pointer-events-none group-hover/item:opacity-100 group-hover/item:pointer-events-auto ${openDropdown === getItemId(item) ? 'opacity-100 pointer-events-auto' : ''}`}>
-                                <Button
-                                    variant={'ghost'}
-                                    size={'icon'}
-                                    className={`h-8 rounded-md hover:bg-primary-950/70 ${openDropdown === getItemId(item) ? 'bg-primary-950/70' : ''}`}
-                                >
-                                    <Ellipsis />
-                                </Button>
+                            <DropdownMenuTrigger className={`absolute top-0 right-0 w-8 h-8 rounded-md hover:bg-primary-950/70 lg:opacity-0 lg:pointer-events-none lg:group-hover/item:opacity-100 lg:group-hover/item:pointer-events-auto ${openDropdown === getItemId(item) ? 'bg-primary-950/70 lg:opacity-100 lg:pointer-events-auto' : ''}`}>
+                                <Ellipsis className="justify-self-center self-center align-middle mx-auto size-4" />
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
+                            <DropdownMenuContent
+                                align="end"
+                                className="bg-background"
+                            >
                                 <DropdownMenuGroup>
-                                    <DropdownMenuItem className="justify-between">
+                                    <DropdownMenuItem
+                                        className="justify-between hover:!bg-destructive-foreground/10"
+                                        onClick={() => handleDelete(getItemId(item))}
+                                    >
                                         Delete
-                                        <Trash2 />
+                                        <Trash2 className="text-destructive-foreground" />
                                     </DropdownMenuItem>
                                 </DropdownMenuGroup>
                             </DropdownMenuContent>

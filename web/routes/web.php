@@ -14,12 +14,14 @@ Route::get('/chat/{id}', [ChatController::class, 'show'])->name('chat.show');
 Route::post('/chat', [ChatController::class, 'store'])
     ->middleware(['throttle:guest_chat'])
     ->name('chat.store');
+Route::post('/chat/{id}', [ChatController::class, 'destroy'])->name('chat.destroy');
 
 Route::get('/journal', [JournalController::class, 'index'])->name('journal.index');
 Route::get('/journal/{id}', [JournalController::class, 'show'])->name('journal.show');
 Route::post('/journal', [JournalController::class, 'store'])
     ->middleware(['throttle:guest_chat'])
     ->name('journal.store');
+Route::post('/journal/{id}', [JournalController::class, 'destroy'])->name('journal.destroy');
 
 // Make this route accessible only in local development
 Route::get('/component-development', function () {
