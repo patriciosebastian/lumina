@@ -5,6 +5,8 @@ import VoiceButton from './ui/voiceButton';
 import { useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ContentBubble from '@/components/ui/contentBubble';
+import { useRoute } from 'ziggy-js';
+import { Separator } from './ui/separator';
 
 export default function MessageCard({
     className = '',
@@ -21,6 +23,9 @@ export default function MessageCard({
     const textareaRef = useRef(null);
     const isMobile = useIsMobile();
     const chatMessages = Object.values(messages);
+    const route = useRoute();
+
+    const chatRoute = route().current() === 'chat.index' || route().current() === 'chat.show';
 
     useEffect(() => {
         const textarea = textareaRef.current;
@@ -40,13 +45,24 @@ export default function MessageCard({
   return (
     <SalosCard className={`relative w-full h-full mx-auto rounded-2xl p-4 flex flex-col items-center gap-8 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[84rem] lg:h-[52.438rem] ${className}`}>
         <SalosCard.Content className="w-full h-[41.938rem] flex-1 overflow-y-auto overflow-x-hidden space-y-4 transparent-scrollbar">
-            {chatMessages.length > 0 && chatMessages.map((message) => (
+            {chatRoute && chatMessages.length > 0 && chatMessages.map((message) => (
                 <ContentBubble
                     key={message.id}
-                    className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'} ${message.journal_id ? 'mx-auto !w-[50%] border-none bg-transparent' : ''}`}
+                    className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'}`}
                 >
                     <p>{message.content}</p>
                 </ContentBubble>
+            ))}
+            {!chatRoute && chatMessages.length > 0 && chatMessages.map((message, index) => (
+                <div
+                    key={message.id}
+                    className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'} mx-auto !w-[50%] border-none bg-transparent`}
+                >
+                    <p>{message.content}</p>
+                    {index < chatMessages.length - 1 &&
+                        <Separator className="my-10 w-full bg-muted-foreground/50" />
+                    }
+                </div>
             ))}
         </SalosCard.Content>
         {showCross && (
