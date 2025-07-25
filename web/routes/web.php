@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\StripeCheckoutController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -22,6 +23,10 @@ Route::post('/journal', [JournalController::class, 'store'])
     ->middleware(['throttle:guest_chat'])
     ->name('journal.store');
 Route::post('/journal/{id}', [JournalController::class, 'destroy'])->name('journal.destroy');
+
+Route::get('/checkout/{plan?}', StripeCheckoutController::class)
+    ->middleware(['auth', 'verified'])
+    ->name('checkout');
 
 // Make this route accessible only in local development
 Route::get('/component-development', function () {
