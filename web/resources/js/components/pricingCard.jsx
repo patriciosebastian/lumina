@@ -22,7 +22,7 @@ export default function PricingCard({
     const route = useRoute();
 
     const handleStartCheckout = (priceId) => {
-        router.post(route('checkout.embedded', { priceId }));
+        router.get(route('checkout.embedded', { priceId }));
     };
 
   return (
