@@ -335,6 +335,7 @@ export default function Home() {
                             features={tier.features}
                             monthly={true}
                             price={tier.monthlyPrice}
+                            priceId={tier.monthlyPriceId}
                             buttonText={tier.buttonText}
                             popular={tier.popular}
                         />
@@ -353,6 +354,7 @@ export default function Home() {
                             features={tier.features}
                             yearly={true}
                             price={tier.yearlyPrice}
+                            priceId={tier.yearlyPriceId}
                             buttonText={tier.buttonText}
                             popular={tier.popular}
                         />
