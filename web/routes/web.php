@@ -24,9 +24,13 @@ Route::post('/journal', [JournalController::class, 'store'])
     ->name('journal.store');
 Route::post('/journal/{id}', [JournalController::class, 'destroy'])->name('journal.destroy');
 
-Route::get('/checkout/{plan?}', StripeCheckoutController::class)
+Route::get('/checkout/{plan?}', [StripeCheckoutController::class, 'index'])
     ->middleware(['auth', 'verified'])
-    ->name('checkout');
+    ->name('checkout.index');
+
+Route::post('/checkout/embedded/{priceId?}', [StripeCheckoutController::class, 'embeddedCheckout'])
+    ->middleware(['auth', 'verified'])
+    ->name('checkout.embedded');
 
 Route::view('/checkout/success', 'checkoutSuccess')
     ->middleware(['auth', 'verified'])
