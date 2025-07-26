@@ -22,7 +22,11 @@ export default function PricingCard({
     const route = useRoute();
 
     const handleStartCheckout = (priceId) => {
-        router.get(route('checkout.embedded', { priceId }));
+        if (priceId === 'free') {
+            router.get(route('register'));
+        } else {
+            router.get(route('checkout.embedded', { priceId }));
+        }
     };
 
   return (

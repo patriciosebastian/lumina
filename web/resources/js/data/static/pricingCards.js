@@ -10,8 +10,8 @@ const pricingCards = [
         ],
         monthlyPrice: 0.00,
         yearlyPrice: 0.00,
-        monthlyPriceId: '',
-        yearlyPriceId: '',
+        monthlyPriceId: 'free',
+        yearlyPriceId: 'free',
         buttonText: "Get Started Now",
         popular: false
     },
@@ -24,30 +24,29 @@ const pricingCards = [
             "Memory Recall: For more personalized responses.",
             "Daily devotional messages."
         ],
-        monthlyPrice: 9.99,
-        yearlyPrice: 99.99,
+        monthlyPrice: 4.99,
+        yearlyPrice: 44.99,
         monthlyPriceId: 'price_1RofbU338HSujneJq5VBjLOn',
         yearlyPriceId: 'price_1Ronkv338HSujneJ4x2OKKEN',
         buttonText: "Get Started Now",
         popular: true
     },
-    {
-        badgeText: "Advanced Access",
-        title: "Premium",
-        subtitle: "Essential features for startups and small teams.",
-        features: [
-            "All Standard features without no limitations.",
-            "Advanced Recall: Deeper memory for evolving conversations.",
-            "Personalized spiritual journaling & progress tracking."
-        ],
-        monthlyPrice: 19.99,
-        yearlyPrice: 99.99,
-        monthlyPriceId: '',
-        yearlyPriceId: '',
-        buttonText: "Get Started Now",
-        popular: false
-    }
+    // {
+    //     badgeText: "Advanced Access",
+    //     title: "Premium",
+    //     subtitle: "Essential features for startups and small teams.",
+    //     features: [
+    //         "All Standard features without no limitations.",
+    //         "Advanced Recall: Deeper memory for evolving conversations.",
+    //         "Personalized spiritual journaling & progress tracking."
+    //     ],
+    //     monthlyPrice: 19.99,
+    //     yearlyPrice: 99.99,
+    //     monthlyPriceId: '',
+    //     yearlyPriceId: '',
+    //     buttonText: "Get Started Now",
+    //     popular: false
+    // }
 ];
-// TODO: add routes?
 
 export default pricingCards;
