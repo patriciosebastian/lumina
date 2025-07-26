@@ -1,6 +1,8 @@
 import { useCallback, useMemo } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js';
+import SalosLogo from '@/components/ui/salosLogo';
+import { Link } from '@inertiajs/react';
 
 export default function CheckoutEmbedded({ clientSecret }) {
     const stripePromise = useMemo(
@@ -19,8 +21,20 @@ export default function CheckoutEmbedded({ clientSecret }) {
   return (
     <div
         id="checkout"
-        className="lg:w-full lg:mx-auto lg:top-0 lg:translate-y-1/8"
+        className="w-full mx-auto"
     >
+        <Link
+            href={route('chat.index')}
+            prefetch={['hover', 'click']}
+            cacheFor={86400} // 1 day
+            className="hidden lg:block mx-auto"
+        >
+            <SalosLogo
+                width={292}
+                height={80}
+                className="mt-6 mb-8 mx-auto"
+            />
+        </Link>
         <EmbeddedCheckoutProvider
             stripe={stripePromise}
             options={options}
