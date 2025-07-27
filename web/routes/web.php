@@ -28,14 +28,6 @@ Route::get('/checkout/{priceId?}', StripeCheckoutController::class)
     ->middleware(['auth', 'verified'])
     ->name('checkout.embedded');
 
-Route::view('/checkout/success', 'checkoutSuccess')
-    ->middleware(['auth', 'verified'])
-    ->name('checkout.success'); // TODO: Create
-
-Route::view('/checkout/cancel', 'checkoutCancel')
-    ->middleware(['auth', 'verified'])
-    ->name('checkout.cancel'); // TODO: Create
-
 // Make this route accessible only in local development
 Route::get('/component-development', function () {
     return Inertia::render('componentDevelopment');

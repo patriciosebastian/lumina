@@ -20,9 +20,8 @@ class StripeCheckoutController extends Controller
                 'quantity' => 1,
             ]],
             'automatic_tax' => ['enabled' => true],
-            'return_url' => route('chat.index'),
+            'redirect_on_completion' => 'never',
             'ui_mode' => 'embedded',
-            'customer' => $request->user()->stripe_id,
         ]);
 
         return Inertia::render('embeddedCheckout', [
