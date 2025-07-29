@@ -17,6 +17,11 @@ const sidebarNavItems: NavItem[] = [
         url: '/settings/password',
         icon: null,
     },
+    {
+        title: 'Billing',
+        url: '/settings/billing',
+        icon: null,
+    },
     // {
     //     title: 'Appearance',
     //     url: '/settings/appearance',
