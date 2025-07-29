@@ -28,10 +28,11 @@ Route::get('/checkout/{priceId?}', StripeCheckoutController::class)
     ->middleware(['auth', 'verified'])
     ->name('checkout.embedded');
 
-// Make this route accessible only in local development
-Route::get('/component-development', function () {
-    return Inertia::render('componentDevelopment');
-})->name('component-development');
+if (app()->environment('local')) {
+    Route::get('/component-development', function () {
+        return Inertia::render('componentDevelopment');
+    })->name('component-development');
+}
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
