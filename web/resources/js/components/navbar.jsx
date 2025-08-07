@@ -30,9 +30,7 @@ export default function Navbar() {
                             size={'salosNav'}
                         >
                             <Link
-                                href={route('home')}
-                                prefetch={['hover', 'click']}
-                                cacheFor="1m"
+                                href={'#Features'}
                             >
                                 Features
                             </Link>
@@ -45,9 +43,7 @@ export default function Navbar() {
                             size={'salosNav'}
                         >
                             <Link
-                                href={route('home')}
-                                prefetch={['hover', 'click']}
-                                cacheFor="1m"
+                                href={'#Benefits'}
                             >
                                 Benefits
                             </Link>
@@ -75,9 +71,7 @@ export default function Navbar() {
                             size={'salosNav'}
                         >
                             <Link
-                                href={route('home')}
-                                prefetch={['hover', 'click']}
-                                cacheFor="1m"
+                                href={'#Pricing'}
                             >
                                 Pricing
                             </Link>

@@ -56,7 +56,7 @@ export default function Home() {
                 <span className="size-full place-content-center p-4 lg:p-6">
                     <div className="w-full flex justify-center items-center gap-4">
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500/0 to-primary-500 lg:w-[5.5rem]" />
-                        SALOS your AI driven mentor inspired by divine wisdom.
+                        SALOS Your Bible Based AI Driven Mentor.
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to primary-500/0 lg:w-[5.5rem]" />
                     </div>
                 </span>
@@ -69,7 +69,7 @@ export default function Home() {
                 <div className="space-y-6 px-4 py-6 flex flex-col justify-center items-center lg:space-y-14 lg:px-6 lg:py-10">
                     <h1 className="text-[2.5rem] font-bold text-center leading-[110%] lg:w-[55.625rem] lg:text-[5rem] lg:font-black lg:leading-[100%]">
                         <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px]">
-                            Wisdom at Your Fingertips&mdash;Guidance from Above
+                            Wisdom at Your Fingertips
                         </span>
                     </h1>
                     <Chatbox />
@@ -135,10 +135,11 @@ export default function Home() {
                 <div className="border-y" />
                 <div className="text-primary-400 text-3xl text-pretty leading-[128%] -tracking-[2%] border px-4 py-10 space-y-8 lg:text-[2.5rem] lg:px-8 lg:py-14 lg:space-y-10">
                     <p>
-                        At <span className="text-primary-800">SALOS</span>, we&apos;re on a mission to push the boundaries of AI innovation. Founded by a team of passionate experts, our journey began with a vision to <span className="text-primary-800">transform industries</span> through the power of artificial intelligence.
+                        Inspired by the wisdom of Solomon, guided by The Word, and powered by AI. Salos helps you discover God's truth, realign your purpose, and supplement your spiritual journey.
                     </p>
-                    <p>With a relentless pursuit of excellence and a commitment to delivering tangible results, <span className="text-primary-800">we&apos;ve established ourselves as leaders in the field</span>.</p>
-                    <p>Our diverse team brings together expertise from across disciplines to craft bespoke AI solutions tailored to your needs.</p>
+                    <p>
+                        By integrating the timeless truth of Scripture with the convenience of artificial intelligence, Salos seeks to inspire, guide, and uplift individuals in their pursuit of purpose and spiritual direction through cutting edge AI chat features, robust journaling mechanics, and purposeful habit formation.
+                    </p>
                 </div>
                 <div className="border-y" />
             </div>
@@ -149,7 +150,10 @@ export default function Home() {
         </div>
 
         {/* Features */}
-        <div className="space-y-10 px-4 mb-14 lg:space-y-20 lg:mb-[11.5rem]">
+        <div
+            className="space-y-10 px-4 mb-14 lg:space-y-20 lg:mb-[11.5rem]"
+            id="Features"
+        >
             <div className="text-center max-w-[41.75rem] mx-auto">
                 <Badge
                     variant={'salosPrimary'}
@@ -168,25 +172,25 @@ export default function Home() {
             </div>
             <div className="space-y-4">
                 <WideBannerCard
-                    title="Biblically-Inspired Wisdom"
-                    subtitle="Answers grounded in faith and wisdom."
+                    title="Biblical Based Wisdom"
+                    subtitle="Answers grounded in God's Word."
                     className="mx-auto"
                 >
-                    Scale your operations with our AI solutions designed for flexibility and adaptability. Our architecture grows with your business, ensuring seamless expansion and innovation.
+                    With logic derived exclusively from the teachings of Jesus and the wisdom of the Bible, Salos empowers users to invite Jesus into their day to day schedule to be reminded and grounded in true purpose.
                 </WideBannerCard>
                 <WideBannerCard
                     title="AI-Powered Mentorship"
                     subtitle="Learn, grow, and receive guidance through advanced AI."
                     className="mx-auto"
                 >
-                    Scale your operations with our AI solutions designed for flexibility and adaptability. Our architecture grows with your business, ensuring seamless expansion and innovation.
+                    Salos' state-of-the-art chat features contains memory recall and biblical based advice to help navigate trials and tribulations and celebrate great successes. A robust database with tailored solutions applicable to modern day situations rooted in eternal truth gives quick and easy access to a new age Bible based chat, and journal functions that pushes users toward self progression and a deeper relationship with Jesus.
                 </WideBannerCard>
                 <WideBannerCard
-                    title="Seamless Accessibility"
-                    subtitle="Ask questions anytime, anywhere."
+                    title="Biblical and Theological Accuracy"
+                    subtitle="Retrieval-Augmented Generation."
                     className="mx-auto"
                 >
-                    Scale your operations with our AI solutions designed for flexibility and adaptability. Our architecture grows with your business, ensuring seamless expansion and innovation.
+                    AI responses draw exclusively from our curated database of the complete Bible and select Christian theological works. We retrieve the most relevant biblical passages and theological concepts to ensure the AI crafts responses based solely on these trusted Christian sources.
                 </WideBannerCard>
             </div>
             <div className="grid grid-cols-[1rem_2.375rem_1fr_2.375rem_1rem] border-y h-[5.5rem] -mx-4 lg:grid-cols-[auto_4.125rem_60rem_4.125rem_auto] lg:h-auto">
@@ -209,7 +213,10 @@ export default function Home() {
         </div>
 
         {/* Benefits */}
-        <div className="space-y-10 px-4 mb-14 lg:space-y-20 lg:mb-[8.75rem]">
+        <div
+            className="space-y-10 px-4 mb-14 lg:space-y-20 lg:mb-[8.75rem]"
+            id="Benefits"
+        >
             <div className="text-center max-w-[41.75rem] mx-auto">
                 <Badge
                     variant={'salosPrimary'}
@@ -305,7 +312,10 @@ export default function Home() {
         </div>
 
         {/* Pricing */}
-        <div className="space-y-10 px-4 mb-14 lg:space-y-20 lg:mb-[11.5rem]">
+        <div
+            className="space-y-10 px-4 mb-14 lg:space-y-20 lg:mb-[11.5rem]"
+            id="Pricing"
+        >
             <div className="text-center max-w-[41.75rem] mx-auto">
                 <h2 className="text-[2rem] font-black leading-11 -tracking-[2%] mb-4 lg:text-[4rem] lg:font-semibold lg:leading-[100%] lg:-tracking-[4%] lg:mb-5">
                     <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px]">
