@@ -31,14 +31,27 @@ export default function PricingCard({
 
   return (
     <>
-        <SalosCard className={`h-[37.938rem] p-6 gap-0 place-content-center ${popular ? 'before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300' : ''} lg:w-[24.333rem] ${className}`}>
+        <SalosCard className={`h-[37.938rem] p-6 gap-0 place-content-center before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 lg:w-[24.333rem] ${className}`}>
             <SalosCard.Header className="space-y-4 p-0 mb-8">
-                <Badge
-                    variant={'salosPrimary'}
-                    className="mb-0"
-                >
-                    {badgeText}
-                </Badge>
+                {!popular && (
+                    <Badge
+                        variant={'salosPrimary'}
+                        className="mb-0"
+                    >
+                        {badgeText}
+                    </Badge>
+                )}
+                {popular && (
+                    <div className="flex justify-between items-center">
+                        <Badge
+                            variant={'salosPrimary'}
+                            className="mb-0"
+                        >
+                            {badgeText}
+                        </Badge>
+                        <span className="text-primary-50">Popular</span>
+                    </div>
+                )}
                 <SalosCard.Header.Title className="text-[1.75rem] leading-[110%] mb-0">
                     {title}
                 </SalosCard.Header.Title>

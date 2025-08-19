@@ -2,11 +2,11 @@ const pricingCards = [
     {
         badgeText: "Basic Access",
         title: "Free Tier",
-        subtitle: "Essential features for startups and small teams.",
+        subtitle: "Basic functions with no commitment.",
         features: [
-            "Limited AI interactions per day (e.g., 3–5 messages).",
-            "No memory recall—responses are session-based.",
-            "Access to general spiritual guidance."
+            "Limited AI interactions per day (3 messages per day).",
+            "Session based conversations with limited memory recall.",
+            "Limited access to all features."
         ],
         monthlyPrice: 0.00,
         yearlyPrice: 0.00,
@@ -16,13 +16,13 @@ const pricingCards = [
         popular: false
     },
     {
-        badgeText: "Mid Access",
+        badgeText: "General Access",
         title: "Standard",
-        subtitle: "Essential features for startups and small teams.",
+        subtitle: "Essential features without limitations.",
         features: [
-            "Unlimited AI interactions without no limitations.",
-            "Memory Recall: For more personalized responses.",
-            "Daily devotional messages."
+            "Unlimited interactions and messages.",
+            "Memory Recall For personalized responses.",
+            "Open-ended spiritual journaling tool."
         ],
         monthlyPrice: 4.99,
         yearlyPrice: 49.99,
@@ -32,13 +32,13 @@ const pricingCards = [
         popular: true
     },
     {
-        badgeText: "Advanced Access",
+        badgeText: "VIP Access",
         title: "Premium",
-        subtitle: "Essential features for startups and small teams.",
+        subtitle: "Unlimited functionality and features.",
         features: [
-            "All Standard features without no limitations.",
-            "Advanced Recall: Deeper memory for evolving conversations.",
-            "Personalized spiritual journaling & progress tracking."
+            "All features in the standard package.",
+            "Advanced Memory Recall for deeper and evolving conversations.",
+            "SALOS community coming soon."
         ],
         monthlyPrice: 9.99,
         yearlyPrice: 89.99,
