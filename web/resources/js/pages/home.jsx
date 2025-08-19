@@ -55,7 +55,7 @@ export default function Home() {
                 <span className="size-full place-content-center p-4 lg:p-6">
                     <div className="w-full flex justify-center items-center gap-4">
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500/0 to-primary-500 lg:w-[5.5rem]" />
-                        Your Bible Based AI Driven Mentor
+                        Your Bible Based AI Mentor
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to primary-500/0 lg:w-[5.5rem]" />
                     </div>
                 </span>
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-[16px_1fr_16px] lg:grid-cols-[1fr_55.625rem_1fr]">
                 <div className="border-y" />
-                <div className="text-primary-400 text-3xl text-pretty leading-[128%] -tracking-[2%] border px-4 py-10 space-y-8 lg:text-[2.5rem] lg:px-8 lg:py-14 lg:space-y-10">
+                <div className="text-primary-400 text-3xl text-center text-pretty leading-[128%] -tracking-[2%] border px-4 py-10 space-y-8 lg:text-[2.5rem] lg:px-8 lg:py-14 lg:space-y-10">
                     <p>
                         Inspired by the wisdom of Solomon, guided by The Word, and powered by AI. Salos helps you discover God&apos;s truth, realign your purpose, and supplement your spiritual journey.
                     </p>
@@ -174,6 +174,8 @@ export default function Home() {
                     title="Biblical Based Wisdom"
                     subtitle="Answers grounded in God's Word."
                     className="mx-auto"
+                    imageWidth={isMobile ? 200 : 311}
+                    imageHeight={isMobile ? 200 : 311}
                 >
                     With logic derived exclusively from the teachings of Jesus and the wisdom of the Bible, SALOS empowers users to invite Jesus into their day to day schedule to be reminded and grounded in true purpose.
                 </WideBannerCard>
@@ -181,6 +183,8 @@ export default function Home() {
                     title="AI-Powered Mentorship"
                     subtitle="Learn and grow through advanced AI."
                     className="mx-auto"
+                    imageWidth={isMobile ? 200 : 311}
+                    imageHeight={isMobile ? 200 : 311}
                 >
                     Memory recall and biblical based advice helps users navigate life&apos;s questions. Integration of a robust database, rooted in eternal truth, offers tailored solutions applicable to modern day situations. Bible based chat and journal functions encourage users to build a deeper relationship with Jesus.
                 </WideBannerCard>
@@ -188,6 +192,8 @@ export default function Home() {
                     title="Biblical and Theological Accuracy"
                     subtitle="Retrieval-Augmented Generation."
                     className="mx-auto"
+                    imageWidth={isMobile ? 200 : 311}
+                    imageHeight={isMobile ? 200 : 311}
                 >
                     AI responses draw exclusively from our curated database of the complete Bible and select Christian theological works. Response generation is based on trusted Christian sources meant to guide and direct users with the truth of the Word and the understanding of theological concepts, ultimately leading to Jesus.
                 </WideBannerCard>
@@ -225,7 +231,7 @@ export default function Home() {
                 </Badge>
                 <h2 className="text-[2rem] font-black leading-11 -tracking-[2%] mb-4 lg:text-[4rem] lg:font-semibold lg:leading-[100%] lg:-tracking-[4%] lg:mb-5">
                     <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px]">
-                        Extensive Catalog Of Tailored Solutions
+                        An Unparalleled Experience
                     </span>
                 </h2>
                 <p className="text-lg font-normal text-primary-500 mx-auto leading-[128%] -tracking-[2%]">
