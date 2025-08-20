@@ -464,7 +464,7 @@ export default function Home() {
                         className="mx-auto"
                     />
                 </Link>
-                <div className="w-fit text-center text-lg font-normal text-primary-700 grid grid-cols-2 gap-4 -tracking-[2%] mx-auto lg:flex lg:justify-center lg:items-center lg:gap-12">
+                <div className="w-fit text-center font-normal text-primary-700 space-x-3 -tracking-[2%] mx-auto lg:text-lg lg:flex lg:justify-center lg:items-center lg:gap-12">
                     <Link
                         href={route('home')}
                         prefetch={['hover', 'click']}
