@@ -11,8 +11,7 @@ import { Link } from '@inertiajs/react';
 import testimonials from '@/data/fake/testimonials/testimonials';
 import pricingCards from '@/data/static/pricingCards';
 import PricingCard from '@/components/pricingCard';
-import handPhone from '../../../public/hand_phone.png';
-import blankScreen from '../../../public/white_rectangle_for_phone.svg';
+import handPhone from '../../../public/hand_phone_1.png';
 import SalosODove from '../../../public/SALOS_Dove_O_Group_1.svg';
 import DownloadOnAppStore from '../../../public/download_on_app_store.svg';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -394,53 +393,38 @@ export default function Home() {
                         <p className="text-center text-sm font-normal text-primary-400 lg:px-51 leading-[21px] mb-10">
                             SALOS mobile is our cutting-edge solution designed to supplement your spiritual journey by inviting Jesus into all areas of your life.
                         </p>
-                        <Button
-                            asChild
-                            className="block mx-auto"
-                        >
-                            <Link
-                                href={route('chat.index')}
-                                prefetch={['hover', 'click']}
-                                cacheFor="1m"
-                                className="text-center"
-                            >
-                                Ask SALOS
-                            </Link>
-                        </Button>
                     </div>
-                    <div className="relative size-full overflow-hidden">
+                    <div className="relative size-auto overflow-hidden">
                         <img
                             src={handPhone}
                             width={isMobile ? 419 : 762}
                             height={isMobile ? 422 : 767}
-                            className="-ml-12 mt-3 lg:-ml-14 lg:mt-0"
+                            className="w-[26.188rem] h-auto mt-3 object-center lg:w-full lg:mx-auto lg:mt-0"
                             alt="Image of a hand holding a phone with the SALOS app"
                         />
-                        <img
-                            src={blankScreen}
-                            width={isMobile ? 124 : 302}
-                            height={isMobile ? 360 : 600}
-                            className="absolute top-5.5 left-1/2 ml-[0.3rem] -translate-x-1/2 lg:top-6 lg:left-112.5"
-                            alt="Image of a blank screen"
-                        />
-                        <Badge
-                            variant={'salosPrimary'}
-                            className="absolute size-[2.375rem] p-[0.61rem] top-1/2 -translate-y-48 left-40 -translate-x-1/2 bg-black shadow-none rounded-[0.61rem] max-h-none lg:rounded-[1.125rem] lg:p-4.5 lg:top-80 lg:size-[4.375rem] lg:left-112.5 lg:-translate-y-0 before:rounded-[0.61rem] lg:before:rounded-[1.125rem]"
-                        >
-                            <img
-                                src={SalosODove}
-                                width={isMobile ? 18.44 : 34}
-                                height={isMobile ? 18.44 : 34}
-                                alt="SALOS abbreviated logo"
-                            />
-                        </Badge>
-                        <div className="absolute w-[6.5rem] h-8 pt-[0.311rem] pb-[0.229rem] px-[0.613rem] rounded-[0.543rem] top-1/2 -translate-y-19 left-40 -translate-x-1/2 place-content-center bg-primary-950 lg:w-[11.813rem] lg:h-14 lg:pt-[0.544rem] lg:pb-[0.401rem] lg:px-[1.119rem] lg:top-150 lg:rounded-2xl lg:-translate-y-0 lg:left-90 lg:-translate-x-0">
-                            <img
-                                src={DownloadOnAppStore}
-                                width={153.11}
-                                height={40.88}
-                                alt="Download on the App Store"
-                            />
+                        <div className="absolute h-[13.7rem] top-4 left-1/2 -translate-x-1/2 lg:h-auto">
+                            <div className="bg-white w-[6rem] !h-[12.5rem] mt-1 rounded-xl lg:w-67 lg:!h-[36.125rem] lg:ml-1.5 lg:rounded-4xl" />
+                            <div className="absolute size-full top-0 flex flex-col gap-36 lg:gap-110">
+                                <Badge
+                                    variant={'salosPrimary'}
+                                    className="size-[2rem] p-[0.61rem] top-1/2 -translate-y-8 left-1/2 ml-[0.125rem] -translate-x-1/2 bg-black shadow-none rounded-[0.61rem] max-h-none lg:rounded-[1.125rem] lg:p-4.5 lg:size-[4.375rem] before:rounded-[0.61rem] lg:before:rounded-[1.125rem]"
+                                >
+                                    <img
+                                        src={SalosODove}
+                                        width={isMobile ? 18.44 : 34}
+                                        height={isMobile ? 18.44 : 34}
+                                        alt="SALOS abbreviated logo"
+                                    />
+                                </Badge>
+                                <div className="w-22 mx-auto pt-[0.311rem] pb-[0.229rem] px-[0.613rem] rounded-[0.543rem] place-content-center bg-primary-950 -mt-2.5 lg:w-[11.813rem] lg:h-14 lg:pt-[0.544rem] lg:pb-[0.401rem] lg:px-[1.119rem] lg:rounded-2xl lg:-translate-y-0 lg:-translate-x-0">
+                                    <img
+                                        src={DownloadOnAppStore}
+                                        width={153.11}
+                                        height={40.88}
+                                        alt="Download on the App Store"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
