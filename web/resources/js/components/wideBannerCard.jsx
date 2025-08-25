@@ -26,7 +26,6 @@ export default function WideBannerCard({
         {hasImage && (
             <SalosCard.Content className="lg:w-80 lg:h-80">
                 <div className="size-fit max-w-[19.438rem] border rounded-2xl border-[#51A5CB26] p-[1.213rem] justify-self-center place-self-center mt-10 max-lg:mx-auto lg:w-80 lg:max-w-80 lg:h-80 lg:p-5 lg:mt-0">
-                    {console.log('image width', imageWidth, 'image height', imageHeight)}
                     <img
                         src={imageSource}
                         width={imageWidth}
