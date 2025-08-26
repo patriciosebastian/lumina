@@ -26,14 +26,9 @@ export function NavMain({ items = [] }: { items: [] }) {
 
     const handleDelete = (itemId: number) => {
         const routeName = isChatRoute ? 'chat.destroy' : 'journal.destroy';
-        const routeNameIndexEndpoint = isChatRoute ? 'chat.index' : 'journal.index';
 
-        router.post(route(routeName, { id: itemId }), {}, {
-            onSuccess: () => {
-                router.visit(route(routeNameIndexEndpoint), {
-                    replace: true,
-                });
-            },
+        router.delete(route(routeName, { id: itemId }), {
+            onBefore: () => window.confirm('Are you sure? This cannot be undone.'),
             onError: (errors) => {
                 console.error('Error deleting message: ', errors);
             },

@@ -11,22 +11,16 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+Route::post('/chat', [ChatController::class, 'store'])->middleware(['throttle:guest_chat'])->name('chat.store');
 Route::get('/chat/{id}', [ChatController::class, 'show'])->name('chat.show');
-Route::post('/chat', [ChatController::class, 'store'])
-    ->middleware(['throttle:guest_chat'])
-    ->name('chat.store');
-Route::post('/chat/{id}', [ChatController::class, 'destroy'])->name('chat.destroy');
+Route::delete('/chat/{id}', [ChatController::class, 'destroy'])->name('chat.destroy');
 
 Route::get('/journal', [JournalController::class, 'index'])->name('journal.index');
+Route::post('/journal', [JournalController::class, 'store'])->middleware(['throttle:guest_chat'])->name('journal.store');
 Route::get('/journal/{id}', [JournalController::class, 'show'])->name('journal.show');
-Route::post('/journal', [JournalController::class, 'store'])
-    ->middleware(['throttle:guest_chat'])
-    ->name('journal.store');
-Route::post('/journal/{id}', [JournalController::class, 'destroy'])->name('journal.destroy');
+Route::delete('/journal/{id}', [JournalController::class, 'destroy'])->name('journal.destroy');
 
-Route::get('/checkout/{priceId?}', StripeCheckoutController::class)
-    ->middleware(['auth', 'verified'])
-    ->name('checkout.embedded');
+Route::get('/checkout/{priceId?}', StripeCheckoutController::class)->middleware(['auth', 'verified'])->name('checkout.embedded');
 
 if (app()->environment('local')) {
     Route::get('/component-development', function () {
