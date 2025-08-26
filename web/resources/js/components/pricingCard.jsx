@@ -32,7 +32,7 @@ export default function PricingCard({
   return (
     <>
         <SalosCard className={`h-[37.938rem] p-6 gap-0 place-content-center before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 lg:w-[24.333rem] ${className}`}>
-            <SalosCard.Header className="space-y-4 p-0 mb-8">
+            <SalosCard.Header className="p-0 mb-8">
                 {!popular && (
                     <Badge
                         variant={'salosPrimary'}

@@ -1,7 +1,7 @@
 const pricingCards = [
     {
         badgeText: "Basic Access",
-        title: "Free Tier",
+        title: "Free",
         subtitle: "Basic functions with no commitment.",
         features: [
             "Limited AI interactions per day (3 messages per day).",
