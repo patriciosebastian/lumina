@@ -93,7 +93,7 @@ export default function Navbar() {
                     </Button>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="md:hidden w-7 h-7 p-0.5">
-                    <NavigationMenuTrigger className="[&>svg]:hidden p-0 h-auto bg-transparent">
+                    <NavigationMenuTrigger className="[&>svg]:hidden p-0 h-auto !bg-transparent">
                         <img
                             src={MobileNavIcon}
                             width={24}
@@ -104,7 +104,7 @@ export default function Navbar() {
                     <NavigationMenuContent className="text-primary-700 text-lg font-normal w-[19.563rem] rounded-xl bg-radial from-[#081F29] to-[#031B26] py-10 px-4 flex flex-col gap-12 !border-0">
                         <div className="flex flex-col gap-4">
                             <Link
-                                href={route('home')}
+                                href={'#Features'}
                                 prefetch={['hover', 'click']}
                                 cacheFor="1m"
                                 className="block hover:text-primary-100"
@@ -112,23 +112,23 @@ export default function Navbar() {
                                 Features
                             </Link>
                             <Link
-                                href={route('home')}
+                                href={'#Benefits'}
                                 prefetch={['hover', 'click']}
                                 cacheFor="1m"
                                 className="block hover:text-primary-100"
                             >
                                 Benefits
                             </Link>
-                            <Link
-                                href={route('home')}
+                            {/* <Link
+                                href={route('about')}
                                 prefetch={['hover', 'click']}
                                 cacheFor="1m"
                                 className="block hover:text-primary-100"
                             >
-                                Testimonials
-                            </Link>
+                                About
+                            </Link> */}
                             <Link
-                                href={route('home')}
+                                href={'#Pricing'}
                                 prefetch={['hover', 'click']}
                                 cacheFor="1m"
                                 className="block hover:text-primary-100"
