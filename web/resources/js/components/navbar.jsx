@@ -49,21 +49,21 @@ export default function Navbar() {
                             </Link>
                         </Button>
                     </NavigationMenuItem>
-                    <NavigationMenuItem>
+                    {/* <NavigationMenuItem>
                         <Button
                             asChild
                             variant={'salosGhost'}
                             size={'salosNav'}
                         >
                             <Link
-                                href={route('home')}
+                                href={route('about')}
                                 prefetch={['hover', 'click']}
                                 cacheFor="1m"
                             >
-                                Testimonials
+                                About
                             </Link>
                         </Button>
-                    </NavigationMenuItem>
+                    </NavigationMenuItem> */}
                     <NavigationMenuItem>
                         <Button
                             asChild
