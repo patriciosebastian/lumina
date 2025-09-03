@@ -8,7 +8,7 @@ import { initializeTheme } from './hooks/use-appearance';
 const appName = 'SALOS';
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => title || appName,
     resolve: (name) => resolvePageComponent(
         [
             `./pages/${name}.tsx`,
