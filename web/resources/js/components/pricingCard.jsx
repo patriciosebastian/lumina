@@ -49,7 +49,7 @@ export default function PricingCard({
                         >
                             {badgeText}
                         </Badge>
-                        <span className="text-primary-50">Popular</span>
+                        <span className="text-lg text-primary-gradient">&#10024; Popular</span>
                     </div>
                 )}
                 <SalosCard.Header.Title className="text-[1.75rem] leading-[110%] mb-0">
