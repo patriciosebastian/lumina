@@ -6,7 +6,7 @@ export default function Chatbox({ className = '', textareaClasses = '', buttonCl
   return (
     <div className={`mx-auto border-0 rounded-[8px] has-focus-visible:shadow-[0_0_50px_12px] has-focus-visible:shadow-[#0072FF99] transition-shadow ${className}`}>
         <Textarea
-            className={`w-[313px] h-[124px] lg:w-[640px] lg:h-[200px] p-6 rounded-t-[8px] rounded-b-none border-b-0 border-primary-700 text-primary-400 !placeholder-primary-400/50 text-lg font-normal !bg-[#00AFFF14] focus-visible:border-primary-700 focus-visible:ring-0 resize-none caret-primary-900 focus-visible:!bg-[#072938] transition-colors peer ${textareaClasses}`}
+            className={`w-[313px] h-[124px] p-6 rounded-t-[8px] rounded-b-none border-b-0 border-primary-700 text-primary-400 !placeholder-primary-400/50 text-lg font-normal !bg-[#00AFFF14] focus-visible:border-primary-700 focus-visible:ring-0 resize-none caret-primary-900 focus-visible:!bg-[#072938] transition-colors peer lg:w-[640px] lg:h-[200px] ${textareaClasses}`}
             placeholder="How can I help guide you today?"
         />
         <Button
