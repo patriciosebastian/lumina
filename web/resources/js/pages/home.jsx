@@ -435,7 +435,7 @@ export default function Home() {
         {/* Footer */}
         <div className="grid grid-cols-[1rem_1fr_1rem] lg:grid-cols-[auto_60rem_auto]">
             <div className="size-full border-r" />
-            <div className="space-y-10 py-14 px-4 lg:space-y-14 lg:py-[8.75rem] lg:px-6">
+            <div className="space-y-10 py-14 px-4 lg:space-y-14 lg:py-18 lg:px-6">
                 <Link
                     href={route('home')}
                     prefetch={['hover', 'click']}
