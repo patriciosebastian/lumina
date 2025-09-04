@@ -52,7 +52,7 @@ export default function MessageCard({
     };
 
   return (
-    <SalosCard className={`relative w-full h-full mx-auto rounded-2xl p-4 flex flex-col items-center gap-8 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[84rem] lg:h-[52.438rem] ${className}`}>
+    <SalosCard className={`relative w-full h-full mx-auto rounded-2xl p-4 flex flex-col items-center gap-8 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[84rem] lg:h-[52.438rem] lg:max-w-full lg:max-h-full ${className}`}>
         <SalosCard.Content
             ref={scrollContainerRef}
             onScroll={onScroll}
@@ -138,7 +138,7 @@ export default function MessageCard({
                             onKeyDown={handleKeyDown}
                             className="w-full flex-grow !min-h-full max-h-43 rounded-t-2xl px-5 py-4 !text-lg font-medium text-foreground border-none placeholder:text-foreground/60 selection:bg-primary-900 selection:text-primary-100 transition-all duration-200 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
                             autoComplete="off"
-                            rows={1}
+                            rows={2}
                         />
                         <div className="w-full h-9 flex justify-end items-center gap-4 px-2.5 pb-2.5 rounded-2xl z-10">
                             <VoiceButton
