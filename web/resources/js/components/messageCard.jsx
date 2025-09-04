@@ -138,7 +138,7 @@ export default function MessageCard({
                             onKeyDown={handleKeyDown}
                             className="w-full flex-grow !min-h-full max-h-43 rounded-t-2xl px-5 py-4 !text-lg font-medium text-foreground border-none placeholder:text-foreground/60 selection:bg-primary-900 selection:text-primary-100 transition-all duration-200 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
                             autoComplete="off"
-                            rows={1}
+                            rows={2}
                         />
                         <div className="w-full h-9 flex justify-end items-center gap-4 px-2.5 pb-2.5 rounded-2xl z-10">
                             <VoiceButton
