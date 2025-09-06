@@ -76,8 +76,9 @@ export default function MessageCard({
             {!chatRoute && chatMessages.length > 0 && chatMessages.map((message, index) => (
                 <div
                     key={message.id}
-                    className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'} text-foreground mx-auto !w-[50%] border-none bg-transparent`}
+                    className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'} text-foreground mx-auto w-full max-md:px-3.5 border-none bg-transparent md:w-3/4 lg:!w-[50%]`}
                 >
+                    <em className="text-neutral-400 block mb-4">{new Date(message.created_at).toLocaleDateString()}</em>
                     <p>{message.content}</p>
                     {index < chatMessages.length - 1 &&
                         <Separator className="my-10 w-full bg-muted-foreground/50" />
