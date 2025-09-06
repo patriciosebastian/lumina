@@ -4,7 +4,7 @@ import { router } from '@inertiajs/react';
 import { useRoute } from 'ziggy-js';
 import { useStream } from '@laravel/stream-react';
 
-export default function Chat({ initialMessages = [] }) {
+export default function Chat({ initialMessages = [], chatboxMessage = null }) {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState(Array.isArray(initialMessages) ? initialMessages : []);
     const [loading, setLoading] = useState(false);
@@ -166,6 +166,18 @@ export default function Chat({ initialMessages = [] }) {
             setIsAtBottom(true);
         }
     }, [chatId, messages.length]);
+
+    useEffect(() => {
+        if (chatboxMessage && chatboxMessage.trim()) {
+            setMessage(chatboxMessage.trim());
+        }
+    }, [chatboxMessage]);
+
+    useEffect(() => {
+        if (chatboxMessage && chatboxMessage.trim() && message === chatboxMessage.trim()) {
+            handleSendMessage();
+        }
+    }, [message, chatboxMessage]);
 
     const handleSendMessage = async () => {
         const cleanMessage = message.trim();

@@ -5,7 +5,7 @@ import { Head, router } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import { useRoute } from 'ziggy-js';
 
-export default function MainApp({ initialMode, data }) {
+export default function MainApp({ initialMode, data, chatboxMessage }) {
     const [isJournalMode, setIsJournalMode] = useState(initialMode === 'journal');
     const [dataToShow, setDataToShow] = useState([]);
     const route = useRoute();
@@ -37,7 +37,7 @@ export default function MainApp({ initialMode, data }) {
         <div className="flex h-full flex-1 flex-col justify-center gap-4 rounded-xl p-1">
             {isJournalMode ?
                 <MiracleJournal initialJournalEntries={data.messages} /> :
-                <Chat initialMessages={data.messages} />
+                <Chat initialMessages={data.messages} chatboxMessage={chatboxMessage} />
             }
         </div>
     </AppLayout>
