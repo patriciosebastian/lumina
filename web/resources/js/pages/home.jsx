@@ -440,7 +440,7 @@ export default function Home() {
                     href={route('home')}
                     prefetch={['hover', 'click']}
                     cacheFor={86400} // 1 day
-                    className="block"
+                    className="block w-fit mx-auto"
                 >
                     <SalosLogo
                         width={292}
