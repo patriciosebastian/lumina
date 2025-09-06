@@ -13,7 +13,7 @@ export default function Chatbox({ className = '', textareaClasses = '', buttonCl
         <Button
             variant={'salosInputBox'}
             size={'salosInputBox'}
-            className={`${buttonClasses}`}
+            className={`hover:bg-background/60 hover:text-primary-300 ${buttonClasses}`}
         >
             <img
                 src={magicWandTransparent}
