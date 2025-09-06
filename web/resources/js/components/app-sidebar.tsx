@@ -40,7 +40,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
             <div className={`${!isMobile ? "bg-transparent rounded-2xl before:rounded-2xl before:content-[''] before:absolute before:z-[1] before:inset-2 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box]" : ''}`}>
                 <Sidebar
                     collapsible="icon"
-                    className="border-none"
+                    className="border-none text-foreground"
                     mobileClasses="border-none border-r-0 bg-background rounded-2xl before:rounded-2xl before:content-[''] before:absolute before:z-[1] before:inset-0 before:p-[0px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box]"
                 >
                     <SidebarHeader>
@@ -62,7 +62,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                     <SidebarContent>
                         <SidebarMenuButton
                             asChild
-                            className="w-auto pl-2 my-2 mx-2 hover:bg-primary-950/70"
+                            className="w-auto pl-2 my-2 mx-2 hover:text-foreground hover:bg-primary-950/70"
                         >
                             <Link
                                 href={route(getRouteName())}
@@ -76,7 +76,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                         <NavMain items={data} />
                     </SidebarContent>
 
-                    <SidebarFooter>
+                    <SidebarFooter className="text-foreground">
                         <NavFooter
                             items={footerNavItems}
                             className="mt-auto"

@@ -52,16 +52,16 @@ export default function MessageCard({
     };
 
   return (
-    <SalosCard className={`relative w-full h-full mx-auto rounded-2xl p-4 flex flex-col items-center gap-8 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[84rem] lg:h-[52.438rem] lg:max-w-full lg:max-h-full ${className}`}>
+    <SalosCard className={`relative w-full h-full mx-auto rounded-2xl flex flex-col items-center gap-8 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[84rem] lg:h-[52.438rem] lg:max-w-full lg:max-h-full ${className}`}>
         <SalosCard.Content
             ref={scrollContainerRef}
             onScroll={onScroll}
-            className="w-full h-[41.938rem] flex-1 overflow-y-auto overflow-x-hidden space-y-4 transparent-scrollbar"
+            className="w-full h-[41.938rem] px-3 flex-1 overflow-y-auto overflow-x-hidden space-y-4 transparent-scrollbar"
         >
             {chatRoute && chatMessages.length > 0 && chatMessages.map((message) => (
                 <ContentBubble
                     key={message.id}
-                    className={`${message.role === 'user' ? 'ml-auto !w-fit max-w-[70%] md:max-w-[60%] lg:max-w-[34.375rem]' : 'mr-auto lg:!w-[35rem]'}`}
+                    className={`${message.role === 'user' ? 'ml-auto !w-fit max-w-[70%] md:max-w-[60%] lg:max-w-[34.375rem]' : 'max-md:w-full max-md:border-none max-md:bg-transparent max-md:mx-auto lg:mr-auto lg:!w-[35rem]'}`}
                 >
                     {message.role === 'user' ? (
                         <p>
@@ -121,7 +121,7 @@ export default function MessageCard({
                         value={currentMessage}
                         onChange={onMessageChange}
                         onKeyDown={handleKeyDown}
-                        className="relative w-full h-[4.5rem] rounded-2xl px-5 py-4 !text-lg font-medium text-foreground border-none placeholder:text-foreground/60 selection:bg-primary-900 selection:text-primary-100 transition-all duration-200 lg:max-h-96 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
+                        className="relative w-full h-[4.5rem] rounded-2xl px-5 py-4 !text-lg font-medium text-foreground/90 border-none placeholder:text-foreground/60 selection:bg-primary-900 selection:text-primary-100 transition-all duration-200 lg:max-h-96 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
                         autoComplete="off"
                         rows={1}
                     />
@@ -136,7 +136,7 @@ export default function MessageCard({
                             value={currentMessage}
                             onChange={onMessageChange}
                             onKeyDown={handleKeyDown}
-                            className="w-full flex-grow !min-h-full max-h-43 rounded-t-2xl px-5 py-4 !text-lg font-medium text-foreground border-none placeholder:text-foreground/60 selection:bg-primary-900 selection:text-primary-100 transition-all duration-200 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
+                            className="w-full flex-grow !min-h-full max-h-43 rounded-t-2xl px-5 py-4 !text-lg font-medium text-foreground/90 border-none placeholder:text-foreground/60 selection:bg-primary-900 selection:text-primary-100 transition-all duration-200 resize-none break-words focus:outline-none overflow-auto [scrollbar-width:thin] transparent-scrollbar"
                             autoComplete="off"
                             rows={2}
                         />

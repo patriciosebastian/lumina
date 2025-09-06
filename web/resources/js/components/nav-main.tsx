@@ -53,19 +53,19 @@ export function NavMain({ items = [] }: { items: [] }) {
                                 href={route(getRouteName(), getItemId(item))}
                                 prefetch
                             >
-                                <span>{item.name}</span>
+                                <span className="text-foreground">{item.name}</span>
                             </Link>
                         </SidebarMenuButton>
                         <DropdownMenu
                             open={openDropdown === getItemId(item)}
                             onOpenChange={(open) => setOpenDropdown(open ? getItemId(item) : null)}
                         >
-                            <DropdownMenuTrigger className={`absolute top-0 right-0 w-8 h-8 rounded-md hover:bg-primary-950/70 lg:opacity-0 lg:pointer-events-none lg:group-hover/item:opacity-100 lg:group-hover/item:pointer-events-auto ${openDropdown === getItemId(item) ? 'bg-primary-950/70 lg:opacity-100 lg:pointer-events-auto' : ''}`}>
+                            <DropdownMenuTrigger className={`absolute top-0 right-0 w-8 h-8 rounded-md hover:bg-primary-950/95 lg:opacity-0 lg:pointer-events-none lg:group-hover/item:opacity-100 lg:group-hover/item:pointer-events-auto ${openDropdown === getItemId(item) ? 'bg-primary-950/95 lg:opacity-100 lg:pointer-events-auto' : ''}`}>
                                 <Ellipsis className="justify-self-center self-center align-middle mx-auto size-4" />
                             </DropdownMenuTrigger>
                             <DropdownMenuContent
                                 align="end"
-                                className="bg-background"
+                                className="text-foreground bg-background"
                             >
                                 <DropdownMenuGroup>
                                     <DropdownMenuItem
