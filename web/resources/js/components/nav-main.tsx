@@ -8,14 +8,15 @@ import { useState } from 'react';
 export function NavMain({ items = [] }: { items: [] }) {
     const route = useRoute();
     const isChatRoute = route().current('chat.*');
+    const isJournalRoute = route().current('journal.*');
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     const getSidebarLabel = (): string => {
-        return isChatRoute ? 'Chats' : 'Journals';
+        return isChatRoute || !isJournalRoute ? 'Chats' : 'Journals';
     }
 
     const getRouteName = (): string => {
-        return isChatRoute ? 'chat.show' : 'journal.show';
+        return isChatRoute || !isJournalRoute ? 'chat.show' : 'journal.show';
     }
 
     const getItemId = (item: object) => {
@@ -25,7 +26,7 @@ export function NavMain({ items = [] }: { items: [] }) {
     }
 
     const handleDelete = (itemId: number) => {
-        const routeName = isChatRoute ? 'chat.destroy' : 'journal.destroy';
+        const routeName = isChatRoute || !isJournalRoute ? 'chat.destroy' : 'journal.destroy';
 
         router.delete(route(routeName, { id: itemId }), {
             onBefore: () => window.confirm('Are you sure? This cannot be undone.'),

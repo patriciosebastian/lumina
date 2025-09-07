@@ -5,9 +5,11 @@ import { Head } from '@inertiajs/react';
 import HeadingSmall from '@/components/heading-small';
 import { Button } from '@/components/ui/button';
 
-export default function Billing() {
+export default function Billing({ chatsData }) {
     return (
-        <AppLayout>
+        <AppLayout
+            data={chatsData.chats}
+        >
             <Head title="Billing" />
 
             <SettingsLayout>

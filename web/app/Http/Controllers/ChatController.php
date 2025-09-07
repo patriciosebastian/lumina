@@ -23,7 +23,7 @@ class ChatController extends Controller
         } else {
             $guestMessages = $request->session()->get('guest_messages', []);
             $data = [
-                'chats' => collect($guestMessages)->where('chat_id', '!=', null)->values(),
+                'chats' => collect($guestMessages)->whereNotNull('chat_id')->values(),
             ];
         }
 

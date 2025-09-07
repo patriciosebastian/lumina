@@ -5,8 +5,8 @@ import { type ReactNode } from 'react';
 interface AppLayoutProps {
     children: ReactNode;
     breadcrumbs?: BreadcrumbItem[];
-    enabled: boolean;
-    onCheckedChange: (updatedMode: boolean) => void;
+    enabled?: boolean;
+    onCheckedChange?: (updatedMode: boolean) => void;
     data: [];
 }
 
