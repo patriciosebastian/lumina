@@ -27,13 +27,14 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
     const route = useRoute();
     const isChatRoute = route().current('chat.*');
     const isJournalRoute = route().current('journal.*');
+    const useChatRoute = isChatRoute || !isJournalRoute;
 
     const getRouteName = (): string => {
-        return isChatRoute || !isJournalRoute ? 'chat.index' : 'journal.index';
+        return useChatRoute ? 'chat.index' : 'journal.index';
     }
 
     const getLabel = (): string => {
-        return isChatRoute || !isJournalRoute ? 'New Chat' : 'New Journal';
+        return useChatRoute ? 'New Chat' : 'New Journal';
     }
 
     return (
