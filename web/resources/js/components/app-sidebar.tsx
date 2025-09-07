@@ -1,7 +1,15 @@
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
+import { Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+    useSidebar
+} from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
 import SalosLogo from './ui/salosLogo';
@@ -24,6 +32,7 @@ const footerNavItems: NavItem[] = [
 
 export function AppSidebar({ data = [] }: { data?: [] }) {
     const isMobile = useIsMobile();
+    const { state } = useSidebar();
     const route = useRoute();
     const isChatRoute = route().current('chat.*');
     const isJournalRoute = route().current('journal.*');
@@ -75,7 +84,10 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                                 <span>{getLabel()}</span>
                             </Link>
                         </SidebarMenuButton>
-                        <NavMain items={data} />
+                        <NavMain
+                            items={data}
+                            sidebarState={state}
+                        />
                     </SidebarContent>
 
                     <SidebarFooter className="text-foreground">

@@ -1,11 +1,21 @@
-import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
+import { SidebarGroup,
+    SidebarGroupLabel,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem
+} from '@/components/ui/sidebar';
 import { Link, router } from '@inertiajs/react';
 import { Ellipsis, Trash2 } from 'lucide-react';
 import { useRoute } from 'ziggy-js';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
+import { DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuTrigger
+} from './ui/dropdown-menu';
 import { useState } from 'react';
 
-export function NavMain({ items = [] }: { items: [] }) {
+export function NavMain({ items = [], sidebarState }: { items: []; sidebarState?: "expanded" | "collapsed" }) {
     const route = useRoute();
     const isChatRoute = route().current('chat.*');
     const isJournalRoute = route().current('journal.*');
@@ -61,7 +71,7 @@ export function NavMain({ items = [] }: { items: [] }) {
                             open={openDropdown === getItemId(item)}
                             onOpenChange={(open) => setOpenDropdown(open ? getItemId(item) : null)}
                         >
-                            <DropdownMenuTrigger className={`absolute top-0 right-0 w-8 h-8 rounded-md hover:bg-primary-950/95 lg:opacity-0 lg:pointer-events-none lg:group-hover/item:opacity-100 lg:group-hover/item:pointer-events-auto ${openDropdown === getItemId(item) ? 'bg-primary-950/95 lg:opacity-100 lg:pointer-events-auto' : ''}`}>
+                            <DropdownMenuTrigger className={`absolute top-0 right-0 w-8 h-8 rounded-md hover:bg-primary-950/95 lg:opacity-0 lg:pointer-events-none lg:group-hover/item:opacity-100 lg:group-hover/item:pointer-events-auto ${openDropdown === getItemId(item) ? 'bg-primary-950/95 lg:opacity-100 lg:pointer-events-auto' : ''} ${sidebarState === 'collapsed' ? 'hidden' : ''}`}>
                                 <Ellipsis className="justify-self-center self-center align-middle mx-auto size-4" />
                             </DropdownMenuTrigger>
                             <DropdownMenuContent
