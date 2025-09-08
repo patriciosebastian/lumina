@@ -36,6 +36,9 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=dm-sans:200,300,400,500,600,700,800,900" rel="stylesheet" />
 
+        {{-- Plausible Analytics --}}
+        <script defer data-domain="salosai.com" src="https://plausible.io/js/script.hash.tagged-events.js"></script>
+
         @routes
         @viteReactRefresh
         {{-- @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"]) --}}
