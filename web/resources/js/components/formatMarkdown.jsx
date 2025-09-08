@@ -1,7 +1,15 @@
 import ReactMarkdown from 'react-markdown';
 
 export default function FormatMarkdown({ content }) {
-    const cleanContent = content
+    const safeContent = typeof content === 'string' ? content : '';
+
+    const cleanContent = safeContent
+        .replace(/[\u2013\u2014]/g, '—')
+        .replace(/\u2212/g, '-')
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/\u2032/g, "'")
+        .replace(/\u2033/g, '"')
         .replace(/<E2><80><99>/g, "'")
         .replace(/<E2><80><9C>/g, '"')
         .replace(/<E2><80><9D>/g, '"')

@@ -74,7 +74,7 @@ export default function Chat({ initialMessages = [], chatboxMessage = null }) {
                             }
                             setMessages(prev => prev.map(msg =>
                                 msg.id === aiMsgIdRef.current ?
-                                    { ...msg, content: msg.content + delta } :
+                                    { ...msg, content: (msg.content || '') + delta } :
                                     msg
                             ));
                             break;
@@ -83,7 +83,7 @@ export default function Chat({ initialMessages = [], chatboxMessage = null }) {
                             if (aiMsgIdRef.current) {
                                 setMessages(prev => prev.map(msg =>
                                     msg.id === aiMsgIdRef.current ?
-                                        { ...msg, streaming: false } :
+                                        { ...msg, streaming: false, content: (msg.content || '') } :
                                         msg
                                 ));
                                 aiMsgIdRef.current = null;

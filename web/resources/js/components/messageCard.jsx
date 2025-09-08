@@ -69,7 +69,7 @@ export default function MessageCard({
                         </p>
 
                     ) : (
-                        <FormatMarkdown content={message.content} />
+                        message.content && <FormatMarkdown content={message.content} />
                     )}
                 </ContentBubble>
             ))}
