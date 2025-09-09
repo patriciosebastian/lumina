@@ -72,7 +72,9 @@ class JournalController extends Controller
         $content = $request->input('content');
 
         if (!$user) {
-            $journalId = $request->input('journalId') ?: uniqid(more_entropy: true);
+            $guestJournals = $request->session()->get('guest_journal_counter', 0);
+            $journalId = $request->input('journalId') ?: ($guestJournals + 1);
+            $request->session()->put('guest_journal_counter', $guestJournals + 1);
 
             $journalData = [
                 'session_id' => uniqid('id_', true),

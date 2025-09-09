@@ -86,7 +86,9 @@ class ChatController extends Controller
 
         try {
             if (!$user) {
-                $chatId = $request->input('chatId') ?: uniqid(more_entropy: true);
+                $guestChats = $request->session()->get('guest_chat_counter', 0);
+                $chatId = $request->input('chatId') ?: ($guestChats + 1);
+                $request->session()->put('guest_chat_counter', $guestChats + 1);
 
                 $messageData = [
                     'session_id' => uniqid('id_', true),
