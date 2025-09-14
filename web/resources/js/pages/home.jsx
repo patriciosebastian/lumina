@@ -468,21 +468,14 @@ export default function Home() {
                         prefetch={['hover', 'click']}
                         cacheFor={3600}
                     >
-                        Testimonials
-                    </Link>
-                    <Link
-                        href={route('home')}
-                        prefetch={['hover', 'click']}
-                        cacheFor={3600}
-                    >
                         Pricing
                     </Link>
                 </div>
                 <div className="flex justify-center items-center gap-10">
-                    <Link
-                        href={route('home')}
-                        prefetch={['hover', 'click']}
-                        cacheFor={3600}
+                    <a
+                        href="https://x.com/salos_ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <img
                             src={xtwitterLogo}
@@ -490,11 +483,11 @@ export default function Home() {
                             height={24}
                             alt="X (formerly known as Twitter) logo"
                         />
-                    </Link>
-                    <Link
-                        href={route('home')}
-                        prefetch={['hover', 'click']}
-                        cacheFor={3600}
+                    </a>
+                    <a
+                        href="https://instagram.com/salos.ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <img
                             src={instagramLogo}
@@ -502,11 +495,11 @@ export default function Home() {
                             height={24}
                             alt="Instagram logo"
                         />
-                    </Link>
-                    <Link
-                        href={route('home')}
-                        prefetch={['hover', 'click']}
-                        cacheFor={3600}
+                    </a>
+                    <a
+                        href="https://tiktok.com/@salos.ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <img
                             src={tiktokLogo}
@@ -514,7 +507,7 @@ export default function Home() {
                             height={24}
                             alt="TikTok logo"
                         />
-                    </Link>
+                    </a>
                 </div>
             </div>
             <div className="size-full border-l" />
