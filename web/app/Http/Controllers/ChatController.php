@@ -21,43 +21,58 @@ class ChatController extends Controller
         if ($request->user()) {
             $data = $request->user()->load('chats');
         } else {
-            $guestMessages = $request->session()->get('guest_messages', []);
-            $data = [
-                'chats' => collect($guestMessages)->whereNotNull('chat_id')->values(),
-            ];
+            $guestMessages = collect($request->session()->get('guest_messages', []))
+                ->whereNotNull('chat_id')
+                ->unique('chat_id')
+                ->sortByDesc('session_created_at')
+                ->values();
+            $data = ['chats' => $guestMessages];
         }
+
+        $chatboxMessage = $request->input('message');
 
         return Inertia::render('mainApp', [
             'initialMode' => 'chat',
             'data' => $data,
-            'chatboxMessage' => $request->input('message'),
+            'chatboxMessage' => $chatboxMessage,
         ]);
     }
 
-    public function show(Request $request, $id): Response
+    public function show(Request $request, int $id): Response
     {
         if ($request->user()) {
             $chat = $request->user()->chats()->find($id);
             $messages = $chat ? $chat->load('messages')->messages->sortBy('created_at') : collect();
             $allChats = $request->user()->chats()->get();
         } else {
+            $messages = collect($request->session()->get('guest_messages', []))
+                ->filter(function ($message) {
+                    return isset($message['chat_id']);
+                })
+                ->where('chat_id',$id)
+                ->map(function ($message) {
+                    return array_merge($message, [
+                        'id' => $message['id'],
+                        'chat_id' => $message['chat_id'],
+                        'created_at' => $message['session_created_at']
+                    ]);
+                })
+                ->sortBy('created_at')
+                ->values();
+
             $allChats = collect($request->session()->get('guest_messages', []))
                 ->filter(function ($message) {
                     return isset($message['chat_id']);
                 })
-                ->where('chat_id', $id)
-                ->sortBy('session_created_at')
-                ->values();
-
-            $messages = collect($allChats)
                 ->groupBy('chat_id')
-                ->map(function ($message, $chatId) {
+                ->map(function ($messages, $chatId) {
                     return (object) [
                         'id' => $chatId,
-                        'name' => $message->first()['name'],
-                        'created_at' => $message->first()['session_created_at'],
+                        'name' => $messages->first()['name'],
+                        'created_at' => $messages->first()['session_created_at'],
                     ];
                 })
+                ->sortByDesc('created_at')
                 ->values();
         }
 
@@ -65,13 +80,12 @@ class ChatController extends Controller
             'initialMode' => 'chat',
             'data' => [
                 'chats' => $allChats,
-                // 'messages' => $messages,
-                'messages' => ($messages instanceof \Illuminate\Support\Collection) ? $messages->values()->all() : (is_array($messages) ? $messages : []),
+                'messages' => $messages,
             ]
         ]);
     }
 
-    public function store(Request $request): JsonResponse|StreamedResponse
+    public function store(Request $request): JsonResponse|StreamedResponse|RedirectResponse
     {
         $request->validate([
             'content' => 'required|string|max:500',
@@ -91,6 +105,7 @@ class ChatController extends Controller
                 $request->session()->put('guest_chat_counter', $guestChats + 1);
 
                 $messageData = [
+                    'id' => $chatId,
                     'session_id' => uniqid('id_', true),
                     'chat_id' => $chatId,
                     'name' => substr($content, 0, 30),
@@ -101,6 +116,7 @@ class ChatController extends Controller
                 ];
 
                 $request->session()->push('guest_messages', $messageData);
+                $request->session()->save();
                 $messages = [$messageData];
             } else {
                 $chatId = $request->input('chatId');
@@ -148,7 +164,7 @@ class ChatController extends Controller
         }
     }
 
-    public function destroy(Request $request, $id): RedirectResponse
+    public function destroy(Request $request, int $id): RedirectResponse
     {
         $user = $request->user();
 
@@ -166,7 +182,7 @@ class ChatController extends Controller
         return redirect()->route('chat.index')->with('success', 'Chat deleted successfully.');
     }
 
-    private function startRagProcess(Request $request, $chatId): JsonResponse|StreamedResponse
+    private function startRagProcess(Request $request, int $chatId): JsonResponse|StreamedResponse
     {
         $openaiKey = config('services.openai.key');
         $embeddingModel = config('services.openai.embedding_model');
@@ -212,7 +228,7 @@ class ChatController extends Controller
         }
     }
 
-    private function streamResponse(Request $request, array $conversationMessages, $chatId): StreamedResponse
+    private function streamResponse(Request $request, array $conversationMessages, int $chatId): StreamedResponse
     {
         $openaiKey = config('services.openai.key');
         $gptModel = config('services.openai.model');
@@ -336,8 +352,6 @@ class ChatController extends Controller
                                         }
 
                                         case 'response.completed': {
-                                            $usage = $event['response']['usage'] ?? null;
-                                            \Log::info('Response completed', ['usage' => $usage]);
                                             $done = true;
                                             break 2;
                                         }
@@ -349,7 +363,7 @@ class ChatController extends Controller
                                             break;
                                     }
                                 } catch (\JsonException $e) {
-                                    \Log::warning('Invalid JSON in stream', [
+                                    \Log::error('Invalid JSON in stream', [
                                         'line' => $line,
                                         'error' => $e->getMessage()
                                     ]);
@@ -645,7 +659,7 @@ class ChatController extends Controller
         return $messages;
     }
 
-    private function storeAiMessageForUser(Request $request, string $fullResponse, $chatId): \Illuminate\Database\Eloquent\Model
+    private function storeAiMessageForUser(Request $request, string $fullResponse, int $chatId): \Illuminate\Database\Eloquent\Model
     {
         $user = $request->user();
 
@@ -657,10 +671,13 @@ class ChatController extends Controller
         ]);
     }
 
-    private function storeAiMessageForGuest(string $fullResponse, $chatId): array
+    private function storeAiMessageForGuest(string $fullResponse, int $chatId): array
     {
+        $messageId = $chatId + 1;
+
         try {
             $messageData = [
+                'id' => $messageId,
                 'session_id' => uniqid('id_', true),
                 'chat_id' => $chatId,
                 'name' => substr($fullResponse, 0, 30),
@@ -671,6 +688,8 @@ class ChatController extends Controller
             ];
 
             session()->push('guest_messages', $messageData);
+            session()->save();
+
             return $messageData;
         } catch (\Exception $e) {
             \Log::error('Failed to store AI message', ['exception' => $e]);

@@ -42,6 +42,14 @@ return Application::configure(basePath: dirname(__DIR__))
                     'message' => 'The page expired, please try again.',
                 ]);
             } elseif ($response->getStatusCode() === 429) {
+                if ($request->expectsJson()) {
+                    return response()->json([
+                        'error' => 'Rate limit exceeded',
+                        'message' => 'Please create an account or log in to continue your session.',
+                        'redirect' => route('register')
+                    ], 429);
+                }
+
                 return redirect()->route('register')->with([
                     'message' => 'Please create an account or log in to continue your session.',
                 ]);

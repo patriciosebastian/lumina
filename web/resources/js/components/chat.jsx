@@ -117,8 +117,30 @@ export default function Chat({ initialMessages = [], chatboxMessage = null }) {
             onFinish: () => {
                 setLoading(false);
             },
-            onError: () => {
+            onError: (error) => {
                 setLoading(false);
+
+                let errorData = null;
+
+                if (error.response && error.response.status === 429) {
+                    errorData = error.response.data;
+                }
+
+                else if (error.message && error.message.includes('Rate limit exceeded')) {
+                    try {
+                        errorData = JSON.parse(error.message);
+                    } catch (e) {
+                        console.error('Failed to parse error message:', e);
+                    }
+                }
+
+                if (errorData && (errorData.error === 'Rate limit exceeded' || errorData.redirect)) {
+                    const message = errorData.message || 'Please create an account or log in to continue your session.';
+                    router.visit(route('register'), {
+                        data: { message }
+                    });
+                    return;
+                }
             }
         }
     );
@@ -183,7 +205,6 @@ export default function Chat({ initialMessages = [], chatboxMessage = null }) {
         const cleanMessage = message.trim();
 
         if (!cleanMessage) {
-            console.warn('Empty message, not sending.');
             return;
         }
 

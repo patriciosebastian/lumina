@@ -35,29 +35,25 @@ export default function MiracleJournal({ initialJournalEntries = [] }) {
         const cleanJournalEntry = journalEntry.trim();
 
         if (!cleanJournalEntry) {
-            console.warn('Empty journal entry, not sending.');
             return;
         }
 
-        setJournalEntries(prev => [...prev, { message: cleanJournalEntry, role: 'user' }]);
+        setJournalEntries(prev => [...prev, {
+            content: cleanJournalEntry,
+            role: 'user',
+            created_at: new Date().toISOString(),
+            id: Date.now(),
+        }]);
         setJournalEntry('');
 
         router.post(route('journal.store'), {
             content: cleanJournalEntry,
             role: 'user',
-            journalId: route().params.id || null,
+            journalId: parseInt(route().params.id) || null,
         }, {
-            onFinish: () => {
-                console.log('Finished sending message');
-            },
-            onSuccess: (response) => {
-                router.visit(route('journal.show', { id: response.props.data.id }), {
-                    replace: true,
-                });
-            },
-            onError: (errors) => {
-                console.error('Error sending message: ', errors);
-            },
+            onFinish: () => {},
+            onSuccess: (response) => {},
+            onError: (errors) => {},
         });
     };
 

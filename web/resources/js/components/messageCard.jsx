@@ -58,9 +58,9 @@ export default function MessageCard({
             onScroll={onScroll}
             className="w-full h-[41.938rem] px-3 flex-1 overflow-y-auto overflow-x-hidden space-y-4 transparent-scrollbar"
         >
-            {chatRoute && chatMessages.length > 0 && chatMessages.map((message) => (
+            {chatRoute && chatMessages.length > 0 && chatMessages.map((message, index) => (
                 <ContentBubble
-                    key={message.id}
+                    key={message.id || message.session_id || index}
                     className={`${message.role === 'user' ? 'ml-auto !w-fit max-w-[70%] md:max-w-[60%] lg:max-w-[34.375rem]' : 'max-md:w-full max-md:border-none max-md:bg-transparent max-md:mx-auto lg:mr-auto lg:!w-[35rem]'}`}
                 >
                     {message.role === 'user' ? (
@@ -75,10 +75,10 @@ export default function MessageCard({
             ))}
             {!chatRoute && chatMessages.length > 0 && chatMessages.map((message, index) => (
                 <div
-                    key={message.id}
+                    key={message.id || message.session_id || index}
                     className={`${message.role === 'user' ? 'ml-auto' : 'mr-auto'} text-foreground mx-auto w-full max-md:px-3.5 border-none bg-transparent md:w-3/4 lg:!w-[50%]`}
                 >
-                    <em className="text-neutral-400 block mb-4">{new Date(message.created_at).toLocaleDateString()}</em>
+                    <em className="text-neutral-400 block mb-4">{message.created_at ? new Date(message.created_at).toLocaleDateString() : ''}</em>
                     <p>{message.content}</p>
                     {index < chatMessages.length - 1 &&
                         <Separator className="my-10 w-full bg-muted-foreground/50" />

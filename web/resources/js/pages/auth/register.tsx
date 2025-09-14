@@ -18,6 +18,7 @@ type RegisterForm = {
 
 export default function Register() {
     const { flash } = usePage().props;
+    const queryMessage = route().params.message;
     const { data, setData, post, processing, errors, reset } = useForm<Required<RegisterForm>>({
         name: '',
         email: '',
@@ -35,8 +36,8 @@ export default function Register() {
     return (
         <AuthLayout title="Create an account" description="Enter your details below to create your account">
             <Head title="Register" />
-            {flash.message && (
-              <div className="text-red-500">{flash.message}</div>
+            {(flash.message || queryMessage) && (
+              <div className="text-red-500">{flash.message || queryMessage}</div>
             )}
             <form className="flex flex-col gap-6" onSubmit={submit}>
                 <div className="grid gap-6">

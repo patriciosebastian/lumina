@@ -14,10 +14,12 @@ class JournalController extends Controller
         if ($request->user()) {
             $data = $request->user()->load('journals');
         } else {
-            $guestJournals = $request->session()->get('guest_messages', []);
-            $data = [
-                'journals' => collect($guestJournals)->where('journal_id', '!=', null)->values(),
-            ];
+            $guestJournals = collect($request->session()->get('guest_messages', []))
+                ->whereNotNull('journal_id')
+                ->unique('journal_id')
+                ->sortByDesc('session_created_at')
+                ->values();
+            $data = ['journals' => $guestJournals];
         }
 
         return Inertia::render('mainApp', [
@@ -26,30 +28,41 @@ class JournalController extends Controller
         ]);
     }
 
-    public function show(Request $request, $id): Response
+    public function show(Request $request, int $id): Response
     {
         if ($request->user()) {
             $journal = $request->user()->journals()->find($id);
             $entries = $journal ? $journal->load('entries')->entries->sortByDesc('created_at') : collect();
             $allJournals = $request->user()->journals()->get();
         } else {
+            $entries = collect($request->session()->get('guest_messages', []))
+                ->filter(function ($message) {
+                    return isset($message['journal_id']);
+                })
+                ->where('journal_id', $id)
+                ->map(function ($entry) {
+                    return array_merge($entry, [
+                        'id' => $entry['id'],
+                        'journal_id' => $entry['journal_id'],
+                        'created_at' => $entry['session_created_at']
+                    ]);
+                })
+                ->sortByDesc('created_at')
+                ->values();
+
             $allJournals = collect($request->session()->get('guest_messages', []))
                 ->filter(function ($message) {
                     return isset($message['journal_id']);
                 })
-                ->where('journal_id', '===', $id)
-                ->sortByDesc('session_created_at')
-                ->values();
-
-            $entries = collect($allJournals)
                 ->groupBy('journal_id')
-                ->map(function ($entry, $journalId) {
+                ->map(function ($entries, $journalId) {
                     return (object) [
                         'id' => $journalId,
-                        'name' => $entry->first()['name'],
-                        'created_at' => $entry->first()['session_created_at'],
+                        'name' => $entries->first()['name'],
+                        'created_at' => $entries->first()['session_created_at'],
                     ];
                 })
+                ->sortByDesc('created_at')
                 ->values();
         }
 
@@ -77,6 +90,7 @@ class JournalController extends Controller
             $request->session()->put('guest_journal_counter', $guestJournals + 1);
 
             $journalData = [
+                'id' => $guestJournals + 1,
                 'session_id' => uniqid('id_', true),
                 'journal_id' => $journalId,
                 'name' => substr($content, 0, 30),
@@ -86,13 +100,15 @@ class JournalController extends Controller
             ];
 
             $request->session()->push('guest_messages', $journalData);
-            return redirect()->route('journal.index');
+            $request->session()->save();
+
+            return redirect()->route('journal.show', ['id' => $journalId]);
         }
 
         $id = $request->input('journalId');
 
         if (!$id) {
-            $user->journals()->create([
+            $journal = $user->journals()->create([
                 'name' => substr($content, 0, 30),
                 'user_id' => $user->id,
             ]);
@@ -100,16 +116,10 @@ class JournalController extends Controller
             $user->journalEntries()->create([
                 'content' => $content,
                 'user_id' => $user->id,
-                'journal_id' => $user->journals()->latest()->first()->id,
+                'journal_id' => $journal->id,
             ]);
 
-            return Inertia::render('mainApp', [
-                'initialMode' => 'journal',
-                'data' => [
-                    'journals' => $user->journals()->get(),
-                    'id' => $user->journals()->latest()->first()->id,
-                ],
-            ]);
+            return redirect()->route('journal.show', ['id' => $journal->id]);
         }
 
         $user->journalEntries()->create([
@@ -118,15 +128,10 @@ class JournalController extends Controller
             'journal_id' => $id,
         ]);
 
-        return Inertia::render('mainApp', [
-            'data' => [
-                'journals' => $user->journals()->get()->toArray(),
-                'id' => $id,
-            ],
-        ]);
+        return redirect()->route('journal.show', ['id' => $id]);
     }
 
-    public function destroy(Request $request, $id): RedirectResponse
+    public function destroy(Request $request, int $id): RedirectResponse
     {
         $user = $request->user();
 
@@ -136,7 +141,10 @@ class JournalController extends Controller
         } else {
             $guestMessages = $request->session()->get('guest_messages', []);
 
-            $filteredMessages = array_filter($guestMessages, fn($message) => ($message['journal_id'] ?? null) != $id);
+            $filteredMessages = array_filter(
+                $guestMessages,
+                fn($message) => ($message['journal_id'] ?? null) !== $id
+            );
 
             $request->session()->put('guest_messages', array_values($filteredMessages));
         }
