@@ -38,7 +38,7 @@ const pricingCards = [
         features: [
             "All features in the standard package.",
             "Advanced Memory Recall for deeper and evolving conversations.",
-            "SALOS community coming soon."
+            "SALOS Overflow community."
         ],
         monthlyPrice: 9.99,
         yearlyPrice: 89.99,
