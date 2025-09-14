@@ -142,10 +142,12 @@ export default function MessageCard({
                             rows={2}
                         />
                         <div className="w-full h-9 flex justify-end items-center gap-4 px-2.5 pb-2.5 rounded-2xl z-10">
-                            <VoiceButton
-                                className="!size-7.5 rounded-[.5rem] px-2 py-2.5 !before:size-7.5 before:rounded-[.5rem] z-10"
-                                iconClasses="!size-4"
-                            />
+                            {showVoiceButton && (
+                                <VoiceButton
+                                    className="!size-7.5 rounded-[.5rem] px-2 py-2.5 !before:size-7.5 before:rounded-[.5rem] z-10"
+                                    iconClasses="!size-4"
+                                />
+                            )}
                             <SendMessageButton
                                 onSendMessage={onSendMessage}
                                 className="!size-7.5 rounded-[.5rem] px-2 py-2.5 !before:size-7.5 before:rounded-[.5rem] z-10"
