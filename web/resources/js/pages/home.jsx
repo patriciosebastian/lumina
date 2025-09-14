@@ -64,9 +64,9 @@ export default function Home() {
             <div className="row-span-5 relative border-b grid grid-cols-[16px_1fr_16px] lg:col-span-5 lg:grid-cols-[1fr_4.125rem_55.625rem_4.125rem_1fr]">
                 <div className="size-full border-r" />
                 <div className="hidden size-full border-r lg:block" />
-                <div className="space-y-6 px-4 py-6 flex flex-col justify-center items-center lg:space-y-14 lg:px-6 lg:py-10">
+                <div className="space-y-6 px-4 py-6 flex flex-col justify-center items-center lg:space-y-13 lg:px-6 lg:py-10">
                     <h1 className="text-[2.5rem] font-bold text-center leading-[110%] lg:w-[55.625rem] lg:text-[5rem] lg:font-black lg:leading-[100%]">
-                        <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px]">
+                        <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px] lg:pb-[.3rem]">
                             Wisdom at Your Fingertips
                         </span>
                     </h1>
