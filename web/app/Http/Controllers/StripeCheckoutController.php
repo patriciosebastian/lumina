@@ -19,18 +19,9 @@ class StripeCheckoutController extends Controller
                 'price' => $priceId,
                 'quantity' => 1,
             ]],
-            'payment_method_types' => [
-                'affirm',
-                'apple_pay',
-                'amazon_pay',
-                'bancontact',
-                'card',
-                'cashapp',
-                'eps',
-                'google_pay',
-                'klarna',
-                'link',
-                'us_bank_account'
+            'automatic_payment_methods' => [
+                'enabled' => true,
+                'allow_redirects' => 'never',
             ],
             'automatic_tax' => ['enabled' => true],
             'redirect_on_completion' => 'never',
