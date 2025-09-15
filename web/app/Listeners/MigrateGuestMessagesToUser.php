@@ -43,6 +43,7 @@ class MigrateGuestMessagesToUser
                         if ($messagesInChat->isNotEmpty()) {
                             $newChat = $user->chats()->create([
                                 'name' => $messagesInChat->first()['name'] ?? "Chat-$sessionChatId",
+                                'user_id' => $user->id,
                             ]);
                             $chatIdMap[$sessionChatId] = $newChat->id;
                         }
@@ -55,6 +56,7 @@ class MigrateGuestMessagesToUser
                             'content' => $message['content'],
                             'role' => MessageRole::from($message['role']),
                             'chat_id' => $chatIdMap[$message['chat_id']],
+                            'user_id' => $user->id,
                         ]);
                     }
                 }
@@ -65,6 +67,7 @@ class MigrateGuestMessagesToUser
                         if ($messagesInJournal->isNotEmpty()) {
                             $newJournal = $user->journals()->create([
                                 'name' => $messagesInJournal->first()['name'] ?? "Journal-$sessionJournalId",
+                                'user_id' => $user->id,
                             ]);
                             $journalIdMap[$sessionJournalId] = $newJournal->id;
                         }
@@ -74,9 +77,10 @@ class MigrateGuestMessagesToUser
                 if ($journalMessages->isNotEmpty()) {
                     foreach ($journalMessages as $message) {
                         $user->journalEntries()->create([
-                            'title' => $message['title'] ?? 'Untitled Entry',
+                            'title' => $message['name'] ?? 'Untitled Entry',
                             'content' => $message['content'],
                             'journal_id' => $journalIdMap[$message['journal_id']],
+                            'user_id' => $user->id,
                         ]);
                     }
                 }
