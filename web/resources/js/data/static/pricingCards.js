@@ -26,8 +26,8 @@ const pricingCards = [
         ],
         monthlyPrice: 4.99,
         yearlyPrice: 49.99,
-        monthlyPriceId: 'price_1S7hy23UT84VygR6bTB6XPN3',
-        yearlyPriceId: 'price_1S7hzU3UT84VygR6IqZieMdh',
+        monthlyPriceId: import.meta.env.VITE_STRIPE_STANDARD_MONTHLY_PRICE_ID,
+        yearlyPriceId: import.meta.env.VITE_STRIPE_STANDARD_YEARLY_PRICE_ID,
         buttonText: "Get Started Now",
         popular: true
     },
@@ -42,8 +42,8 @@ const pricingCards = [
         ],
         monthlyPrice: 9.99,
         yearlyPrice: 89.99,
-        monthlyPriceId: 'price_1S7i063UT84VygR6K1N0DwF3',
-        yearlyPriceId: 'price_1S7i0O3UT84VygR6RxCHWyoc',
+        monthlyPriceId: import.meta.env.VITE_STRIPE_PREMIUM_MONTHLY_PRICE_ID,
+        yearlyPriceId: import.meta.env.VITE_STRIPE_PREMIUM_YEARLY_PRICE_ID,
         buttonText: "Get Started Now",
         popular: false
     }

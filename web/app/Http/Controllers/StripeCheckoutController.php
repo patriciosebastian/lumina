@@ -9,7 +9,7 @@ use Laravel\Cashier\Cashier;
 
 class StripeCheckoutController extends Controller
 {
-    public function __invoke(Request $request, string $priceId = 'price_1RofbU338HSujneJq5VBjLOn'): Response
+    public function __invoke(Request $request, string $priceId = 'price_1S7hy23UT84VygR6bTB6XPN3'): Response
     {
         $stripe = Cashier::stripe();
 
