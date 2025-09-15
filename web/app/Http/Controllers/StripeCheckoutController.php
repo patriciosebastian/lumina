@@ -19,9 +19,10 @@ class StripeCheckoutController extends Controller
                 'price' => $priceId,
                 'quantity' => 1,
             ]],
-            'automatic_payment_methods' => [
-                'enabled' => true,
-                'allow_redirects' => 'never',
+            'payment_method_types' => [
+                'card',
+                'link',
+                'us_bank_account'
             ],
             'automatic_tax' => ['enabled' => true],
             'redirect_on_completion' => 'never',
