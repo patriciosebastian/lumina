@@ -1,6 +1,6 @@
 import SalosCard from './ui/salosCard';
-import SALOSCross from '../../../public/SALOS_Cross.svg';
-import SALOSChat from '../../../public/SALOS_Chat.svg';
+import SALOSCross from '../../images/SALOS_Cross.svg';
+import SALOSChat from '../../images/SALOS_Chat.svg';
 import SendMessageButton from './ui/sendMessageButton';
 import VoiceButton from './ui/voiceButton';
 import { useEffect, useRef } from 'react';

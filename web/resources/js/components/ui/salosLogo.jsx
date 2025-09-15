@@ -1,4 +1,4 @@
-import Logo from '../../../../public/Salos.svg';
+import Logo from '../../../images/Salos.svg';
 
 export default function SalosLogo({
     width = 116,

@@ -1,7 +1,7 @@
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from './ui/navigation-menu';
 import { Button } from './ui/button';
 import { Link } from '@inertiajs/react';
-import MobileNavIcon from '../../../public/MobileNavIcon.svg';
+import MobileNavIcon from '../../images/MobileNavIcon.svg';
 import SalosLogo from './ui/salosLogo';
 import { useRoute } from 'ziggy-js';
 

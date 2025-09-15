@@ -1,4 +1,4 @@
-import GroupedCircles from "../../../public/grouped-circles.svg";
+import GroupedCircles from "../../images/grouped-circles.svg";
 import SalosCard from "./ui/salosCard";
 
 export default function WideBannerCard({

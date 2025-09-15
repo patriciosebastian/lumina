@@ -3,7 +3,7 @@ import { router } from "@inertiajs/react";
 import { useRoute } from "ziggy-js";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import magicWandTransparent from "../../../../public/magic-wand-transparent.svg";
+import magicWandTransparent from "../../../images/magic-wand-transparent.svg";
 
 export default function Chatbox({ className = '', textareaClasses = '', buttonClasses = '' }) {
   const [message, setMessage] = useState('');
