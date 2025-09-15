@@ -23,9 +23,9 @@ export default function PricingCard({
 
     const handleStartCheckout = (priceId) => {
         if (priceId === 'free') {
-            router.get(route('register'));
+            router.visit(route('register'));
         } else {
-            router.get(route('checkout.embedded', { priceId }));
+            router.visit(route('checkout.embedded', { priceId }));
         }
     };
 
