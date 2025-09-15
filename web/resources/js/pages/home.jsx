@@ -135,7 +135,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-[16px_1fr_16px] lg:grid-cols-[1fr_55.625rem_1fr]">
                 <div className="border-y" />
-                <div className="text-primary-400 text-3xl text-center text-pretty leading-[128%] -tracking-[2%] border px-4 py-10 space-y-8 lg:text-[2.5rem] lg:px-8 lg:py-14 lg:space-y-10">
+                <div className="text-primary-400 text-2xl text-center text-pretty leading-[128%] -tracking-[2%] border px-4 py-10 space-y-8 lg:px-8 lg:py-14 lg:space-y-10 xl:text-[2.25rem]">
                     <p>
                         Inspired by the wisdom of Solomon, guided by The Word, and powered by AI. Salos helps you discover God&apos;s truth, realign your purpose, and supplement your spiritual journey.
                     </p>
