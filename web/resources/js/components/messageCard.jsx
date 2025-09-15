@@ -52,7 +52,7 @@ export default function MessageCard({
     };
 
   return (
-    <SalosCard className={`relative w-full h-full mx-auto rounded-2xl flex flex-col items-center gap-2 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[84rem] lg:h-[52.438rem] lg:max-w-full lg:max-h-full ${className}`}>
+    <SalosCard className={`relative w-full h-full mx-auto rounded-2xl flex flex-col items-center gap-2 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[90%] lg:h-full lg:max-w-[84rem] ${className}`}>
         <SalosCard.Content
             ref={scrollContainerRef}
             onScroll={onScroll}
