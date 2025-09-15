@@ -26,8 +26,8 @@ const pricingCards = [
         ],
         monthlyPrice: 4.99,
         yearlyPrice: 49.99,
-        monthlyPriceId: 'price_1RofbU338HSujneJq5VBjLOn',
-        yearlyPriceId: 'price_1Ronkv338HSujneJ4x2OKKEN',
+        monthlyPriceId: 'price_1S7hy23UT84VygR6bTB6XPN3',
+        yearlyPriceId: 'price_1S7hzU3UT84VygR6IqZieMdh',
         buttonText: "Get Started Now",
         popular: true
     },
@@ -42,8 +42,8 @@ const pricingCards = [
         ],
         monthlyPrice: 9.99,
         yearlyPrice: 89.99,
-        monthlyPriceId: 'price_1RpgEr338HSujneJWTc6lE6r',
-        yearlyPriceId: 'price_1RpgFR338HSujneJkmJxG6Ip',
+        monthlyPriceId: 'price_1S7i063UT84VygR6K1N0DwF3',
+        yearlyPriceId: 'price_1S7i0O3UT84VygR6RxCHWyoc',
         buttonText: "Get Started Now",
         popular: false
     }
