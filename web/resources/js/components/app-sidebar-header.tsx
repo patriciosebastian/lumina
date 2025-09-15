@@ -24,7 +24,7 @@ export function AppSidebarHeader({ breadcrumbs = [], enabled, onCheckedChange, .
                 <SidebarTrigger className="-ml-1 hover:bg-primary-950 hover:text-foreground cursor-pointer" />
                 {!isMobile &&
                     <Announcement className="w-fit bg-transparent absolute left-1/2 -translate-x-1/2 text-primary-800">
-                        SALOS is in Beta. Report feedback or bugs to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
+                        SALOS is in Beta. Help us make it better. Report feedback or bugs to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
                     </Announcement>
                 }
                 <Breadcrumbs breadcrumbs={breadcrumbs} />

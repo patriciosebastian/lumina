@@ -16,6 +16,7 @@ import SalosLogo from './ui/salosLogo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useRoute } from 'ziggy-js';
 import { Edit } from 'lucide-react';
+import Announcement from './ui/announcement';
 
 const footerNavItems: NavItem[] = [
     // {
@@ -91,6 +92,11 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                     </SidebarContent>
 
                     <SidebarFooter className="text-foreground">
+                        {isMobile &&
+                            <Announcement className="w-fit bg-transparent text-left text-sm text-primary-800 ml-4">
+                                SALOS is in Beta. Help us make it better. Report feedback or bugs to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
+                            </Announcement>
+                        }
                         <NavFooter
                             items={footerNavItems}
                             className="mt-auto"
