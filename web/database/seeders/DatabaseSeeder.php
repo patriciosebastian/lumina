@@ -14,24 +14,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Schema::disableForeignKeyConstraints();
+        if (! app()->environment('production')) {
+            Schema::disableForeignKeyConstraints();
 
-        User::factory(10)->create();
+            User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => '123',
-        ]);
+            User::factory()->create([
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+                'password' => '123',
+            ]);
 
-        if (app()->environment('local')) {
             $this->call([
                 TestimonialSeeder::class,
                 ChatSeeder::class,
                 JournalSeeder::class,
             ]);
-        }
 
-        Schema::enableForeignKeyConstraints();
+            Schema::enableForeignKeyConstraints();
+        }
     }
 }
