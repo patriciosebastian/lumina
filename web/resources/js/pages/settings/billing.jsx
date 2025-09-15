@@ -1,11 +1,14 @@
 import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
-import { Head } from '@inertiajs/react';
-
+import { Head, Link } from '@inertiajs/react';
 import HeadingSmall from '@/components/heading-small';
 import { Button } from '@/components/ui/button';
+import { useRoute } from 'ziggy-js';
 
-export default function Billing({ chatsData }) {
+export default function Billing({ chatsData, auth }) {
+    const route = useRoute();
+    const userHasPurchased = auth.user && auth.user.stripe_id ? true : false;
+
     return (
         <AppLayout
             data={chatsData.chats}
@@ -13,6 +16,19 @@ export default function Billing({ chatsData }) {
             <Head title="Billing" />
 
             <SettingsLayout>
+                {!userHasPurchased && (
+                    <div className="space-y-6">
+                        <HeadingSmall title="Purchase a Subscription" description="Purchase a subscription plan to unlock paid features." />
+                        <Button
+                            asChild
+                            variant={'salosSecondaryAlt'}
+                        >
+                            <Link href={`${route('home')}#Pricing`}>
+                                View Plans
+                            </Link>
+                        </Button>
+                    </div>
+                )}
                 <div className="space-y-6">
                     <HeadingSmall title="Manage billing and subscription information" description="Ensure your billing information is up to date" />
                     <Button asChild>
