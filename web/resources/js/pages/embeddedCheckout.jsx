@@ -30,7 +30,7 @@ export default function CheckoutEmbedded({ clientSecret }) {
             href={route('chat.index')}
             prefetch={['hover', 'click']}
             cacheFor={86400} // 1 day
-            className="hidden lg:block mx-auto"
+            className="hidden lg:block mx-auto w-fit"
         >
             <SalosLogo
                 width={292}
@@ -68,7 +68,7 @@ export default function CheckoutEmbedded({ clientSecret }) {
             href={route('chat.index')}
             prefetch={['hover', 'click']}
             cacheFor={86400} // 1 day
-            className="hidden lg:block mx-auto"
+            className="hidden lg:block mx-auto w-fit"
         >
             <SalosLogo
                 width={292}
