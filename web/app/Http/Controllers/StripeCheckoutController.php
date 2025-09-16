@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
-use Laravel\Cashier\Cashier;
 
 class StripeCheckoutController extends Controller
 {
@@ -14,7 +13,6 @@ class StripeCheckoutController extends Controller
         $checkout = $request->user()
             ->newSubscription('default', $priceId)
             ->checkout([
-                'mode' => 'subscription',
                 'ui_mode' => 'embedded',
                 'redirect_on_completion' => 'never',
                 'payment_method_types' => [
