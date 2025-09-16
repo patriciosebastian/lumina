@@ -1,12 +1,14 @@
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from './ui/navigation-menu';
 import { Button } from './ui/button';
-import { Link } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import MobileNavIcon from '../../images/MobileNavIcon.svg';
 import SalosLogo from './ui/salosLogo';
 import { useRoute } from 'ziggy-js';
 
 export default function Navbar() {
     const route = useRoute();
+    const props = usePage().props;
+    const user = props.auth.user;
 
   return (
     <>
@@ -79,18 +81,35 @@ export default function Navbar() {
                     </NavigationMenuItem>
                 </div>
                 <NavigationMenuItem className='hidden md:block'>
-                    <Button
-                        asChild
-                        size={'salosNav'}
-                    >
-                        <Link
-                            href={route('chat.index')}
-                            prefetch={['hover', 'click']}
-                            cacheFor="1m"
+                    {!user ? (
+                        <Button
+                            asChild
+                            size={'salosNav'}
                         >
-                            Ask SALOS
-                        </Link>
-                    </Button>
+                            <Link
+                                href={route('chat.index')}
+                                prefetch={['hover', 'click']}
+                                cacheFor="1m"
+                            >
+                                Ask SALOS
+                            </Link>
+                        </Button>
+                    ) : (
+                        <Button
+                            asChild
+                            size={'salosNav'}
+                            variant={'salosSecondaryAlt'}
+                            className="hover:bg-background/60 hover:text-primary-300"
+                        >
+                            <Link
+                                href={route('chat.index')}
+                                prefetch={['hover', 'click']}
+                                cacheFor="1m"
+                            >
+                                Go to Chat
+                            </Link>
+                        </Button>
+                    )}
                 </NavigationMenuItem>
                 <NavigationMenuItem className="md:hidden w-7 h-7 p-0.5">
                     <NavigationMenuTrigger className="[&>svg]:hidden p-0 h-auto !bg-transparent">
@@ -136,18 +155,35 @@ export default function Navbar() {
                                 Pricing
                             </Link>
                         </div>
-                        <Button
-                            asChild
-                            size={'salosDropdown'}
-                        >
-                            <Link
-                                href={route('chat.index')}
-                                prefetch={['hover', 'click']}
-                                cacheFor="1m"
+                        {!user ? (
+                            <Button
+                                asChild
+                                size={'salosDropdown'}
                             >
-                                Ask SALOS
-                            </Link>
-                        </Button>
+                                <Link
+                                    href={route('chat.index')}
+                                    prefetch={['hover', 'click']}
+                                    cacheFor="1m"
+                                >
+                                    Ask SALOS
+                                </Link>
+                            </Button>
+                        ) : (
+                            <Button
+                                asChild
+                                size={'salosDropdown'}
+                                variant={'salosSecondaryAlt'}
+                                className="hover:bg-background/60 hover:text-primary-300"
+                            >
+                                <Link
+                                    href={route('chat.index')}
+                                    prefetch={['hover', 'click']}
+                                    cacheFor="1m"
+                                >
+                                    Go to Chat
+                                </Link>
+                            </Button>
+                        )}
                     </NavigationMenuContent>
                 </NavigationMenuItem>
             </NavigationMenuList>
