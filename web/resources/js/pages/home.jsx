@@ -34,7 +34,7 @@ export default function Home() {
         *   - Don't forget to componentize certain sections:
         *       - Think of header as a HomeLayout layout file, not a component (navbar as children).
         */}
-        <Announcement className="text-sm md:text-base text-balance">
+        <Announcement className="text-xs md:text-base text-balance">
             Welcome to the Beta &#127881; We want to hear from you! Please report any feedback or bugs you find to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
         </Announcement>
         <div className="relative grid grid-rows-8 h-screen min-h-svh lg:h-full lg:grid-rows-[1fr_64px_69px_5fr]">
