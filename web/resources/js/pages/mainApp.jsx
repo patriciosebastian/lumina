@@ -34,7 +34,7 @@ export default function MainApp({ initialMode, data, chatboxMessage }) {
         data={dataToShow}
     >
         <Head title="Chat with SALOS" />
-        <div className="flex h-full flex-1 flex-col justify-center gap-4 rounded-xl p-1">
+        <div className="flex h-svh flex-1 flex-col justify-center gap-4 rounded-xl p-1 md:h-full">
             {isJournalMode ?
                 <MiracleJournal initialJournalEntries={data.messages} /> :
                 <Chat initialMessages={data.messages} chatboxMessage={chatboxMessage} />
