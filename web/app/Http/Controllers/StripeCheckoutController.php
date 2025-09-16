@@ -11,26 +11,22 @@ class StripeCheckoutController extends Controller
 {
     public function __invoke(Request $request, string $priceId = 'price_1S7hy23UT84VygR6bTB6XPN3'): Response
     {
-        $stripe = Cashier::stripe();
-
-        $session = $stripe->checkout->sessions->create([
-            'mode' => 'subscription',
-            'line_items' => [[
-                'price' => $priceId,
-                'quantity' => 1,
-            ]],
-            'payment_method_types' => [
-                'card',
-                'link',
-                'us_bank_account'
-            ],
-            'automatic_tax' => ['enabled' => true],
-            'redirect_on_completion' => 'never',
-            'ui_mode' => 'embedded',
-        ]);
+        $checkout = $request->user()
+            ->newSubscription('default', $priceId)
+            ->checkout([
+                'mode' => 'subscription',
+                'ui_mode' => 'embedded',
+                'redirect_on_completion' => 'never',
+                'payment_method_types' => [
+                    'card',
+                    'link',
+                    'us_bank_account'
+                ],
+                'automatic_tax' => ['enabled' => true],
+            ]);
 
         return Inertia::render('embeddedCheckout', [
-            'clientSecret' => $session->client_secret,
+            'clientSecret' => $checkout->client_secret,
         ]);
     }
 }
