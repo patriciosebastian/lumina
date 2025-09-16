@@ -23,6 +23,7 @@ class BillingController extends Controller
 
         return Inertia::render('settings/billing', [
             'chatsData' => $data,
+            'userHasActiveSubscription' => $user?->subscribed() ?? false,
         ]);
     }
 }

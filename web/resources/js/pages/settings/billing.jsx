@@ -5,9 +5,9 @@ import HeadingSmall from '@/components/heading-small';
 import { Button } from '@/components/ui/button';
 import { useRoute } from 'ziggy-js';
 
-export default function Billing({ chatsData, auth }) {
+export default function Billing({ chatsData, userHasActiveSubscription }) {
     const route = useRoute();
-    const userHasPurchased = auth.user && auth.user.stripe_id ? true : false;
+    const userHasPurchased = userHasActiveSubscription;
 
     return (
         <AppLayout
