@@ -10,6 +10,10 @@ Route::get('/', function () {
     return Inertia::render('home');
 })->name('home');
 
+Route::get('/about', function () {
+    return Inertia::render('about');
+})->name('about');
+
 Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
 Route::post('/chat', [ChatController::class, 'store'])->middleware(['throttle:guest_messages'])->name('chat.store');
 Route::get('/chat/{id}', [ChatController::class, 'show'])->name('chat.show');
