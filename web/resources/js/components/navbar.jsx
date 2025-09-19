@@ -51,7 +51,7 @@ export default function Navbar() {
                             </Link>
                         </Button>
                     </NavigationMenuItem>
-                    {/* <NavigationMenuItem>
+                    <NavigationMenuItem>
                         <Button
                             asChild
                             variant={'salosGhost'}
@@ -65,7 +65,7 @@ export default function Navbar() {
                                 About
                             </Link>
                         </Button>
-                    </NavigationMenuItem> */}
+                    </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Button
                             asChild

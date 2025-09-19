@@ -22,7 +22,6 @@ export default function CenteredIconCard({
                 variant={'salosPrimary'}
                 className={`mx-auto w-[3.75rem] h-[3.75rem] max-h-none p-3.5 border rounded-[1.125rem] before:rounded-[1.125rem] flex justify-center items-center shadow-none lg:w-20 lg:h-20 lg:p-[1.125rem] ${badgeClasses}`}
             >
-                {/* TODO: should I do a useMedia hook to get the screen size and set the width and height of the image accordingly? also, can that be server side? */}
                 <img
                     src={img}
                     width={imgWidth}
