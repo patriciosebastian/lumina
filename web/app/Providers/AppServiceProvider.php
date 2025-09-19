@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Testimonial;
+use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Cashier\Cashier;
@@ -28,6 +30,15 @@ class AppServiceProvider extends ServiceProvider
             if (!$request->user()) {
                 return Limit::perDay(3)->by($request->ip());
             }
+        });
+
+        Gate::define('viewPulse', function (User $user) {
+            return in_array($user->email, [
+                'psebastiansalazar@gmail.com',
+                'salosengineering@gmail.com',
+                'erikloudermilk@yahoo.com',
+                'rickyloudermilk14@yahoo.com',
+            ]);
         });
 
         Testimonial::preventSilentlyDiscardingAttributes();
