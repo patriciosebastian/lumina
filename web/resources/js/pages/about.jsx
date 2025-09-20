@@ -54,7 +54,7 @@ export default function About() {
                         </span>
                     </h1>
                     <p className="text-lg text-primary-500 text-center max-w-[41.75rem] leading-[128%] -tracking-[2%]">
-                        Discover the heart behind SALOS and our mission to integrate biblical wisdom with cutting-edge AI technology.
+                        Discover the heart behind our mission to integrate biblical wisdom with cutting-edge AI technology.
                     </p>
                 </div>
                 <div className="hidden size-full border-l lg:block" />
@@ -172,7 +172,7 @@ export default function About() {
                     </span>
                 </h2>
                 <p className="text-lg font-normal text-primary-500 mx-auto leading-[128%] -tracking-[2%]">
-                    Meet the team of believers and technologists who are passionate about bridging faith and innovation.
+                    Meet the team of passionate believers.
                 </p>
             </div>
             <div className="space-y-8 lg:grid lg:grid-cols-3 lg:w-[60rem] lg:mx-auto lg:gap-8 lg:space-y-0">
@@ -184,6 +184,7 @@ export default function About() {
                                 src={ErikPortraitJpg}
                                 alt="Erik Loudermilk"
                                 className="w-full h-full object-cover object-top"
+                                loading="lazy"
                             />
                         </picture>
                     </div>
@@ -211,6 +212,7 @@ export default function About() {
                                 src={PatricioPortraitJpg}
                                 alt="Patricio Salazar"
                                 className="w-full h-full object-cover object-top"
+                                loading="lazy"
                             />
                         </picture>
                     </div>
@@ -218,7 +220,7 @@ export default function About() {
                         <h3 className="text-center text-xl font-semibold text-primary-200 mb-1">Patricio Salazar</h3>
                         <p className="text-center text-sm text-primary-400 font-medium mb-4">Co-Founder</p>
                         <p className="text-sm text-primary-200 leading-relaxed">
-                            We're in a unique time where humans are seeking spiritual advice from something that's not human. Which is very dangerous. So then why build SALOS? While I believe that people shouldn't be delegating the process of building their faith and learning with others, I think the situation will only get worse. And as a Christian, I don&apos;t want to sit on the side lines. While big tech points people to AI, I'll use AI to try and point people back to Jesus.
+                            We're in a unique time where people are seeking spiritual advice from something that's not human. Which is very dangerous. So then why build SALOS? While I believe that people shouldn't be delegating the process of building their faith and learning with others, I think the situation will only get worse. And as a Christian , I don&apos;t want to sit on the side lines. While big tech points people to AI, I'll use AI to try and point people back to Jesus.
                         </p>
                         <br />
                         <p className="text-sm text-primary-200 leading-relaxed">
@@ -234,6 +236,7 @@ export default function About() {
                                 src={RickyPortraitJpg}
                                 alt="Ricky Loudermilk"
                                 className="w-full h-full object-cover object-top"
+                                loading="lazy"
                             />
                         </picture>
                     </div>
