@@ -22,7 +22,7 @@ export default function About() {
         <Announcement className="text-xs md:text-base text-balance">
             Welcome to the Beta &#127881; We want to hear from you! Please report any feedback or bugs you find to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
         </Announcement>
-        <div className="place-items-center h-[113.5px] border-b grid grid-cols-[16px_1fr_16px] lg:col-span-5 lg:grid-cols-[1fr_4.125rem_55.625rem_4.125rem_1fr] z-10">
+        <div className="place-items-center h-[113.5px] border-b grid grid-cols-[16px_1fr_16px] lg:col-span-5 lg:grid-cols-[1fr_4.125rem_55.625rem_4.125rem_1fr]">
             <div className="w-4 h-full border-r lg:w-full" />
             <div className="hidden size-full border-r lg:block" />
             <Navbar />
