@@ -9,8 +9,9 @@
 
         <title inertia>SALOS</title>
 
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=dm-sans:200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+        <link rel="preload" href="https://fonts.bunny.net/css?family=dm-sans:200,300,400,500,600,700,800,900" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=dm-sans:200,300,400,500,600,700,800,900"></noscript>
 
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
