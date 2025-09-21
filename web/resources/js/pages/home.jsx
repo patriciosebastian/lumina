@@ -486,6 +486,7 @@ export default function Home() {
                             width={24}
                             height={24}
                             alt="X (formerly known as Twitter) logo"
+                            loading="lazy"
                         />
                     </a>
                     <a
@@ -498,6 +499,7 @@ export default function Home() {
                             width={24}
                             height={24}
                             alt="Instagram logo"
+                            loading="lazy"
                         />
                     </a>
                     <a
@@ -510,6 +512,7 @@ export default function Home() {
                             width={24}
                             height={24}
                             alt="TikTok logo"
+                            loading="lazy"
                         />
                     </a>
                 </div>
