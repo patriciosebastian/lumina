@@ -8,11 +8,11 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('home');
-})->name('home');
+})->middleware('compress')->name('home');
 
 Route::get('/about', function () {
     return Inertia::render('about');
-})->name('about');
+})->middleware('compress')->name('about');
 
 Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
 Route::post('/chat', [ChatController::class, 'store'])->middleware(['throttle:guest_messages'])->name('chat.store');
