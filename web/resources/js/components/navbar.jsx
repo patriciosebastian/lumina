@@ -8,7 +8,7 @@ import { useRoute } from 'ziggy-js';
 export default function Navbar() {
     const route = useRoute();
     const props = usePage().props;
-    const user = props.auth.user;
+    const user = props.auth?.user;
 
   return (
     <>
@@ -24,7 +24,6 @@ export default function Navbar() {
                     </Link>
                 </NavigationMenuItem>
                 <div className="hidden md:flex md:justify-center md:items-center md:gap-4 text-md w-fit text-primary-700">
-                    {/* TODO: update Link routes | create a file or service to pull these from and loop over to build here */}
                     <NavigationMenuItem>
                         <Button
                             asChild
