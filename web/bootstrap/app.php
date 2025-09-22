@@ -38,8 +38,12 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->respond(function (Response $response, Throwable $exception, Request $request) {
-            if (! app()->environment(['local', 'testing']) && in_array($response->getStatusCode(), [500, 503, 404, 403])) {
-                return Inertia::render('ErrorPage', ['status' => $response->getStatusCode()]) // TODO: create custom error page.
+            if (in_array($response->getStatusCode(), [500, 503, 404, 403])) {
+                return Inertia::render('ErrorPage', [
+                    'status' => $response->getStatusCode(),
+                    'message' => $exception->getMessage(),
+                    'auth' => ['user' => $request->user()]
+                ])
                     ->toResponse($request)
                     ->setStatusCode($response->getStatusCode());
             } elseif ($response->getStatusCode() === 419) {
@@ -50,13 +54,13 @@ return Application::configure(basePath: dirname(__DIR__))
                 if ($request->expectsJson()) {
                     return response()->json([
                         'error' => 'Rate limit exceeded',
-                        'message' => 'Please create an account or log in to continue your session.',
+                        'message' => 'Upgrade your account to continue your session.',
                         'redirect' => route('register')
                     ], 429);
                 }
 
                 return redirect()->route('register')->with([
-                    'message' => 'Please create an account or log in to continue your session.',
+                    'message' => 'Upgrade your account to continue your session.',
                 ]);
             }
 
