@@ -82,12 +82,6 @@ export default function About() {
             <div className="relative grid grid-cols-[16px_1fr_16px] bg-[#031118] mb-14 overflow-x-clip before:content-[''] before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-b before:from-transparent before:from-[0%] before:to-[#031118] before:to-[100%] lg:mb-[11.5rem] lg:grid-cols-[1fr_55.625rem_1fr] lg:before:content-none lg:before:bg-none">
                 <div className="border-y" />
                 <div className="text-primary-400 text-xl text-center text-pretty leading-[128%] -tracking-[2%] border px-4 py-10 space-y-6 lg:px-8 lg:py-14 lg:space-y-8 lg:text-2xl">
-                    {/* <p>
-                        SALOS exists to bridge the ancient wisdom of Scripture with the innovative possibilities of artificial intelligence. We believe that technology, when guided by divine truth, can serve as a powerful tool for spiritual growth and biblical understanding.
-                    </p>
-                    <p>
-                        Our mission is to create an AI companion that doesn't replace pastoral care or personal Bible study, but rather enhances and supports your spiritual journey with biblically grounded insights, encouragement, and guidance rooted in the unchanging truth of God's Word.
-                    </p> */}
                     <p>
                         At SALOS, our mission is to merge modern technology with eternal truth. We exist to solve a growing problem in today&apos;s world - disconnection. Disconnection from God, from ourselves, and from one another. People are searching for hope in places that often leave them more empty, anxious, or alone. SALOS was born to stand in that gap.
                     </p>
