@@ -38,7 +38,7 @@ export default function About() {
                     <div className="w-full flex justify-center items-center gap-4">
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500/0 to-primary-500 lg:w-[5.5rem]" />
                         About SALOS
-                        <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to primary-500/0 lg:w-[5.5rem]" />
+                        <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to-primary-500/0 lg:w-[5.5rem]" />
                     </div>
                 </span>
                 <div className="hidden size-full border-l lg:block" />
@@ -214,11 +214,11 @@ export default function About() {
                         <h3 className="text-center text-xl font-semibold text-primary-200 mb-1">Patricio Salazar</h3>
                         <p className="text-center text-sm text-primary-400 font-medium mb-4">Co-Founder</p>
                         <p className="text-sm text-primary-200 leading-relaxed">
-                            We're in a unique time where people are seeking spiritual advice from something that's not human. Which is very dangerous. So then why build SALOS? While I believe that people shouldn't be delegating the process of building their faith and learning with others, I think the situation will only get worse. And as a Christian , I don&apos;t want to sit on the side lines. While big tech points people to AI, I'll use AI to try and point people back to Jesus.
+                            We're in a unique time where people are seeking spiritual advice from something that's not human. Which is very dangerous. So then why build SALOS? While I believe that people shouldn't be delegating the process of building their faith and learning with others, I think the situation will only get worse. And as a Christian, I don&apos;t want to sit on the sidelines. While big tech points people to AI, I'll use AI to try and point people back to Jesus.
                         </p>
                         <br />
                         <p className="text-sm text-primary-200 leading-relaxed">
-                            AI "hallucinates" and can get many things wrong. It works most accurately and "hallucinates" the least when you provide it exact context as knowledge. So when people ask AI about their faith, which one of them is actually using the Bible as the exclusive knowledge base? I hope this is what SALOS can be. Not a replacement, not a substitue. A reminder, a better placeholder. A voice crying out in the AI wilderness.
+                            AI "hallucinates" and can get many things wrong. It works most accurately and "hallucinates" the least when you provide it exact context as knowledge. So when people ask AI about their faith, which one of them is actually using the Bible as the exclusive knowledge base? I hope this is what SALOS can be. Not a replacement, not a substitute. A reminder, a better placeholder. A voice crying out in the AI wilderness.
                         </p>
                     </div>
                 </div>
@@ -238,7 +238,7 @@ export default function About() {
                         <h3 className="text-center text-xl font-semibold text-primary-200 mb-1">Ricky Loudermilk</h3>
                         <p className="text-center text-sm text-primary-400 font-medium mb-4">Co-Founder</p>
                         <p className="text-sm text-primary-200 leading-relaxed">
-                            SALOS is the intersection of modern technology and eternal truth. SALOS is a constant reminder of faith, and that no matter how far humanity progresses, we are all aligned in the image of God. SALOS is a call to action to put Jesus at the forefront of your life. SALOS is a tool for those who know God, and for those have yet to meet God. SALOS reminds us that no matter how far we stray away, He&apos;s right by your side struggling and succeeding with you.
+                            SALOS is the intersection of modern technology and eternal truth. SALOS is a constant reminder of faith, and that no matter how far humanity progresses, we are all aligned in the image of God. SALOS is a call to action to put Jesus at the forefront of your life. SALOS is a tool for those who know God, and for those who have yet to meet God. SALOS reminds us that no matter how far we stray away, He&apos;s right by your side struggling and succeeding with you.
                         </p>
                         <br />
                         <p className="text-sm text-primary-200 leading-relaxed">
@@ -258,7 +258,7 @@ export default function About() {
                     <div className="w-full flex justify-center items-center gap-4">
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500/0 to-primary-500 lg:w-[5.5rem]" />
                         Contact Us
-                        <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to primary-500/0 lg:w-[5.5rem]" />
+                        <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to-primary-500/0 lg:w-[5.5rem]" />
                     </div>
                 </span>
                 <div className="size-full border-l" />
