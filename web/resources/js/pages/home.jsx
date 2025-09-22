@@ -454,21 +454,28 @@ export default function Home() {
                 </Link>
                 <div className="w-fit text-center font-normal text-primary-700 space-x-3 -tracking-[2%] mx-auto lg:text-lg lg:flex lg:justify-center lg:items-center lg:gap-12">
                     <Link
-                        href={route('home')}
+                        href="/#Features"
                         prefetch={['hover', 'click']}
                         cacheFor={3600} // 1 hour
                     >
                         Features
                     </Link>
                     <Link
-                        href={route('home')}
+                        href="/#Benefits"
                         prefetch={['hover', 'click']}
                         cacheFor={3600}
                     >
                         Benefits
                     </Link>
                     <Link
-                        href={route('home')}
+                        href={route('about')}
+                        prefetch={['hover', 'click']}
+                        cacheFor={3600}
+                    >
+                        About
+                    </Link>
+                    <Link
+                        href="/#Pricing"
                         prefetch={['hover', 'click']}
                         cacheFor={3600}
                     >
