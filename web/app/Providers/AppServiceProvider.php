@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Cashier\Cashier;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Auth\Events\Registered;
+use App\Listeners\HandleUserRegistered;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -44,5 +47,7 @@ class AppServiceProvider extends ServiceProvider
         Testimonial::preventSilentlyDiscardingAttributes();
 
         Cashier::calculateTaxes();
+
+        Event::listen(Registered::class, HandleUserRegistered::class);
     }
 }
