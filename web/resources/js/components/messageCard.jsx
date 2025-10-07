@@ -69,14 +69,14 @@ export default function MessageCard({
                         </p>
 
                     ) : (
-                        message.content && message.content.filter(part => part.type === 'text').map((part, index) => (
+                        message.content && (
                             <Streamdown
                                 key={index}
                                 parseIncompleteMarkdown={true}
                             >
-                                {part.content}
+                                {message.content}
                             </Streamdown>
-                        ))
+                        )
                     )}
                 </ContentBubble>
             ))}
