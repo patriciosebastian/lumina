@@ -14,6 +14,10 @@ Route::get('/about', function () {
     return Inertia::render('about');
 })->middleware('compress')->name('about');
 
+Route::get('/privacy-policy', function () {
+    return Inertia::render('privacyPolicy');
+})->middleware('compress')->name('privacy-policy');
+
 Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
 Route::post('/chat', [ChatController::class, 'store'])->middleware(['throttle:guest_messages'])->name('chat.store');
 Route::get('/chat/{id}', [ChatController::class, 'show'])->name('chat.show');
