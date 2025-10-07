@@ -9,7 +9,7 @@ import ContentBubble from '@/components/ui/contentBubble';
 import { useRoute } from 'ziggy-js';
 import { Separator } from './ui/separator';
 import { Badge } from './ui/badge';
-import FormatMarkdown from './formatMarkdown';
+import { Streamdown } from 'streamdown';
 
 export default function MessageCard({
     className = '',
@@ -69,7 +69,14 @@ export default function MessageCard({
                         </p>
 
                     ) : (
-                        message.content && <FormatMarkdown content={message.content} />
+                        message.content && message.content.filter(part => part.type === 'text').map((part, index) => (
+                            <Streamdown
+                                key={index}
+                                parseIncompleteMarkdown={true}
+                            >
+                                {part.content}
+                            </Streamdown>
+                        ))
                     )}
                 </ContentBubble>
             ))}
