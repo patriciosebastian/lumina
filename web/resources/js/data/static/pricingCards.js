@@ -22,7 +22,8 @@ const pricingCards = [
         features: [
             "Unlimited interactions and messages.",
             "Memory Recall For personalized responses.",
-            "Open-ended spiritual journaling tool."
+            "Open-ended spiritual journaling tool.",
+            "Complimentary Custom Bible."
         ],
         monthlyPrice: 7.49,
         yearlyPrice: 84.99,
@@ -38,7 +39,8 @@ const pricingCards = [
         features: [
             "All features in the standard package.",
             "Advanced Memory Recall for deeper and evolving conversations.",
-            "SALOS Overflow community."
+            "SALOS Overflow community.",
+            "Complimentary Custom Bible."
         ],
         monthlyPrice: 12.49,
         yearlyPrice: 124.99,
