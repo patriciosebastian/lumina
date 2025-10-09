@@ -24,8 +24,8 @@ const pricingCards = [
             "Memory Recall For personalized responses.",
             "Open-ended spiritual journaling tool."
         ],
-        monthlyPrice: 4.99,
-        yearlyPrice: 49.99,
+        monthlyPrice: 7.49,
+        yearlyPrice: 84.99,
         monthlyPriceId: import.meta.env.VITE_STRIPE_STANDARD_MONTHLY_PRICE_ID,
         yearlyPriceId: import.meta.env.VITE_STRIPE_STANDARD_YEARLY_PRICE_ID,
         buttonText: "Get Started Now",
@@ -40,8 +40,8 @@ const pricingCards = [
             "Advanced Memory Recall for deeper and evolving conversations.",
             "SALOS Overflow community."
         ],
-        monthlyPrice: 9.99,
-        yearlyPrice: 89.99,
+        monthlyPrice: 12.49,
+        yearlyPrice: 124.99,
         monthlyPriceId: import.meta.env.VITE_STRIPE_PREMIUM_MONTHLY_PRICE_ID,
         yearlyPriceId: import.meta.env.VITE_STRIPE_PREMIUM_YEARLY_PRICE_ID,
         buttonText: "Get Started Now",
