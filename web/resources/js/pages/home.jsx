@@ -354,7 +354,7 @@ export default function Home() {
                 </TabsContent>
                 <TabsContent
                     value="Yearly"
-                    className="space-y-4 lg:space-y-0 lg:flex lg:justify-center lg:items-center lg:gap-4"
+                    className="space-y-4 lg:space-y-0 lg:flex lg:justify-center lg:items-stretch lg:gap-4"
                 >
                     {pricingCards.map((tier, index) => (
                         <PricingCard
