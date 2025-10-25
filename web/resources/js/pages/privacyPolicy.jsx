@@ -8,10 +8,12 @@ import tiktokLogo from '../../images/tiktok.svg';
 
 export default function PrivacyPolicy() {
   return (
-    <>
+    <div className="min-h-screen bg-background">
         <Announcement className="text-xs md:text-base text-balance">
             Welcome to the Beta &#127881; We want to hear from you! Please report any feedback or bugs you find to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
         </Announcement>
+
+        {/* Navbar */}
         <div className="place-items-center h-[92px] border-b grid grid-cols-[16px_1fr_16px] lg:col-span-5 lg:grid-cols-[1fr_4.125rem_55.625rem_4.125rem_1fr] lg:h-[113.5px]">
             <div className="w-4 h-full border-r lg:w-full" />
             <div className="hidden size-full border-r lg:block" />
@@ -21,47 +23,29 @@ export default function PrivacyPolicy() {
         </div>
 
         {/* Hero Section */}
-        <div className="relative grid grid-rows-[auto] h-auto min-h-[50vh] lg:h-auto">
-            <div className="place-items-center text-center text-balance text-primary-400 border-b grid grid-cols-[16px_1fr_16px] lg:col-span-5 lg:grid-cols-[1fr_4.125rem_55.625rem_4.125rem_1fr]">
-                <div className="size-full border-r" />
-                <div className="hidden size-full border-r lg:block" />
-                <span className="size-full place-content-center p-4 lg:p-6">
-                    <div className="w-full flex justify-center items-center gap-4">
-                        <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500/0 to-primary-500 lg:w-[5.5rem]" />
-                        Privacy Policy
-                        <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to-primary-500/0 lg:w-[5.5rem]" />
-                    </div>
-                </span>
-                <div className="hidden size-full border-l lg:block" />
-                <div className="size-full border-l" />
-            </div>
-            <div className="relative border-b grid grid-cols-[16px_1fr_16px] lg:col-span-5 lg:grid-cols-[1fr_4.125rem_55.625rem_4.125rem_1fr]">
-                <div className="size-full border-r" />
-                <div className="hidden size-full border-r lg:block" />
-                <div className="space-y-6 px-4 py-10 flex flex-col justify-center items-center lg:space-y-8 lg:px-6 lg:py-14">
-                    <h1 className="text-[2.5rem] font-bold text-center leading-[110%] lg:w-[55.625rem] lg:text-[4rem] lg:font-black lg:leading-[100%]">
-                        <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px] lg:pb-[.3rem]">
+        <div className="relative border-b">
+            <div className="max-w-5xl mx-auto px-4 py-16 lg:py-24">
+                <div className="text-center space-y-6">
+                    <h1 className="text-4xl font-bold leading-tight lg:text-6xl lg:font-black">
+                        <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500">
                             Privacy Policy
                         </span>
                     </h1>
-                    <p className="text-lg text-primary-500 text-center max-w-[41.75rem] leading-[128%] -tracking-[2%]">
+                    <p className="text-lg text-primary-500 max-w-2xl mx-auto">
                         Your privacy and data protection are important to us.
                     </p>
                 </div>
-                <div className="hidden size-full border-l lg:block" />
-                <div className="size-full border-l" />
             </div>
+
+            {/* Background Gradient */}
+            <div className="absolute size-64 top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 rounded-full bg-radial-[at_50%_75%] from-primary-200 via-primary-500 to-background to-90% blur-[15rem]" />
         </div>
-        {/* Background Gradient */}
-        <div className="absolute size-64 top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 rounded-full bg-radial-[at_50%_75%] from-primary-200 via-primary-500 to-background to-90% blur-[15rem]" />
 
         {/* Privacy Policy Content */}
-        <div className="space-y-10 px-4 mb-14 lg:space-y-20 lg:mb-[11.5rem]">
-            <div className="relative grid grid-cols-[16px_1fr_16px] bg-[#031118] overflow-x-clip before:content-[''] before:absolute before:inset-x-0 before:-top-8 before:h-8 before:bg-gradient-to-b before:from-transparent before:from-[0%] before:to-[#031118] before:to-[100%] lg:grid-cols-[1fr_55.625rem_1fr] lg:before:content-none lg:before:bg-none">
-                <div className="border-y" />
-                <div className="text-primary-400 prose border lg:prose-lg">
-                    {/* BEGIN PRIVACY POLICY CONTENT */}
-                    <p>Last updated: September 15, 2025</p>
+        <div className="py-16 lg:py-24">
+            <div className="max-w-4xl mx-auto px-4">
+                <div className="prose prose-invert prose-primary max-w-none prose-headings:text-primary-300 prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-h4:text-lg prose-h4:mt-6 prose-h4:mb-2 prose-p:text-primary-400 prose-p:leading-relaxed prose-a:text-primary-400 prose-a:underline hover:prose-a:text-primary-300 prose-strong:text-primary-300 prose-strong:font-semibold prose-ul:text-primary-400 prose-li:text-primary-400">
+                    <p>Last updated: October 24, 2025</p>
                     <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
                     <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank">Privacy Policy Generator</a>.</p>
                     <h2>Interpretation and Definitions</h2>
@@ -132,46 +116,22 @@ export default function PrivacyPolicy() {
                     </li>
                     </ul>
                     <h4>Usage Data</h4>
-                    <p>Usage Data is collected automatically when using the Service.</p>
-                    <p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
-                    <p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
-                    <p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
-                    <h4>Information Collected while Using the Application</h4>
-                    <p>While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:</p>
-                    <ul>
-                    <li>Information regarding your location</li>
-                    </ul>
-                    <p>We use this information to provide features of Our Service, to improve and customize Our Service. The information may be uploaded to the Company's servers and/or a Service Provider's server or it may be simply stored on Your device.</p>
-                    <p>You can enable or disable access to this information at any time, through Your Device settings.</p>
-                    <h4>Tracking Technologies and Cookies</h4>
-                    <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
-                    <ul>
-                    <li><strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
-                    <li><strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
-                    </ul>
-                    <p>Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. You can learn more about cookies on <a href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies" target="_blank">TermsFeed website</a> article.</p>
-                    <p>We use both Session and Persistent Cookies for the purposes set out below:</p>
+                    <p>We collect minimal usage data automatically when you use the Service through Plausible Analytics, our privacy-focused analytics provider.</p>
+                    <p>This data is completely anonymous and aggregated. We do not collect or store any personally identifiable information such as IP addresses, device identifiers, or other tracking data. Plausible does not use cookies and all collected data cannot be used to identify individual users.</p>
+                    <p>The anonymous usage data helps us understand general website traffic patterns and improve our Service while fully respecting your privacy.</p>
+                    <h4>Cookies and Analytics</h4>
+                    <p>We use only essential cookies necessary for the operation and security of our Service. A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service.</p>
+                    <p>We use the following types of cookies:</p>
                     <ul>
                     <li>
                     <p><strong>Necessary / Essential Cookies</strong></p>
-                    <p>Type: Session Cookies</p>
+                    <p>Type: Session and Persistent Cookies</p>
                     <p>Administered by: Us</p>
-                    <p>Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</p>
-                    </li>
-                    <li>
-                    <p><strong>Cookies Policy / Notice Acceptance Cookies</strong></p>
-                    <p>Type: Persistent Cookies</p>
-                    <p>Administered by: Us</p>
-                    <p>Purpose: These Cookies identify if users have accepted the use of cookies on the Website.</p>
-                    </li>
-                    <li>
-                    <p><strong>Functionality Cookies</strong></p>
-                    <p>Type: Persistent Cookies</p>
-                    <p>Administered by: Us</p>
-                    <p>Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</p>
+                    <p>Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users, maintain your session, and protect against security threats such as cross-site request forgery. Without these Cookies, the services that You have asked for cannot be provided.</p>
                     </li>
                     </ul>
-                    <p>For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</p>
+                    <h4>Privacy-Focused Analytics</h4>
+                    <p>We use Plausible Analytics, a privacy-focused, cookieless analytics service, to understand how visitors use our Service. Plausible does not use cookies, does not collect personal data, and is fully compliant with GDPR, CCPA, and PECR. All data collected is aggregated and anonymous. For more information, visit <a href="https://plausible.io/privacy-focused-web-analytics" target="_blank">Plausible Analytics</a>.</p>
                     <h3>Use of Your Personal Data</h3>
                     <p>The Company may use Personal Data for the following purposes:</p>
                     <ul>
@@ -202,7 +162,7 @@ export default function PrivacyPolicy() {
                     </ul>
                     <p>We may share Your personal information in the following situations:</p>
                     <ul>
-                    <li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service,  to contact You.</li>
+                    <li><strong>With Service Providers:</strong> We use third-party service providers to help us operate and improve our Service. For analytics, we use Plausible Analytics, which only receives anonymous, aggregated data and does not collect or store any personal information. We may share personal information with other service providers only as necessary to provide our Service (such as payment processing through Stripe).</li>
                     <li><strong>For business transfers:</strong> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</li>
                     <li><strong>With Affiliates:</strong> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</li>
                     <li><strong>With business partners:</strong> We may share Your information with Our business partners to offer You certain products, services or promotions.</li>
@@ -252,16 +212,14 @@ export default function PrivacyPolicy() {
                     <ul>
                     <li>By email: info@salosai.com</li>
                     </ul>
-                    {/* END PRIVACY POLICY CONTENT */}
                 </div>
-                <div className="border-y" />
             </div>
         </div>
 
         {/* Footer */}
-        <div className="grid grid-cols-[1rem_1fr_1rem] lg:grid-cols-[auto_60rem_auto]">
-            <div className="size-full border-r" />
-            <div className="space-y-10 py-14 px-4 lg:space-y-14 lg:py-18 lg:px-6">
+        <footer className="grid grid-cols-[1rem_1fr_1rem] lg:grid-cols-[auto_60rem_auto]">
+            <div className="size-full border-r border-t" />
+            <div className="space-y-10 py-14 px-4 border-t lg:space-y-14 lg:py-18 lg:px-6">
                 <Link
                     href={route('home')}
                     prefetch={['hover', 'click']}
@@ -343,13 +301,13 @@ export default function PrivacyPolicy() {
                     </a>
                 </div>
             </div>
-            <div className="size-full border-l" />
+            <div className="size-full border-l border-t" />
             <div className="size-full border-r border-t" />
             <div className="flex justify-center items-center p-6 border-t">
                 <span className="text-center text-base font-normal text-primary-950 leading-6">© 2025 SALOS. All Rights Reserved</span>
             </div>
             <div className="size-full border-l border-t" />
-        </div>
-    </>
+        </footer>
+    </div>
   );
 }
