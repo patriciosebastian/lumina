@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
                     <p><strong>Application</strong> refers to SALOS, the software program provided by the Company.</p>
                     </li>
                     <li>
-                    <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to LIVE4GOD LLC, 2024 arborside drive.</p>
+                    <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to LIVE4GOD LLC, 2024 Arborside Drive, Texas, United States.</p>
                     </li>
                     <li>
                     <p><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</p>
