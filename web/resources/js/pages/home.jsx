@@ -482,46 +482,64 @@ export default function Home() {
                         Pricing
                     </Link>
                 </div>
-                <div className="flex justify-center items-center gap-10">
-                    <a
-                        href="https://x.com/salos_ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src={xtwitterLogo}
-                            width={24}
-                            height={24}
-                            alt="X (formerly known as Twitter) logo"
-                            loading="lazy"
-                        />
-                    </a>
-                    <a
-                        href="https://instagram.com/salos.ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src={instagramLogo}
-                            width={24}
-                            height={24}
-                            alt="Instagram logo"
-                            loading="lazy"
-                        />
-                    </a>
-                    <a
-                        href="https://tiktok.com/@salos.ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src={tiktokLogo}
-                            width={24}
-                            height={24}
-                            alt="TikTok logo"
-                            loading="lazy"
-                        />
-                    </a>
+                <div className="space-y-4">
+                    <div className="flex justify-center items-center gap-10">
+                        <a
+                            href="https://x.com/salos_ai"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src={xtwitterLogo}
+                                width={24}
+                                height={24}
+                                alt="X (formerly known as Twitter) logo"
+                                loading="lazy"
+                            />
+                        </a>
+                        <a
+                            href="https://instagram.com/salos.ai"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src={instagramLogo}
+                                width={24}
+                                height={24}
+                                alt="Instagram logo"
+                                loading="lazy"
+                            />
+                        </a>
+                        <a
+                            href="https://tiktok.com/@salos.ai"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src={tiktokLogo}
+                                width={24}
+                                height={24}
+                                alt="TikTok logo"
+                                loading="lazy"
+                            />
+                        </a>
+                    </div>
+                    <div className="flex justify-center items-center gap-4 text-sm text-primary-700 lg:gap-6 lg:text-base">
+                        <Link
+                            href={route('privacy-policy')}
+                            prefetch={['hover', 'click']}
+                            cacheFor={3600}
+                        >
+                            Privacy Policy
+                        </Link>
+                        <Link
+                            href={route('terms')}
+                            prefetch={['hover', 'click']}
+                            cacheFor={3600}
+                        >
+                            Terms & Conditions
+                        </Link>
+                    </div>
                 </div>
             </div>
             <div className="size-full border-l" />
