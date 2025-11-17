@@ -201,6 +201,16 @@ export default function Chat({ initialMessages = [], chatboxMessage = null }) {
         }
     }, [message, chatboxMessage]);
 
+    useEffect(() => {
+        const draftMessage = chatId
+            ? sessionStorage.getItem(`chatDraft-${chatId}`)
+            : sessionStorage.getItem('chatDraft-new');
+
+        if (draftMessage && !chatboxMessage) {
+            setMessage(draftMessage);
+        }
+    }, []);
+
     const handleSendMessage = async () => {
         const cleanMessage = message.trim();
 
@@ -219,6 +229,9 @@ export default function Chat({ initialMessages = [], chatboxMessage = null }) {
         setMessage('');
         setLoading(true);
         setIsAtBottom(true);
+        chatId
+            ? sessionStorage.removeItem(`chatDraft-${chatId}`)
+            : sessionStorage.removeItem('chatDraft-new');
 
         bufferRef.current = '';
         aiMsgIdRef.current = null;
@@ -233,6 +246,19 @@ export default function Chat({ initialMessages = [], chatboxMessage = null }) {
 
     const handleMessageChange = (e) => {
         setMessage(e.target.value);
+        handleChatDraft(e.target.value);
+    };
+
+    const handleChatDraft = (value) => {
+        if (chatId) {
+            value.trim()
+                ? sessionStorage.setItem(`chatDraft-${chatId}`, value)
+                : sessionStorage.removeItem(`chatDraft-${chatId}`);
+        } else {
+            value.trim()
+                ? sessionStorage.setItem('chatDraft-new', value)
+                : sessionStorage.removeItem('chatDraft-new');
+        }
     };
 
     return (

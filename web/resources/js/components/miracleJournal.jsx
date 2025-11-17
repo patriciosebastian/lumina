@@ -31,6 +31,16 @@ export default function MiracleJournal({ initialJournalEntries = [] }) {
         }
     }, [journalId, journalEntries.length]);
 
+    useEffect(() => {
+        const draftJournalEntry = journalId
+            ? sessionStorage.getItem(`journalDraft-${journalId}`)
+            : sessionStorage.getItem('journalDraft-new');
+
+        if (draftJournalEntry) {
+            setJournalEntry(draftJournalEntry);
+        }
+    }, []);
+
     const handleSendJournalEntry = () => {
         const cleanJournalEntry = journalEntry.trim();
 
@@ -44,7 +54,11 @@ export default function MiracleJournal({ initialJournalEntries = [] }) {
             created_at: new Date().toISOString(),
             id: Date.now(),
         }]);
+
         setJournalEntry('');
+        journalId
+            ? sessionStorage.removeItem(`journalDraft-${journalId}`)
+            : sessionStorage.removeItem('journalDraft-new');
 
         router.post(route('journal.store'), {
             content: cleanJournalEntry,
@@ -59,6 +73,19 @@ export default function MiracleJournal({ initialJournalEntries = [] }) {
 
     const handleJournalEntryChange = (e) => {
         setJournalEntry(e.target.value);
+        handleJournalEntryDraft(e.target.value);
+    };
+
+    const handleJournalEntryDraft = (value) => {
+        if (journalId) {
+            value.trim()
+                ? sessionStorage.setItem(`journalDraft-${journalId}`, value)
+                : sessionStorage.removeItem(`journalDraft-${journalId}`);
+        } else {
+            value.trim()
+                ? sessionStorage.setItem('journalDraft-new', value)
+                : sessionStorage.removeItem('journalDraft-new');
+        }
     };
 
   return (
