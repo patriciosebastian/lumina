@@ -71,7 +71,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                         </SidebarMenu>
                     </SidebarHeader>
 
-                    <SidebarContent>
+                    <SidebarContent className="transparent-scrollbar">
                         <SidebarMenuButton
                             asChild
                             className="w-auto pl-2 my-2 mx-2 hover:text-foreground hover:bg-primary-950/70"
