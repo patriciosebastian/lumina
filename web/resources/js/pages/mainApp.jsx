@@ -22,9 +22,33 @@ export default function MainApp({ initialMode, data, chatboxMessage }) {
 
     const handleCheckedChange = (updatedMode) => {
         setIsJournalMode(updatedMode);
+        visitNewOrLastRoute(updatedMode);
+    };
 
-        const routeName = updatedMode ? 'journal.index' : 'chat.index';
-        router.visit(route(routeName));
+    const visitNewOrLastRoute = (updatedMode) => {
+        const resourceId = route().params.id;
+
+        if (updatedMode) {
+            route().current('chat.show')
+                ? sessionStorage.setItem('lastChatId', resourceId)
+                : sessionStorage.removeItem('lastChatId');
+
+            const lastJournalId = sessionStorage.getItem('lastJournalId');
+
+            lastJournalId
+                ? router.visit(route('journal.show', { id: lastJournalId }))
+                : router.visit(route('journal.index'));
+        } else {
+            route().current('journal.show')
+                ? sessionStorage.setItem('lastJournalId', resourceId)
+                : sessionStorage.removeItem('lastJournalId');
+
+            const lastChatId = sessionStorage.getItem('lastChatId');
+
+            lastChatId
+                ? router.visit(route('chat.show', { id: lastChatId }))
+                : router.visit(route('chat.index'));
+        }
     };
 
   return (
