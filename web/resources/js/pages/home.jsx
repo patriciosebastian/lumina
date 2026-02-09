@@ -22,7 +22,7 @@ import SalosLogo from '@/components/ui/salosLogo';
 import { useRoute } from 'ziggy-js';
 import Announcement from '@/components/ui/announcement';
 
-export default function Home() {
+export default function Home({ marketingCopy = {} }) {
     const isMobile = useIsMobile();
     const route = useRoute();
 
@@ -34,9 +34,11 @@ export default function Home() {
         *   - Don't forget to componentize certain sections:
         *       - Think of header as a HomeLayout layout file, not a component (navbar as children).
         */}
-        <Announcement className="text-xs md:text-base text-balance">
-            Welcome to the Beta &#127881; We want to hear from you! Please report any feedback or bugs you find to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
-        </Announcement>
+        {marketingCopy.announcement_show && (
+            <Announcement className="text-xs md:text-base text-balance">
+                <div dangerouslySetInnerHTML={{ __html: marketingCopy.announcement_text || 'Welcome to the Beta 🎉' }} />
+            </Announcement>
+        )}
         <div className="relative grid grid-rows-8 h-screen min-h-svh lg:h-full lg:grid-rows-[1fr_64px_69px_5fr]">
             <div className="place-items-center border-b grid grid-cols-[16px_1fr_16px] lg:col-span-5 lg:grid-cols-[1fr_4.125rem_55.625rem_4.125rem_1fr]">
                 <div className="w-4 h-full border-r lg:w-full" />
@@ -58,7 +60,7 @@ export default function Home() {
                 <span className="size-full place-content-center p-4 lg:p-6">
                     <div className="w-full flex justify-center items-center gap-4">
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500/0 to-primary-500 lg:w-[5.5rem]" />
-                        Your Bible Based AI Mentor
+                        {marketingCopy.hero_tagline || 'Your Bible Based AI Mentor'}
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to primary-500/0 lg:w-[5.5rem]" />
                     </div>
                 </span>
@@ -71,7 +73,7 @@ export default function Home() {
                 <div className="space-y-6 px-4 py-6 flex flex-col justify-center items-center lg:space-y-13 lg:px-6 lg:py-10">
                     <h1 className="text-[2.5rem] font-bold text-center leading-[110%] lg:w-[55.625rem] lg:text-[5rem] lg:font-black lg:leading-[100%]">
                         <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px] lg:pb-[.3rem]">
-                            Wisdom at Your Fingertips
+                            {marketingCopy.hero_title || 'Wisdom at Your Fingertips'}
                         </span>
                     </h1>
                     <Chatbox />
@@ -82,14 +84,14 @@ export default function Home() {
                 {/* Verses */}
                 <div className="hidden absolute w-[13.125rem] p-4 top-[7.5rem] lg:block">
                     <p className="text-xs opacity-30">
-                        <span className="block font-semibold">Romans 12:2:</span>
-                        &quot;Do not conform to the pattern of this world, but be transformed by the renewing of your mind&quot;
+                        <span className="block font-semibold">{marketingCopy.verse_1_reference || 'Romans 12:2:'}</span>
+                        {marketingCopy.verse_1_text || '"Do not conform to the pattern of this world, but be transformed by the renewing of your mind"'}
                     </p>
                 </div>
                 <div className="hidden absolute w-[13.125rem] p-4 bottom-[7.5rem] right-0 text-end lg:block">
                     <p className="text-xs opacity-30">
-                        <span className="block font-semibold">Philippians 4:13:</span>
-                        &quot;I can do all things through Christ who strengthens me&quot;
+                        <span className="block font-semibold">{marketingCopy.verse_2_reference || 'Philippians 4:13:'}</span>
+                        {marketingCopy.verse_2_text || '"I can do all things through Christ who strengthens me"'}
                     </p>
                 </div>
             </div>
@@ -137,10 +139,10 @@ export default function Home() {
                 <div className="border-y" />
                 <div className="text-primary-400 text-2xl text-center text-pretty leading-[128%] -tracking-[2%] border px-4 py-10 space-y-8 lg:px-8 lg:py-14 lg:space-y-10 xl:text-[2.25rem]">
                     <p>
-                        Inspired by the wisdom of Solomon, guided by The Word, and powered by AI. Salos helps you discover God&apos;s truth, realign your purpose, and supplement your spiritual journey.
+                        {marketingCopy.about_paragraph_1 || "Inspired by the wisdom of Solomon, guided by The Word, and powered by AI. Salos helps you discover God's truth, realign your purpose, and supplement your spiritual journey."}
                     </p>
                     <p>
-                        By integrating the timeless truth of Scripture with the convenience of artificial intelligence, Salos seeks to inspire, guide, and uplift individuals in their pursuit of purpose and spiritual direction through cutting edge AI chat features, robust journaling mechanics, and purposeful habit formation.
+                        {marketingCopy.about_paragraph_2 || "By integrating the timeless truth of Scripture with the convenience of artificial intelligence, Salos seeks to inspire, guide, and uplift individuals in their pursuit of purpose and spiritual direction through cutting edge AI chat features, robust journaling mechanics, and purposeful habit formation."}
                     </p>
                 </div>
                 <div className="border-y" />
@@ -165,40 +167,40 @@ export default function Home() {
                 </Badge>
                 <h2 className="text-[2rem] font-black leading-11 -tracking-[2%] mb-4 lg:text-[4rem] lg:font-semibold lg:leading-[100%] lg:-tracking-[4%] lg:mb-5">
                     <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px]">
-                        Step Into Your Potential With Our AI Solutions
+                        {marketingCopy.features_title || 'Step Into Your Potential With Our AI Solutions'}
                     </span>
                 </h2>
                 <p className="text-lg text-balance text-primary-500 mx-auto leading-[128%] -tracking-[2%]">
-                    Discover the transformative power of an AI with the purpose of helping you find your true purpose in Jesus.
+                    {marketingCopy.features_subtitle || 'Discover the transformative power of an AI with the purpose of helping you find your true purpose in Jesus.'}
                 </p>
             </div>
             <div className="space-y-4">
                 <WideBannerCard
-                    title="Biblical Based Wisdom"
-                    subtitle="Answers grounded in God's Word."
+                    title={marketingCopy.feature_1_title || "Biblical Based Wisdom"}
+                    subtitle={marketingCopy.feature_1_subtitle || "Answers grounded in God's Word."}
                     className="mx-auto"
                     imageWidth={isMobile ? 200 : 311}
                     imageHeight={isMobile ? 200 : 311}
                 >
-                    With logic derived exclusively from the teachings of Jesus and the wisdom of the Bible, SALOS empowers users to invite Jesus into their day to day schedule to be reminded and grounded in true purpose.
+                    {marketingCopy.feature_1_description || "With logic derived exclusively from the teachings of Jesus and the wisdom of the Bible, SALOS empowers users to invite Jesus into their day to day schedule to be reminded and grounded in true purpose."}
                 </WideBannerCard>
                 <WideBannerCard
-                    title="AI-Powered Mentorship"
-                    subtitle="Learn and grow through advanced AI."
+                    title={marketingCopy.feature_2_title || "AI-Powered Mentorship"}
+                    subtitle={marketingCopy.feature_2_subtitle || "Learn and grow through advanced AI."}
                     className="mx-auto"
                     imageWidth={isMobile ? 200 : 311}
                     imageHeight={isMobile ? 200 : 311}
                 >
-                    Memory recall and biblical based advice helps users navigate life&apos;s questions. Integration of a robust database, rooted in eternal truth, offers tailored solutions applicable to modern day situations. Bible based chat and journal functions encourage users to build a deeper relationship with Jesus.
+                    {marketingCopy.feature_2_description || "Memory recall and biblical based advice helps users navigate life's questions. Integration of a robust database, rooted in eternal truth, offers tailored solutions applicable to modern day situations. Bible based chat and journal functions encourage users to build a deeper relationship with Jesus."}
                 </WideBannerCard>
                 <WideBannerCard
-                    title="Biblical and Theological Accuracy"
-                    subtitle="Retrieval-Augmented Generation."
+                    title={marketingCopy.feature_3_title || "Biblical and Theological Accuracy"}
+                    subtitle={marketingCopy.feature_3_subtitle || "Retrieval-Augmented Generation."}
                     className="mx-auto"
                     imageWidth={isMobile ? 200 : 311}
                     imageHeight={isMobile ? 200 : 311}
                 >
-                    AI responses draw exclusively from our curated database of the complete Bible and select Christian theological works. Response generation is based on trusted Christian sources meant to guide and direct users with the truth of the Word and the understanding of theological concepts, ultimately leading to Jesus.
+                    {marketingCopy.feature_3_description || "AI responses draw exclusively from our curated database of the complete Bible and select Christian theological works. Response generation is based on trusted Christian sources meant to guide and direct users with the truth of the Word and the understanding of theological concepts, ultimately leading to Jesus."}
                 </WideBannerCard>
             </div>
             <div className="grid grid-cols-[1rem_2.375rem_1fr_2.375rem_1rem] border-y h-[5.5rem] -mx-4 lg:grid-cols-[auto_4.125rem_60rem_4.125rem_auto] lg:h-auto">
@@ -234,47 +236,47 @@ export default function Home() {
                 </Badge>
                 <h2 className="text-[2rem] font-black leading-11 -tracking-[2%] mb-4 lg:text-[4rem] lg:font-semibold lg:leading-[100%] lg:-tracking-[4%] lg:mb-5">
                     <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px]">
-                        An Unparalleled Experience
+                        {marketingCopy.benefits_title || 'An Unparalleled Experience'}
                     </span>
                 </h2>
                 <p className="text-lg font-normal text-primary-500 mx-auto leading-[128%] -tracking-[2%]">
-                    Each distinctly crafted solution provides personal guidance for your individual spiritual journey as you seek to grow and further a relationship with Jesus.
+                    {marketingCopy.benefits_subtitle || 'Each distinctly crafted solution provides personal guidance for your individual spiritual journey as you seek to grow and further a relationship with Jesus.'}
                 </p>
             </div>
             <div className="space-y-4 lg:grid lg:grid-cols-2 lg:w-[60rem] lg:mx-auto lg:gap-4 lg:space-y-0">
                 <CenteredIconCard
-                    title="Guidance Rooted in Divine Wisdom"
+                    title={marketingCopy.benefit_1_title || "Guidance Rooted in Divine Wisdom"}
                     className="mx-auto"
                     contentClasses="p-0"
                 >
-                    Mentorship and biblical based advice grounded in everlasting truth allows users to navigate life&apos;s obstacles through understanding God&apos;s Word and directing users to build a stronger relationship with Jesus.
+                    {marketingCopy.benefit_1_description || "Mentorship and biblical based advice grounded in everlasting truth allows users to navigate life's obstacles through understanding God's Word and directing users to build a stronger relationship with Jesus."}
                 </CenteredIconCard>
                 <CenteredIconCard
-                    title="Righteous Mentor For Life's Journey"
-                    subtitle="Learn, grow, and receive guidance through advanced AI."
+                    title={marketingCopy.benefit_2_title || "Righteous Mentor For Life's Journey"}
+                    subtitle={marketingCopy.benefit_2_subtitle || "Learn, grow, and receive guidance through advanced AI."}
                     className="mx-auto"
                     titleClasses="!w-full"
                     contentClasses="p-0"
                 >
-                    Unlike traditional self-help tools, SALOS grows alongside users, meeting users in any circumstance and growing as the user progresses in their journey while providing continuous support, encouragement, and wisdom tailored to their unique journey.
+                    {marketingCopy.benefit_2_description || "Unlike traditional self-help tools, SALOS grows alongside users, meeting users in any circumstance and growing as the user progresses in their journey while providing continuous support, encouragement, and wisdom tailored to their unique journey."}
                 </CenteredIconCard>
                 <CenteredIconCard
-                    title="Spiritual Growth & Personal Development"
-                    subtitle="Ask questions anytime, anywhere."
+                    title={marketingCopy.benefit_3_title || "Spiritual Growth & Personal Development"}
+                    subtitle={marketingCopy.benefit_3_subtitle || "Ask questions anytime, anywhere."}
                     className="mx-auto"
                     titleClasses="!w-full"
                     contentClasses="p-0"
                 >
-                    By integrating biblical teachings and profound spiritual insights, SALOS strategically helps users grow in their faith, align with their higher purpose, and live a more fulfilling life.
+                    {marketingCopy.benefit_3_description || "By integrating biblical teachings and profound spiritual insights, SALOS strategically helps users grow in their faith, align with their higher purpose, and live a more fulfilling life."}
                 </CenteredIconCard>
                 <CenteredIconCard
-                    title="Actionable & Life-Changing Advice"
-                    subtitle="Ask questions anytime, anywhere."
+                    title={marketingCopy.benefit_4_title || "Actionable & Life-Changing Advice"}
+                    subtitle={marketingCopy.benefit_4_subtitle || "Ask questions anytime, anywhere."}
                     className="mx-auto"
                     titleClasses="!w-full"
                     contentClasses="p-0"
                 >
-                    All Scripture is breathed out by God and profitable for teaching and training in righteousness. Using the Word of God, SALOS provides real, actionable steps users can take to improve their circumstances.
+                    {marketingCopy.benefit_4_description || "All Scripture is breathed out by God and profitable for teaching and training in righteousness. Using the Word of God, SALOS provides real, actionable steps users can take to improve their circumstances."}
                 </CenteredIconCard>
             </div>
         </div>
@@ -320,11 +322,11 @@ export default function Home() {
             <div className="text-center max-w-[41.75rem] mx-auto">
                 <h2 className="text-[2rem] font-black leading-11 -tracking-[2%] mb-4 lg:text-[4rem] lg:font-semibold lg:leading-[100%] lg:-tracking-[4%] lg:mb-5">
                     <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-[#A8E4FF] to-primary-500 lg:-tracking-[3px]">
-                        Pricing
+                        {marketingCopy.pricing_title || 'Pricing'}
                     </span>
                 </h2>
                 <p className="text-pretty text-lg font-normal text-primary-500 mx-auto leading-[128%] -tracking-[2%] lg:w-[65%]">
-                    Select a plan designed to maximize your experience
+                    {marketingCopy.pricing_subtitle || 'Select a plan designed to maximize your experience'}
                 </p>
             </div>
             <SalosTabs
@@ -393,9 +395,9 @@ export default function Home() {
                 <div className="size-full border-r" />
                 <div className="size-full pt-14 px-4 lg:pt-20 lg:px-8 mx-auto">
                     <div className="mb-10 lg:mb-[4.938rem]">
-                        <h2 className="text-center text-[1.75rem] font-semibold lg:text-[2.5rem] lg:font-bold text-primary-300 mb-5 lg:px-34 lg:-tracking-[2px] leading-[110%]">Connecting Innovation With Eternal Truth</h2>
+                        <h2 className="text-center text-[1.75rem] font-semibold lg:text-[2.5rem] lg:font-bold text-primary-300 mb-5 lg:px-34 lg:-tracking-[2px] leading-[110%]">{marketingCopy.mobile_app_title || 'Connecting Innovation With Eternal Truth'}</h2>
                         <p className="text-center text-sm font-normal text-primary-400 lg:px-51 leading-[21px] mb-10">
-                            SALOS mobile is our cutting-edge solution designed to supplement your spiritual journey by inviting Jesus into all areas of your life.
+                            {marketingCopy.mobile_app_description || 'SALOS mobile is our cutting-edge solution designed to supplement your spiritual journey by inviting Jesus into all areas of your life.'}
                         </p>
                     </div>
                     <div className="relative size-auto overflow-hidden">

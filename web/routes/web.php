@@ -1,13 +1,17 @@
 <?php
 
-use App\Http\Controllers\JournalController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\JournalController;
+use App\Http\Controllers\MarketingCopyController;
 use App\Http\Controllers\StripeCheckoutController;
+use App\Models\MarketingCopy;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('home');
+    return Inertia::render('home', [
+        'marketingCopy' => MarketingCopy::getAllFormatted(),
+    ]);
 })->middleware('compress')->name('home');
 
 Route::get('/about', function () {
@@ -33,6 +37,13 @@ Route::get('/journal/{id}', [JournalController::class, 'show'])->name('journal.s
 Route::delete('/journal/{id}', [JournalController::class, 'destroy'])->name('journal.destroy');
 
 Route::get('/checkout/{priceId?}', StripeCheckoutController::class)->middleware(['auth', 'verified'])->name('checkout.embedded');
+
+// Admin Routes
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/marketing-copy', [MarketingCopyController::class, 'index'])->name('marketing-copy.index');
+    Route::put('/marketing-copy/{marketingCopy}', [MarketingCopyController::class, 'update'])->name('marketing-copy.update');
+    Route::put('/marketing-copy', [MarketingCopyController::class, 'bulkUpdate'])->name('marketing-copy.bulk-update');
+});
 
 if (app()->environment('local')) {
     Route::get('/component-development', function () {
