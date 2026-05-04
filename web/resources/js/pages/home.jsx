@@ -4,7 +4,7 @@ import TestimonialCard from '@/components/testimonialCard';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Chatbox from '@/components/ui/chatbox';
-import SalosTabs from '@/components/ui/salosTabs';
+import LuminaTabs from '@/components/ui/luminaTabs';
 import { TabsContent } from '@/components/ui/tabs';
 import WideBannerCard from '@/components/wideBannerCard';
 import { Link } from '@inertiajs/react';
@@ -18,7 +18,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import xtwitterLogo from '../../images/X_Twitter.svg';
 import instagramLogo from '../../images/instagram.svg';
 import tiktokLogo from '../../images/tiktok.svg';
-import SalosLogo from '@/components/ui/salosLogo';
+import LuminaLogo from '@/components/ui/luminaLogo';
 import { useRoute } from 'ziggy-js';
 import Announcement from '@/components/ui/announcement';
 
@@ -35,7 +35,7 @@ export default function Home() {
         *       - Think of header as a HomeLayout layout file, not a component (navbar as children).
         */}
         <Announcement className="text-xs md:text-base text-balance">
-            Welcome to the Beta &#127881; We want to hear from you! Please report any feedback or bugs you find to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
+            Welcome to the Beta &#127881; We want to hear from you! Please report any feedback or bugs you find to <a href="mailto:info@chatwithlumina.com" className="underline">info@chatwithlumina.com</a>
         </Announcement>
         <div className="relative grid grid-rows-8 h-screen min-h-svh lg:h-full lg:grid-rows-[1fr_64px_69px_5fr]">
             <div className="place-items-center border-b grid grid-cols-[16px_1fr_16px] lg:col-span-5 lg:grid-cols-[1fr_4.125rem_55.625rem_4.125rem_1fr]">
@@ -158,7 +158,7 @@ export default function Home() {
         >
             <div className="text-center max-w-[41.75rem] mx-auto">
                 <Badge
-                    variant={'salosPrimary'}
+                    variant={'luminaPrimary'}
                     className="mb-6"
                 >
                     Features
@@ -180,7 +180,7 @@ export default function Home() {
                     imageWidth={isMobile ? 200 : 311}
                     imageHeight={isMobile ? 200 : 311}
                 >
-                    With logic derived exclusively from the teachings of Jesus and the wisdom of the Bible, SALOS empowers users to invite Jesus into their day to day schedule to be reminded and grounded in true purpose.
+                    With logic derived exclusively from the teachings of Jesus and the wisdom of the Bible, Lumina empowers users to invite Jesus into their day to day schedule to be reminded and grounded in true purpose.
                 </WideBannerCard>
                 <WideBannerCard
                     title="AI-Powered Mentorship"
@@ -211,7 +211,7 @@ export default function Home() {
                             prefetch={['hover', 'click']}
                             cacheFor="1m"
                         >
-                            Ask SALOS
+                            Ask Lumina
                         </Link>
                     </Button>
                 </div>
@@ -227,7 +227,7 @@ export default function Home() {
         >
             <div className="text-center max-w-[41.75rem] mx-auto">
                 <Badge
-                    variant={'salosPrimary'}
+                    variant={'luminaPrimary'}
                     className="mb-6"
                 >
                     Benefits
@@ -256,7 +256,7 @@ export default function Home() {
                     titleClasses="!w-full"
                     contentClasses="p-0"
                 >
-                    Unlike traditional self-help tools, SALOS grows alongside users, meeting users in any circumstance and growing as the user progresses in their journey while providing continuous support, encouragement, and wisdom tailored to their unique journey.
+                    Unlike traditional self-help tools, Lumina grows alongside users, meeting users in any circumstance and growing as the user progresses in their journey while providing continuous support, encouragement, and wisdom tailored to their unique journey.
                 </CenteredIconCard>
                 <CenteredIconCard
                     title="Spiritual Growth & Personal Development"
@@ -265,7 +265,7 @@ export default function Home() {
                     titleClasses="!w-full"
                     contentClasses="p-0"
                 >
-                    By integrating biblical teachings and profound spiritual insights, SALOS strategically helps users grow in their faith, align with their higher purpose, and live a more fulfilling life.
+                    By integrating biblical teachings and profound spiritual insights, Lumina strategically helps users grow in their faith, align with their higher purpose, and live a more fulfilling life.
                 </CenteredIconCard>
                 <CenteredIconCard
                     title="Actionable & Life-Changing Advice"
@@ -274,7 +274,7 @@ export default function Home() {
                     titleClasses="!w-full"
                     contentClasses="p-0"
                 >
-                    All Scripture is breathed out by God and profitable for teaching and training in righteousness. Using the Word of God, SALOS provides real, actionable steps users can take to improve their circumstances.
+                    All Scripture is breathed out by God and profitable for teaching and training in righteousness. Using the Word of God, Lumina provides real, actionable steps users can take to improve their circumstances.
                 </CenteredIconCard>
             </div>
         </div>
@@ -327,7 +327,7 @@ export default function Home() {
                     Select a plan designed to maximize your experience
                 </p>
             </div>
-            <SalosTabs
+            <LuminaTabs
                 defaultValue="Monthly"
                 tabs="Monthly, Yearly"
                 className="w-fit mx-auto gap-6 lg:gap-8"
@@ -371,10 +371,10 @@ export default function Home() {
                         />
                     ))}
                 </TabsContent>
-            </SalosTabs>
+            </LuminaTabs>
         </div>
 
-        {/* SALOS mobile is coming soon */}
+        {/* Lumina mobile is coming soon */}
         <div>
             <div className="place-items-center text-center text-balance text-primary-400 border-y grid grid-cols-[1rem_2.375rem_1fr_2.375rem_1rem] lg:col-span-5 lg:grid-cols-[auto_4.125rem_60rem_4.125rem_auto]">
                 <div className="size-full border-r" />
@@ -382,7 +382,7 @@ export default function Home() {
                 <span className="size-full place-content-center p-4 lg:p-6">
                     <div className="w-full flex justify-center items-center gap-4">
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500/0 to-primary-500 lg:w-[5.5rem]" />
-                        SALOS App Coming Soon
+                        Lumina App Coming Soon
                         <div className="h-[1px] w-6 rounded-full bg-gradient-to-r from-primary-500 to primary-500/0 lg:w-[5.5rem]" />
                     </div>
                 </span>
@@ -395,7 +395,7 @@ export default function Home() {
                     <div className="mb-10 lg:mb-[4.938rem]">
                         <h2 className="text-center text-[1.75rem] font-semibold lg:text-[2.5rem] lg:font-bold text-primary-300 mb-5 lg:px-34 lg:-tracking-[2px] leading-[110%]">Connecting Innovation With Eternal Truth</h2>
                         <p className="text-center text-sm font-normal text-primary-400 lg:px-51 leading-[21px] mb-10">
-                            SALOS mobile is our cutting-edge solution designed to supplement your spiritual journey by inviting Jesus into all areas of your life.
+                            Lumina mobile is our cutting-edge solution designed to supplement your spiritual journey by inviting Jesus into all areas of your life.
                         </p>
                     </div>
                     <div className="relative size-auto overflow-hidden">
@@ -404,20 +404,20 @@ export default function Home() {
                             width={isMobile ? 419 : 762}
                             height={isMobile ? 422 : 767}
                             className="w-[26.188rem] h-auto mt-3 object-center lg:w-full lg:mx-auto lg:mt-0"
-                            alt="Image of a hand holding a phone with the SALOS app"
+                            alt="Image of a hand holding a phone with the Lumina app"
                         />
                         <div className="absolute h-[13.7rem] top-4 left-1/2 -translate-x-1/2 lg:h-auto">
                             <div className="bg-white w-[6rem] !h-[12.5rem] mt-1 rounded-xl lg:w-67 lg:!h-[36.125rem] lg:ml-1.5 lg:rounded-4xl" />
                             <div className="absolute size-full top-0 flex flex-col gap-36 lg:gap-110">
                                 <Badge
-                                    variant={'salosPrimary'}
+                                    variant={'luminaPrimary'}
                                     className="size-[2rem] p-[0.61rem] top-1/2 -translate-y-8 left-1/2 ml-[0.125rem] -translate-x-1/2 bg-black shadow-none rounded-[0.61rem] max-h-none lg:rounded-[1.125rem] lg:p-4.5 lg:size-[4.375rem] before:rounded-[0.61rem] lg:before:rounded-[1.125rem]"
                                 >
                                     <img
                                         src={SalosODove}
                                         width={isMobile ? 18.44 : 34}
                                         height={isMobile ? 18.44 : 34}
-                                        alt="SALOS abbreviated logo"
+                                        alt="Lumina abbreviated logo"
                                     />
                                 </Badge>
                                 <div className="w-22 mx-auto pt-[0.311rem] pb-[0.229rem] px-[0.613rem] rounded-[0.543rem] place-content-center bg-primary-950 -mt-2.5 lg:w-[11.813rem] lg:h-14 lg:pt-[0.544rem] lg:pb-[0.401rem] lg:px-[1.119rem] lg:rounded-2xl lg:-translate-y-0 lg:-translate-x-0">
@@ -446,7 +446,7 @@ export default function Home() {
                     cacheFor={86400} // 1 day
                     className="block w-fit mx-auto"
                 >
-                    <SalosLogo
+                    <LuminaLogo
                         width={292}
                         height={80}
                         className="mx-auto"
@@ -545,7 +545,7 @@ export default function Home() {
             <div className="size-full border-l" />
             <div className="size-full border-r border-t" />
             <div className="flex justify-center items-center p-6 border-t">
-                <span className="text-center text-base font-normal text-primary-950 leading-6">© 2025 SALOS. All Rights Reserved</span>
+                <span className="text-center text-base font-normal text-primary-950 leading-6">© 2025 Lumina. All Rights Reserved</span>
             </div>
             <div className="size-full border-l border-t" />
         </div>

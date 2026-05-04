@@ -9,7 +9,7 @@ const Header = ({ enabled, setEnabled, switchText }) => {
                 src={Logo}
                 width={116}
                 height={32}
-                alt="SALOS Logo"
+                alt="Lumina Logo"
             />
         </div>
         <div className="relative bg-linear-to-b from-[#54C0F100] to-[#54C0F133] flex items-center justify-between px-4 w-[181px] h-[48px] gradient-border-mask rounded-[68px] text-white cursor-pointer">

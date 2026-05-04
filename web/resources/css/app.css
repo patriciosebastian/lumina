@@ -59,10 +59,10 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-salos: var(--sidebar-salos);
+    --color-sidebar-lumina: var(--sidebar-lumina);
 
     /**
-    * SALOS
+    * Lumina
     *
     */
     /* OKLCH Color Space */                               /* Original HEX values */
@@ -144,7 +144,7 @@
 
 :root {
     /* --background: oklch(1 0 0); */ /* default */
-    --background: var(--salos-background);
+    --background: var(--lumina-background);
     /* --foreground: oklch(0.145 0 0); */
     --foreground: oklch(0.985 0 0);
     --card: oklch(1 0 0);
@@ -179,23 +179,23 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.87 0 0);
-    --sidebar-salos: transparent;
+    --sidebar-lumina: transparent;
 
     /* TODO: clean up */
-    /* --salos-background: oklch(0.17 0.0266 223.43); */
-    /* --salos-background: oklch(0.31 0.0444 230.01); */
-    --salos-background: oklch(0.17 0.0262 229.32);
-    /* --salos-background: oklch(0.24 0.0438 232.68); */
-    /* --salos-background: oklch(0.24 0.0433 233.42); */
-    /* --salos-background: oklch(0.21 0.0374 230.73); */
-    /* --salos-background: oklch(0.28 0.0509 232.84); */
-    /* --salos-background: oklch(0.17 0.0283 226.12); */
-    /* --salos-background: oklch(0.2 0.035 229.94); */
+    /* --lumina-background: oklch(0.17 0.0266 223.43); */
+    /* --lumina-background: oklch(0.31 0.0444 230.01); */
+    --lumina-background: oklch(0.17 0.0262 229.32);
+    /* --lumina-background: oklch(0.24 0.0438 232.68); */
+    /* --lumina-background: oklch(0.24 0.0433 233.42); */
+    /* --lumina-background: oklch(0.21 0.0374 230.73); */
+    /* --lumina-background: oklch(0.28 0.0509 232.84); */
+    /* --lumina-background: oklch(0.17 0.0283 226.12); */
+    /* --lumina-background: oklch(0.2 0.035 229.94); */
 }
 
 .dark {
     /* --background: oklch(0.145 0 0); */ /* default */
-    --background: var(--salos-background);
+    --background: var(--lumina-background);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.145 0 0);
     --card-foreground: oklch(0.985 0 0);
@@ -227,7 +227,7 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(0.269 0 0);
     --sidebar-ring: oklch(0.439 0 0);
-    --sidebar-salos: transparent;
+    --sidebar-lumina: transparent;
 }
 
 @layer base {

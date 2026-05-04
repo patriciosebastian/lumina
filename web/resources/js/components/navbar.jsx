@@ -2,7 +2,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { Button } from './ui/button';
 import { Link, usePage } from '@inertiajs/react';
 import MobileNavIcon from '../../images/MobileNavIcon.svg';
-import SalosLogo from './ui/salosLogo';
+import LuminaLogo from './ui/luminaLogo';
 import { useRoute } from 'ziggy-js';
 
 export default function Navbar() {
@@ -20,15 +20,15 @@ export default function Navbar() {
                         prefetch={['hover', 'click']}
                         cacheFor="1m"
                     >
-                        <SalosLogo />
+                        <LuminaLogo />
                     </Link>
                 </NavigationMenuItem>
                 <div className="hidden md:flex md:justify-center md:items-center md:gap-4 text-md w-fit text-primary-700">
                     <NavigationMenuItem>
                         <Button
                             asChild
-                            variant={'salosGhost'}
-                            size={'salosNav'}
+                            variant={'luminaGhost'}
+                            size={'luminaNav'}
                         >
                             <Link
                                 href={`${route('home')}#Features`}
@@ -40,8 +40,8 @@ export default function Navbar() {
                     <NavigationMenuItem>
                         <Button
                             asChild
-                            variant={'salosGhost'}
-                            size={'salosNav'}
+                            variant={'luminaGhost'}
+                            size={'luminaNav'}
                         >
                             <Link
                                 href={`${route('home')}#Benefits`}
@@ -53,8 +53,8 @@ export default function Navbar() {
                     <NavigationMenuItem>
                         <Button
                             asChild
-                            variant={'salosGhost'}
-                            size={'salosNav'}
+                            variant={'luminaGhost'}
+                            size={'luminaNav'}
                         >
                             <Link
                                 href={route('about')}
@@ -68,8 +68,8 @@ export default function Navbar() {
                     <NavigationMenuItem>
                         <Button
                             asChild
-                            variant={'salosGhost'}
-                            size={'salosNav'}
+                            variant={'luminaGhost'}
+                            size={'luminaNav'}
                         >
                             <Link
                                 href={`${route('home')}#Pricing`}
@@ -83,21 +83,21 @@ export default function Navbar() {
                     {!user ? (
                         <Button
                             asChild
-                            size={'salosNav'}
+                            size={'luminaNav'}
                         >
                             <Link
                                 href={route('chat.index')}
                                 prefetch={['hover', 'click']}
                                 cacheFor="1m"
                             >
-                                Ask SALOS
+                                Ask Lumina
                             </Link>
                         </Button>
                     ) : (
                         <Button
                             asChild
-                            size={'salosNav'}
-                            variant={'salosSecondaryAlt'}
+                            size={'luminaNav'}
+                            variant={'luminaSecondaryAlt'}
                             className="hover:bg-background/60 hover:text-primary-300"
                         >
                             <Link
@@ -157,21 +157,21 @@ export default function Navbar() {
                         {!user ? (
                             <Button
                                 asChild
-                                size={'salosDropdown'}
+                                size={'luminaDropdown'}
                             >
                                 <Link
                                     href={route('chat.index')}
                                     prefetch={['hover', 'click']}
                                     cacheFor="1m"
                                 >
-                                    Ask SALOS
+                                    Ask Lumina
                                 </Link>
                             </Button>
                         ) : (
                             <Button
                                 asChild
-                                size={'salosDropdown'}
-                                variant={'salosSecondaryAlt'}
+                                size={'luminaDropdown'}
+                                variant={'luminaSecondaryAlt'}
                                 className="hover:bg-background/60 hover:text-primary-300"
                             >
                                 <Link

@@ -1,4 +1,4 @@
-import SalosLogo from '@/components/ui/salosLogo';
+import LuminaLogo from '@/components/ui/luminaLogo';
 import { Link } from '@inertiajs/react';
 import { type PropsWithChildren } from 'react';
 
@@ -16,7 +16,7 @@ export default function AuthSimpleLayout({ children, title, description }: Props
                     <div className="flex flex-col items-center gap-4">
                         <Link href={route('home')} className="flex flex-col items-center gap-2 font-medium">
                             <div className="mb-1 flex items-center justify-center rounded-md">
-                                <SalosLogo />
+                                <LuminaLogo />
                             </div>
                             <span className="sr-only">{title}</span>
                         </Link>

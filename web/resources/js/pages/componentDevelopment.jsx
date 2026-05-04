@@ -6,11 +6,11 @@ import TestimonialCard from "@/components/testimonialCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Chatbox from "@/components/ui/chatbox";
-import SalosTabs from "@/components/ui/salosTabs";
+import LuminaTabs from "@/components/ui/luminaTabs";
 import { TabsContent } from "@/components/ui/tabs";
 import WideBannerCard from "@/components/wideBannerCard";
 import { useState } from "react";
-import SalosSwitch from "@/components/ui/salosSwitch";
+import LuminaSwitch from "@/components/ui/luminaSwitch";
 import MessageCard from "@/components/messageCard";
 import SendMessageButton from "@/components/ui/sendMessageButton";
 import VoiceButton from "@/components/ui/voiceButton";
@@ -58,17 +58,17 @@ export default function ComponentDevelopment() {
 
                 <h2 className="text-3xl font-bold mb-4">Buttons</h2>
                 <div className="flex flex-wrap justify-start items-center gap-4">
-                    <Button>Ask SALOS</Button>
-                    <Button variant={'salosPrimaryAlt'}>Ask SALOS</Button>
-                    <Button variant={'salosSecondary'}>Ask SALOS 2</Button>
-                    <Button variant={'salosSecondaryAlt'}>Ask SALOS</Button>
+                    <Button>Ask Lumina</Button>
+                    <Button variant={'luminaPrimaryAlt'}>Ask Lumina</Button>
+                    <Button variant={'luminaSecondary'}>Ask Lumina 2</Button>
+                    <Button variant={'luminaSecondaryAlt'}>Ask Lumina</Button>
                     <SendMessageButton />
                     <VoiceButton />
                 </div>
 
                 <h2 className="text-3xl font-bold mb-4">Badges</h2>
                 <div className="flex flex-wrap justify-start items-center gap-4">
-                    <Badge variant={'salosPrimary'}>Label</Badge>
+                    <Badge variant={'luminaPrimary'}>Label</Badge>
                 </div>
 
                 <h2 className="text-3xl font-bold mb-4">Cards</h2>
@@ -84,13 +84,13 @@ export default function ComponentDevelopment() {
                         title="Guidance Rooted in Divine Wisdom"
                         imgAltText="Smiling robot head"
                     >
-                        SALOS offers mentorship and advice grounded in God's wisdom, helping users navigate life's challenges with clarity, faith, and purpose.
+                        Lumina offers mentorship and advice grounded in God's wisdom, helping users navigate life's challenges with clarity, faith, and purpose.
                     </CenteredIconCard>
                     <CenteredBannerCard
                         title="Unwavering Support, 24/7"
                         imgAltText="Chat bubble with the letters 'AI' inside"
                     >
-                        No matter the topic, nothing is too small or too big for SALOS. SALOS is always there to provide faith-driven guidance, ensuring users always have someone in their corner navigating life with them.
+                        No matter the topic, nothing is too small or too big for Lumina. Lumina is always there to provide faith-driven guidance, ensuring users always have someone in their corner navigating life with them.
                     </CenteredBannerCard>
                     <TestimonialCard
                         text="We couldn&apos;t be happier with our new website. Proxima&apos;s designers listened to every one of our concerns and crafted a site that truly reflects our brand and mission."
@@ -133,7 +133,7 @@ export default function ComponentDevelopment() {
 
                 <h2 className="text-3xl font-bold mb-4">Tabs</h2>
                 <div className="w-fit flex flex-wrap justify-start items-center gap-4">
-                    <SalosTabs
+                    <LuminaTabs
                         defaultValue="Monthly"
                         tabs="Monthly, Yearly"
                     >
@@ -143,12 +143,12 @@ export default function ComponentDevelopment() {
                         <TabsContent value="Yearly">
                             <p className="text-xl">Or in here</p>
                         </TabsContent>
-                    </SalosTabs>
+                    </LuminaTabs>
                 </div>
 
                 <h2 className="text-3xl font-bold mb-4">Switch</h2>
                 <div className="flex flex-wrap justify-start items-center gap-4">
-                    <SalosSwitch
+                    <LuminaSwitch
                         checked={enabled}
                         onCheckedChange={handleCheckedChange}
                         checkedText="Alternative Text"

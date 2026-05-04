@@ -12,7 +12,7 @@ import { Sidebar,
 } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import SalosLogo from './ui/salosLogo';
+import LuminaLogo from './ui/luminaLogo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useRoute } from 'ziggy-js';
 import { Edit } from 'lucide-react';
@@ -64,7 +64,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                                     className="hover:bg-transparent"
                                 >
                                     <Link href={route('chat.index')} prefetch>
-                                        <SalosLogo />
+                                        <LuminaLogo />
                                     </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -94,7 +94,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                     <SidebarFooter className="text-foreground">
                         {isMobile &&
                             <Announcement className="w-fit bg-transparent text-left text-sm text-primary-800 ml-4">
-                                SALOS is in Beta. Help us make it better. Report feedback or bugs to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
+                                Lumina is in Beta. Help us make it better. Report feedback or bugs to <a href="mailto:info@chatwithlumina.com" className="underline">info@chatwithlumina.com</a>
                             </Announcement>
                         }
                         <NavFooter

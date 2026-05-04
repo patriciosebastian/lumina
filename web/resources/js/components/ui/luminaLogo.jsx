@@ -1,7 +1,7 @@
 import { Head } from '@inertiajs/react';
 import Logo from '../../../images/Salos.svg';
 
-export default function SalosLogo({
+export default function LuminaLogo({
     width = 116,
     height = 32,
     className = '',
@@ -16,7 +16,7 @@ export default function SalosLogo({
             width={width}
             height={height}
             className={className}
-            alt="SALOS Logo: The word Salos in all caps with the outline of a Dove on the 'O'"
+            alt="Lumina Logo"
         />
     </>
   );

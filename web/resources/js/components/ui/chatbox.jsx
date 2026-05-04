@@ -41,8 +41,8 @@ export default function Chatbox({ className = '', textareaClasses = '', buttonCl
             onKeyDown={handleKeyDown}
         />
         <Button
-            variant={'salosInputBox'}
-            size={'salosInputBox'}
+            variant={'luminaInputBox'}
+            size={'luminaInputBox'}
             className={`hover:bg-background/60 hover:text-primary-300 ${buttonClasses}`}
             onClick={handleSendMessage}
         >
@@ -53,7 +53,7 @@ export default function Chatbox({ className = '', textareaClasses = '', buttonCl
                 alt="Static SVG graphic of a magic wand"
                 className="w-6 h-6"
             />
-            Ask SALOS
+            Ask Lumina
         </Button>
     </div>
   );

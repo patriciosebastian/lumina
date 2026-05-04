@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Structure
 
-SALOS is a full-stack application combining Laravel (PHP) backend with React/TypeScript frontend using Inertia.js. The project uses a monorepo structure with:
+Lumina is a full-stack application combining Laravel (PHP) backend with React/TypeScript frontend using Inertia.js. The project uses a monorepo structure with:
 
 - `web/` - Laravel application with React frontend
 - `mobile/` - Mobile development (currently empty as of Sep 5, 2025)
@@ -94,7 +94,7 @@ composer dev:ssr         # Start with SSR support
 ### Styling Approach
 - Tailwind CSS v4 with custom color scheme
 - Uses `class-variance-authority` for component variants
-- Custom components follow naming convention: `salos*` (e.g., `salosCard`, `salosSwitch`)
+- Custom components follow naming convention: `lumina*` (e.g., `luminaCard`, `luminaSwitch`)
 - Mix of TypeScript (.tsx) and JavaScript (.jsx) components
 
 ## Testing and Quality

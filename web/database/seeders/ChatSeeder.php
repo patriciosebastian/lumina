@@ -74,7 +74,7 @@ class ChatSeeder extends Seeder
     {
         if ($messageIndex === 0) {
             $openingMessages = [
-                "Hi SALOS, I'm feeling overwhelmed with work lately. Can you help me figure out how to manage my stress?",
+                "Hi Lumina, I'm feeling overwhelmed with work lately. Can you help me figure out how to manage my stress?",
                 "I want to start a new habit but I keep procrastinating. Any advice?",
                 "I'm having trouble communicating with my partner. What should I do?",
                 "I feel like I'm not making progress toward my goals. How can I stay motivated?",
@@ -154,7 +154,7 @@ class ChatSeeder extends Seeder
             ->create();
 
         $this->createSpecificChat($careerChat, [
-            ['role' => MessageRole::USER, 'content' => "Hi SALOS, I'm considering leaving my current job to pursue a career in UX design. I have some design skills but I'm worried about making the transition. What should I consider?"],
+            ['role' => MessageRole::USER, 'content' => "Hi Lumina, I'm considering leaving my current job to pursue a career in UX design. I have some design skills but I'm worried about making the transition. What should I consider?"],
             ['role' => MessageRole::ASSISTANT, 'content' => "It's exciting that you're considering a career in UX design! Career transitions can feel overwhelming, but they're also opportunities for growth. Let's explore this step by step. First, tell me about your current design skills and experience - what have you worked on so far?"],
             ['role' => MessageRole::USER, 'content' => "I've been doing some freelance logo design and I've taken a few online courses about user experience. I really enjoy the problem-solving aspect of design, but I don't have professional UX experience yet."],
             ['role' => MessageRole::ASSISTANT, 'content' => "That's a solid foundation! Your freelance work shows you can deliver for clients, and your interest in problem-solving is essential for UX. Here's what I'd suggest: start building a UX portfolio with personal projects, consider volunteering for nonprofits to get real experience, and maybe look into UX bootcamps or mentorship programs. What feels most actionable to you right now?"],

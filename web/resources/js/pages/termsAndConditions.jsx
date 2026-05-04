@@ -1,6 +1,6 @@
 import Navbar from '@/components/navbar';
 import Announcement from '@/components/ui/announcement';
-import SalosLogo from '@/components/ui/salosLogo';
+import LuminaLogo from '@/components/ui/luminaLogo';
 import { Link } from '@inertiajs/react';
 import xtwitterLogo from '../../images/X_Twitter.svg';
 import instagramLogo from '../../images/instagram.svg';
@@ -10,7 +10,7 @@ export default function TermsAndConditions() {
   return (
     <div className="bg-background min-h-screen">
         <Announcement className="text-xs text-balance md:text-base">
-            Welcome to the Beta &#127881; We want to hear from you! Please report any feedback or bugs you find to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
+            Welcome to the Beta &#127881; We want to hear from you! Please report any feedback or bugs you find to <a href="mailto:info@chatwithlumina.com" className="underline">info@chatwithlumina.com</a>
         </Announcement>
 
         {/* Navbar */}
@@ -31,7 +31,7 @@ export default function TermsAndConditions() {
                             Terms and Conditions
                         </span>
                     </h1>
-                    <p className="text-primary-500 mx-auto max-w-2xl text-lg">Your rights and responsibilities when using SALOS.</p>
+                    <p className="text-primary-500 mx-auto max-w-2xl text-lg">Your rights and responsibilities when using Lumina.</p>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@ export default function TermsAndConditions() {
                         <li>
                             <p>
                                 <strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic
-                                device, named SALOS
+                                device, named Lumina
                             </p>
                         </li>
                         <li>
@@ -119,9 +119,9 @@ export default function TermsAndConditions() {
                         </li>
                         <li>
                             <p>
-                                <strong>Website</strong> refers to SALOS AI , accessible from{' '}
-                                <a href="https://salosai.com/" rel="external nofollow noopener" target="_blank">
-                                    https://salosai.com/
+                                <strong>Website</strong> refers to Lumina AI , accessible from{' '}
+                                <a href="https://chatwithlumina.com/" rel="external nofollow noopener" target="_blank">
+                                    https://chatwithlumina.com/
                                 </a>
                             </p>
                         </li>
@@ -205,7 +205,7 @@ export default function TermsAndConditions() {
                     <p>Except when required by law, paid Subscription fees are non-refundable.</p>
                     <p>
                         Certain refund requests for Subscriptions may be considered by the Company on a case-by-case basis and granted at the sole
-                        discretion of the Company. If You wish to request a refund, please contact us at info@salosai.com.
+                        discretion of the Company. If You wish to request a refund, please contact us at info@chatwithlumina.com.
                     </p>
                     <h3>Free Accounts</h3>
                     <p>
@@ -372,7 +372,7 @@ export default function TermsAndConditions() {
                     <h2>Contact Us</h2>
                     <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
                     <ul>
-                        <li>By email: info@salosai.com</li>
+                        <li>By email: info@chatwithlumina.com</li>
                     </ul>
                 </div>
             </div>
@@ -383,7 +383,7 @@ export default function TermsAndConditions() {
             <div className="size-full border-t border-r" />
             <div className="space-y-10 border-t px-4 py-14 lg:space-y-14 lg:px-6 lg:py-18">
                 <Link href={route('home')} prefetch={['hover', 'click']} cacheFor={86400} className="mx-auto block w-fit">
-                    <SalosLogo width={292} height={80} className="mx-auto" />
+                    <LuminaLogo width={292} height={80} className="mx-auto" />
                 </Link>
                 <div className="text-primary-700 mx-auto w-fit space-x-3 text-center font-normal -tracking-[2%] lg:flex lg:items-center lg:justify-center lg:gap-12 lg:text-lg">
                     <Link href={`${route('home')}#Features`} prefetch={['hover', 'click']} cacheFor={3600}>
@@ -432,7 +432,7 @@ export default function TermsAndConditions() {
             <div className="size-full border-t border-l" />
             <div className="size-full border-t border-r" />
             <div className="flex items-center justify-center border-t p-6">
-                <span className="text-primary-950 text-center text-base leading-6 font-normal">© 2025 SALOS. All Rights Reserved</span>
+                <span className="text-primary-950 text-center text-base leading-6 font-normal">© 2025 Lumina. All Rights Reserved</span>
             </div>
             <div className="size-full border-t border-l" />
         </footer>

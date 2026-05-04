@@ -7,7 +7,7 @@
 
         <x-theme-init />
 
-        <title inertia>SALOS</title>
+        <title inertia>Lumina</title>
 
         <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
         <link rel="preload" href="https://fonts.bunny.net/css?family=dm-sans:200,300,400,500,600,700,800,900" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -17,11 +17,11 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="SALOS" />
+        <meta name="apple-mobile-web-app-title" content="Lumina" />
         <link rel="manifest" href="/site.webmanifest" />
 
         {{-- Plausible Analytics --}}
-        <script defer data-domain="salosai.com" src="https://plausible.io/js/script.hash.tagged-events.js"></script>
+        <script defer data-domain="chatwithlumina.com" src="https://plausible.io/js/script.hash.tagged-events.js"></script>
 
         @routes
         @viteReactRefresh

@@ -151,7 +151,7 @@ function SidebarProvider({
 
 function Sidebar({
   side = "left",
-  variant = "salos",
+  variant = "lumina",
   collapsible = "icon",
   className,
   mobileClasses = "",
@@ -159,7 +159,7 @@ function Sidebar({
   ...props
 }: React.ComponentProps<"div"> & {
   side?: "left" | "right"
-  variant?: "sidebar" | "floating" | "inset" | "salos"
+  variant?: "sidebar" | "floating" | "inset" | "lumina"
   collapsible?: "offcanvas" | "icon" | "none"
   mobileClasses?: string
 }) {
@@ -224,7 +224,7 @@ function Sidebar({
           "relative h-svh w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear",
           "group-data-[collapsible=offcanvas]:w-0",
           "group-data-[side=right]:rotate-180",
-          variant === "floating" || variant === "inset" || variant === "salos"
+          variant === "floating" || variant === "inset" || variant === "lumina"
             ? "group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]"
             : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)"
         )}
@@ -235,8 +235,8 @@ function Sidebar({
           side === "left"
             ? "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
             : "right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
-          // Adjust the padding for floating, inset and salos variants.
-          variant === "floating" || variant === "inset" || variant === "salos"
+          // Adjust the padding for floating, inset and lumina variants.
+          variant === "floating" || variant === "inset" || variant === "lumina"
             ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
             : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)", // defaults removed from this line "group-data-[side=left]:border-r group-data-[side=right]:border-l"
           className
@@ -245,7 +245,7 @@ function Sidebar({
       >
         <div
           data-sidebar="sidebar"
-          className={`bg-sidebar-salos group-data-[variant=floating]:border-sidebar-border group-data-[variant=salos]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=salos]:rounded-lg group-data-[variant=floating]:border group-data-[variant=salos]:border group-data-[variant=floating]:shadow-sm group-data-[variant=salos]:shadow-sm ${className}`}
+          className={`bg-sidebar-lumina group-data-[variant=floating]:border-sidebar-border group-data-[variant=lumina]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=lumina]:rounded-lg group-data-[variant=floating]:border group-data-[variant=lumina]:border group-data-[variant=floating]:shadow-sm group-data-[variant=lumina]:shadow-sm ${className}`}
         >
           {children}
         </div>

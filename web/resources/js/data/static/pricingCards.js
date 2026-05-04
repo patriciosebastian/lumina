@@ -39,7 +39,7 @@ const pricingCards = [
         features: [
             "All features in the standard package.",
             "Advanced Memory Recall for deeper and evolving conversations.",
-            "SALOS Overflow community.",
+            "Lumina Overflow community.",
             "Complimentary Custom Bible."
         ],
         monthlyPrice: 12.49,

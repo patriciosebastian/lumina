@@ -1,6 +1,6 @@
 {
-  "name": "SALOS",
-  "short_name": "SALOS",
+  "name": "Lumina",
+  "short_name": "Lumina",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#031119",
-  "background_color": "#031119",
+  "theme_color": "#FAF7F2",
+  "background_color": "#FAF7F2",
   "display": "standalone"
 }

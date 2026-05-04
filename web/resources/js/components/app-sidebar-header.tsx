@@ -1,6 +1,6 @@
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { Breadcrumbs } from '@/components/breadcrumbs';
-import SalosSwitch from './ui/salosSwitch';
+import LuminaSwitch from './ui/luminaSwitch';
 import { type BreadcrumbItem as BreadcrumbItemType } from '@/types';
 import { useRoute } from 'ziggy-js';
 import Announcement from './ui/announcement';
@@ -24,12 +24,12 @@ export function AppSidebarHeader({ breadcrumbs = [], enabled, onCheckedChange, .
                 <SidebarTrigger className="-ml-1 hover:bg-primary-950 hover:text-foreground cursor-pointer" />
                 {!isMobile &&
                     <Announcement className="w-fit bg-transparent absolute left-1/2 -translate-x-1/2 text-primary-800">
-                        SALOS is in Beta. Help us make it better. Report feedback or bugs to <a href="mailto:info@salosai.com" className="underline">info@salosai.com</a>
+                        Lumina is in Beta. Help us make it better. Report feedback or bugs to <a href="mailto:info@chatwithlumina.com" className="underline">info@chatwithlumina.com</a>
                     </Announcement>
                 }
                 <Breadcrumbs breadcrumbs={breadcrumbs} />
                 <div>
-                    <SalosSwitch checked={enabled} onCheckedChange={onCheckedChange} hidden={isHidden} />
+                    <LuminaSwitch checked={enabled} onCheckedChange={onCheckedChange} hidden={isHidden} />
                 </div>
             </div>
         </header>

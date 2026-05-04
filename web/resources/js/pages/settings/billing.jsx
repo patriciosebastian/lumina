@@ -21,7 +21,7 @@ export default function Billing({ chatsData, userHasActiveSubscription }) {
                         <HeadingSmall title="Purchase a Subscription" description="Purchase a subscription plan to unlock paid features." />
                         <Button
                             asChild
-                            variant={'salosSecondaryAlt'}
+                            variant={'luminaSecondaryAlt'}
                         >
                             <Link href={`${route('home')}#Pricing`}>
                                 View Plans

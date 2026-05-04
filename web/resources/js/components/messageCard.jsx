@@ -1,4 +1,4 @@
-import SalosCard from './ui/salosCard';
+import LuminaCard from './ui/luminaCard';
 import SALOSCross from '../../images/SALOS_Cross.svg';
 import SALOSChat from '../../images/SALOS_Chat.svg';
 import SendMessageButton from './ui/sendMessageButton';
@@ -52,8 +52,8 @@ export default function MessageCard({
     };
 
   return (
-    <SalosCard className={`relative w-full h-[calc(100vh-4.5rem)] mx-auto rounded-2xl flex flex-col items-center gap-2 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[90%] lg:max-w-[84rem] xl:max-h-[52.438rem] ${className}`}>
-        <SalosCard.Content
+    <LuminaCard className={`relative w-full h-[calc(100vh-4.5rem)] mx-auto rounded-2xl flex flex-col items-center gap-2 bg-[#00AFFF14] before:rounded-2xl before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box] overflow-y-visible overflow-x-hidden lg:p-8 lg:w-[90%] lg:max-w-[84rem] xl:max-h-[52.438rem] ${className}`}>
+        <LuminaCard.Content
             ref={scrollContainerRef}
             onScroll={onScroll}
             className="w-full h-[41.938rem] px-3 flex-1 overflow-y-auto overflow-x-hidden space-y-4 transparent-scrollbar"
@@ -96,7 +96,7 @@ export default function MessageCard({
                 <div className="flex justify-start">
                     <div className="flex items-center gap-2">
                         <Badge
-                            variant={'salosPrimary'}
+                            variant={'luminaPrimary'}
                             className={`h-10 w-10 max-h-none p-2 border rounded-[68px] before:rounded-[68px] flex justify-center items-center shadow-none animate-pulse`}
                         >
                             <img
@@ -111,14 +111,14 @@ export default function MessageCard({
                 </div>
             )}
             <div ref={bottomSentinelRef} className="h-[1px] w-[1px] invisible" aria-hidden="true" />
-        </SalosCard.Content>
+        </LuminaCard.Content>
         {showCross && (
             <div
               className="absolute size-[17.688rem] top-1/2 left-1/2 right-0 bg-no-repeat bg-center bg-contain opacity-20 pointer-events-none z-0 transform -translate-y-1/2 -translate-x-1/2"
               style={{ backgroundImage: `url(${SALOSCross})` }}
             />
         )}
-        <SalosCard.Footer className="w-full max-h-52 flex items-end gap-4 lg:max-h-96">
+        <LuminaCard.Footer className="w-full max-h-52 flex items-end gap-4 lg:max-h-96">
             <div className="relative size-full bg-linear-to-b from-[#54C0F100] to-[#54C0F133] rounded-2xl z-0 before:content-[''] before:absolute before:z-[-1] before:inset-0 before:p-[1px] before:rounded-2xl before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 before:[mask:linear-gradient(var(--color-primary-500)_0_0)_exclude,_linear-gradient(#000_0_0)_content-box]">
                 {!isMobile && (
                     <textarea
@@ -178,7 +178,7 @@ export default function MessageCard({
                     )}
                 </>
             )}
-        </SalosCard.Footer>
-    </SalosCard>
+        </LuminaCard.Footer>
+    </LuminaCard>
   );
 }

@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js';
-import SalosLogo from '@/components/ui/salosLogo';
+import LuminaLogo from '@/components/ui/luminaLogo';
 import { Link } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 
@@ -32,7 +32,7 @@ export default function CheckoutEmbedded({ clientSecret }) {
             cacheFor={86400} // 1 day
             className="hidden lg:block mx-auto w-fit"
         >
-            <SalosLogo
+            <LuminaLogo
                 width={292}
                 height={80}
                 className="mt-6 mx-auto"
@@ -44,8 +44,8 @@ export default function CheckoutEmbedded({ clientSecret }) {
             </h2>
             <Button
                 asChild
-                variant={'salosSecondaryAlt'}
-                size={'salosPrimary'}
+                variant={'luminaSecondaryAlt'}
+                size={'luminaPrimary'}
                 className="w-fit mx-auto"
             >
                 <Link
@@ -70,7 +70,7 @@ export default function CheckoutEmbedded({ clientSecret }) {
             cacheFor={86400} // 1 day
             className="hidden lg:block mx-auto w-fit"
         >
-            <SalosLogo
+            <LuminaLogo
                 width={292}
                 height={80}
                 className="mt-6 mb-8 mx-auto"

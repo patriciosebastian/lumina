@@ -1,4 +1,4 @@
-import SalosCard from './ui/salosCard';
+import LuminaCard from './ui/luminaCard';
 
 export default function TestimonialCard({
     className = '',
@@ -12,11 +12,11 @@ export default function TestimonialCard({
     authorTitle = null,
 }) {
   return (
-    <SalosCard className={`w-[19.563rem] h-[18.5rem] flex flex-col justify-center p-6 gap-6 lg:w-[17.5rem] ${className}`}>
-        <SalosCard.Content>
+    <LuminaCard className={`w-[19.563rem] h-[18.5rem] flex flex-col justify-center p-6 gap-6 lg:w-[17.5rem] ${className}`}>
+        <LuminaCard.Content>
             {text}
-        </SalosCard.Content>
-        <SalosCard.Footer className="w-60 flex justify-start items-center gap-4">
+        </LuminaCard.Content>
+        <LuminaCard.Footer className="w-60 flex justify-start items-center gap-4">
             {authorImg && (
                 <img
                     src={authorImg}
@@ -33,7 +33,7 @@ export default function TestimonialCard({
                     <p className="text-sm font-normal text-primary-500">{authorTitle}</p>
                 )}
             </div>
-        </SalosCard.Footer>
-    </SalosCard>
+        </LuminaCard.Footer>
+    </LuminaCard>
   );
 }

@@ -1,6 +1,6 @@
 import { BookPlusIcon, CheckIcon } from 'lucide-react';
 import { Badge } from './ui/badge';
-import SalosCard from './ui/salosCard';
+import LuminaCard from './ui/luminaCard';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
 import { router } from '@inertiajs/react';
@@ -31,11 +31,11 @@ export default function PricingCard({
 
   return (
     <>
-        <SalosCard className={`min-h-[37.938rem] p-6 gap-0 place-content-center lg:flex-1 lg:flex lg:flex-col before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 lg:w-[24.333rem] ${className}`}>
-            <SalosCard.Header className="p-0 mb-8">
+        <LuminaCard className={`min-h-[37.938rem] p-6 gap-0 place-content-center lg:flex-1 lg:flex lg:flex-col before:bg-gradient-to-r before:from-purple-700 before:to-cyan-300 lg:w-[24.333rem] ${className}`}>
+            <LuminaCard.Header className="p-0 mb-8">
                 {!popular && (
                     <Badge
-                        variant={'salosPrimary'}
+                        variant={'luminaPrimary'}
                         className="mb-0"
                     >
                         {badgeText}
@@ -44,7 +44,7 @@ export default function PricingCard({
                 {popular && (
                     <div className="flex justify-between items-center">
                         <Badge
-                            variant={'salosPrimary'}
+                            variant={'luminaPrimary'}
                             className="mb-0"
                         >
                             {badgeText}
@@ -52,18 +52,18 @@ export default function PricingCard({
                         <span className="text-lg text-primary-200">&#10024; Popular</span>
                     </div>
                 )}
-                <SalosCard.Header.Title className="text-[1.75rem] leading-[110%] mb-0">
+                <LuminaCard.Header.Title className="text-[1.75rem] leading-[110%] mb-0">
                     {title}
-                </SalosCard.Header.Title>
-                <SalosCard.Header.CardDescription>
+                </LuminaCard.Header.Title>
+                <LuminaCard.Header.CardDescription>
                     {subtitle}
-                </SalosCard.Header.CardDescription>
-            </SalosCard.Header>
+                </LuminaCard.Header.CardDescription>
+            </LuminaCard.Header>
             <Separator className="h-[1px] bg-gradient-to-r from-primary-500/0 via-primary-500 lg:w-[5.5rem] to-primary-500/0" />
-            <SalosCard.Content className="p-0 lg:flex-grow">
+            <LuminaCard.Content className="p-0 lg:flex-grow">
                 <div className="flex justify-start items-center gap-3.5 mb-4 mt-8">
                     <Badge
-                        variant={'salosPrimary'}
+                        variant={'luminaPrimary'}
                         className="size-8 p-0"
                     >
                         <CheckIcon className="!size-4" />
@@ -72,7 +72,7 @@ export default function PricingCard({
                 </div>
                 <div className="flex justify-start items-center gap-3.5 mb-4">
                     <Badge
-                        variant={'salosPrimary'}
+                        variant={'luminaPrimary'}
                         className="size-8 p-0"
                     >
                         <CheckIcon className="!size-4" />
@@ -81,7 +81,7 @@ export default function PricingCard({
                 </div>
                 <div className="flex justify-start items-center gap-3.5 mb-8">
                     <Badge
-                        variant={'salosPrimary'}
+                        variant={'luminaPrimary'}
                         className="size-8 p-0"
                     >
                         <CheckIcon className="!size-4" />
@@ -99,17 +99,17 @@ export default function PricingCard({
                     {monthly && <span className="text-base font-normal leading-6"> /per month</span>}
                     {yearly && <span className="text-base font-normal leading-6"> /per year</span>}
                 </div>
-            </SalosCard.Content>
-            <SalosCard.Footer className="p-0">
+            </LuminaCard.Content>
+            <LuminaCard.Footer className="p-0">
                 <Button
-                    variant={'salosSecondary'}
+                    variant={'luminaSecondary'}
                     className="w-full"
                     onClick={() => handleStartCheckout(priceId)}
                 >
                     {buttonText}
                 </Button>
-            </SalosCard.Footer>
-        </SalosCard>
+            </LuminaCard.Footer>
+        </LuminaCard>
     </>
   );
 }
