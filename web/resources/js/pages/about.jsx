@@ -5,10 +5,6 @@ import { Button } from '@/components/ui/button';
 import CenteredIconCard from '@/components/centeredIconCard';
 import PatricioPortrait from '../../images/patricio_portrait.webp';
 import PatricioPortraitJpg from '../../images/patricio_portrait.jpg';
-import RickyPortrait from '../../images/ricky_portrait.webp';
-import RickyPortraitJpg from '../../images/ricky_portrait.jpeg';
-import ErikPortrait from '../../images/erik_portrait.webp';
-import ErikPortraitJpg from '../../images/erik_portrait.jpeg';
 import LuminaDove from '../../images/SALOS_Dove_O_Group_1.svg';
 import LuminaLogo from '@/components/ui/luminaLogo';
 import { Link } from '@inertiajs/react';
@@ -173,34 +169,6 @@ export default function About() {
                 <div className="border rounded-lg p-6 space-y-4 mx-auto max-w-sm lg:max-w-none">
                     <div className="w-40 h-40 mx-auto rounded-full overflow-hidden">
                         <picture>
-                            <source srcSet={ErikPortrait} type="image/webp" />
-                            <img
-                                src={ErikPortraitJpg}
-                                alt="Erik Loudermilk"
-                                className="w-full h-full object-cover object-top"
-                                loading="lazy"
-                            />
-                        </picture>
-                    </div>
-                    <div>
-                        <h3 className="text-center text-xl font-semibold text-primary-200 mb-1">Erik Loudermilk</h3>
-                        <p className="text-center text-sm text-primary-400 font-medium mb-4">Co-Founder</p>
-                        <p className="text-sm text-primary-200 leading-relaxed">
-                            AI is inevitable and a worldwide controversial subject. I figured why not bring Jesus to the forefront of technology to shepherd our hearts back to what really matters in this world. Lumina is meant to be your guide back to the only eternal truth: Jesus.
-                        </p>
-                        <br />
-                        <p className="text-sm text-primary-200 leading-relaxed">
-                            Lumina welcomes anyone to learn about Jesus, no matter your starting point. Whether you have no idea how to navigate your faith journey or you&apos;re just looking for more purpose in your day to day life, Lumina is for everyone.
-                        </p>
-                        <br />
-                        <p className="text-sm text-primary-200 leading-relaxed">
-                            Lumina is the asset I yearned for when I was fearful to show up to church because of my imperfections, when I was shy to ask questions that I felt I should already know, or when I was afraid to face vulnerability to accept Jesus into my life. And through God&apos;s grace, we are able to share it with you!
-                        </p>
-                    </div>
-                </div>
-                <div className="border rounded-lg p-6 space-y-4 mx-auto max-w-sm lg:max-w-none">
-                    <div className="w-40 h-40 mx-auto rounded-full overflow-hidden">
-                        <picture>
                             <source srcSet={PatricioPortrait} type="image/webp" />
                             <img
                                 src={PatricioPortraitJpg}
@@ -219,30 +187,6 @@ export default function About() {
                         <br />
                         <p className="text-sm text-primary-200 leading-relaxed">
                             AI "hallucinates" and can get many things wrong. It works most accurately and "hallucinates" the least when you provide it exact context as knowledge. So when people ask AI about their faith, which one of them is actually using the Bible as the exclusive knowledge base? I hope this is what Lumina can be. Not a replacement, not a substitute. A reminder, a better placeholder. A voice crying out in the AI wilderness.
-                        </p>
-                    </div>
-                </div>
-                <div className="border rounded-lg p-6 space-y-4 mx-auto max-w-sm lg:max-w-none">
-                    <div className="w-40 h-40 mx-auto rounded-full overflow-hidden">
-                        <picture>
-                            <source srcSet={RickyPortrait} type="image/webp" />
-                            <img
-                                src={RickyPortraitJpg}
-                                alt="Ricky Loudermilk"
-                                className="w-full h-full object-cover object-top"
-                                loading="lazy"
-                            />
-                        </picture>
-                    </div>
-                    <div>
-                        <h3 className="text-center text-xl font-semibold text-primary-200 mb-1">Ricky Loudermilk</h3>
-                        <p className="text-center text-sm text-primary-400 font-medium mb-4">Co-Founder</p>
-                        <p className="text-sm text-primary-200 leading-relaxed">
-                            Lumina is the intersection of modern technology and eternal truth. Lumina is a constant reminder of faith, and that no matter how far humanity progresses, we are all aligned in the image of God. Lumina is a call to action to put Jesus at the forefront of your life. Lumina is a tool for those who know God, and for those who have yet to meet God. Lumina reminds us that no matter how far we stray away, He&apos;s right by your side struggling and succeeding with you.
-                        </p>
-                        <br />
-                        <p className="text-sm text-primary-200 leading-relaxed">
-                            Lumina is a resource I wish I had when I was getting to learn my Bible. Lumina is a resource I wish I had when I was struggling with battles only I could speak with God about. Lumina is more than a product, it&apos;s a tool that gives anyone unlimited access into Christianity. A solution to modern day depression and anxiety. A solution to chronic loneliness, and a solution to unlocking your passion and fulfillment.
                         </p>
                     </div>
                 </div>
