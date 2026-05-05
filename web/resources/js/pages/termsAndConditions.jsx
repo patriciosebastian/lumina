@@ -401,13 +401,13 @@ export default function TermsAndConditions() {
                 </div>
                 <div className="space-y-4">
                     <div className="flex items-center justify-center gap-10">
-                        <a href="https://x.com/salos_ai" target="_blank" rel="noopener noreferrer">
+                        <a href="https://x.com/lumina_ai" target="_blank" rel="noopener noreferrer">
                             <img src={xtwitterLogo} width={24} height={24} alt="X (formerly known as Twitter) logo" />
                         </a>
-                        <a href="https://instagram.com/salos.ai" target="_blank" rel="noopener noreferrer">
+                        <a href="https://instagram.com/lumina.ai" target="_blank" rel="noopener noreferrer">
                             <img src={instagramLogo} width={24} height={24} alt="Instagram logo" />
                         </a>
-                        <a href="https://tiktok.com/@salos.ai" target="_blank" rel="noopener noreferrer">
+                        <a href="https://tiktok.com/@lumina.ai" target="_blank" rel="noopener noreferrer">
                             <img src={tiktokLogo} width={24} height={24} alt="TikTok logo" />
                         </a>
                     </div>

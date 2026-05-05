@@ -9,7 +9,7 @@ import RickyPortrait from '../../images/ricky_portrait.webp';
 import RickyPortraitJpg from '../../images/ricky_portrait.jpeg';
 import ErikPortrait from '../../images/erik_portrait.webp';
 import ErikPortraitJpg from '../../images/erik_portrait.jpeg';
-import SalosDove from '../../images/SALOS_Dove_O_Group_1.svg';
+import LuminaDove from '../../images/SALOS_Dove_O_Group_1.svg';
 import LuminaLogo from '@/components/ui/luminaLogo';
 import { Link } from '@inertiajs/react';
 import xtwitterLogo from '../../images/X_Twitter.svg';
@@ -113,7 +113,7 @@ export default function About() {
                     title="Scripture as Ultimate Authority"
                     className="mx-auto"
                     contentClasses="p-0"
-                    img={SalosDove}
+                    img={LuminaDove}
                     imgWidth={60}
                     imgHeight={60}
                     imgAltText="Scripture icon"
@@ -126,7 +126,7 @@ export default function About() {
                     className="mx-auto"
                     titleClasses="!w-full"
                     contentClasses="p-0"
-                    img={SalosDove}
+                    img={LuminaDove}
                     imgAltText="Cross icon"
                 >
                     We affirm that Jesus Christ is the Son of God, our Lord and Savior, and the only way to eternal life. Our AI is designed to point users toward a deeper relationship with Him.
@@ -136,7 +136,7 @@ export default function About() {
                     className="mx-auto"
                     titleClasses="!w-full"
                     contentClasses="p-0"
-                    img={SalosDove}
+                    img={LuminaDove}
                     imgAltText="Holy Spirit flame icon"
                 >
                     We recognize that true spiritual understanding comes through the Holy Spirit's work in believers' hearts. Lumina serves as a tool to support, not replace, this divine guidance.
@@ -146,7 +146,7 @@ export default function About() {
                     className="mx-auto"
                     titleClasses="!w-full"
                     contentClasses="p-0"
-                    img={SalosDove}
+                    img={LuminaDove}
                     imgAltText="Technology icon"
                 >
                     We believe the Body of Christ is essential and that technology should never replace community but strengthen it. We strongly direct users to seek fellowship and counsel within their local church.
@@ -355,7 +355,7 @@ export default function About() {
                 <div className="space-y-4">
                     <div className="flex justify-center items-center gap-10">
                         <a
-                            href="https://x.com/salos_ai"
+                            href="https://x.com/lumina_ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -367,7 +367,7 @@ export default function About() {
                             />
                         </a>
                         <a
-                            href="https://instagram.com/salos.ai"
+                            href="https://instagram.com/lumina.ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -379,7 +379,7 @@ export default function About() {
                             />
                         </a>
                         <a
-                            href="https://tiktok.com/@salos.ai"
+                            href="https://tiktok.com/@lumina.ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

@@ -1,6 +1,6 @@
 import LuminaCard from './ui/luminaCard';
-import SALOSCross from '../../images/SALOS_Cross.svg';
-import SALOSChat from '../../images/SALOS_Chat.svg';
+import LuminaCross from '../../images/SALOS_Cross.svg';
+import LuminaChat from '../../images/SALOS_Chat.svg';
 import SendMessageButton from './ui/sendMessageButton';
 import VoiceButton from './ui/voiceButton';
 import { useEffect, useRef } from 'react';
@@ -100,8 +100,8 @@ export default function MessageCard({
                             className={`h-10 w-10 max-h-none p-2 border rounded-[68px] before:rounded-[68px] flex justify-center items-center shadow-none animate-pulse`}
                         >
                             <img
-                                src={SALOSChat}
-                                alt="salos"
+                                src={LuminaChat}
+                                alt="lumina"
                             />
                         </Badge>
                         <div className="text-primary-200 flex items-center gap-2">
@@ -115,7 +115,7 @@ export default function MessageCard({
         {showCross && (
             <div
               className="absolute size-[17.688rem] top-1/2 left-1/2 right-0 bg-no-repeat bg-center bg-contain opacity-20 pointer-events-none z-0 transform -translate-y-1/2 -translate-x-1/2"
-              style={{ backgroundImage: `url(${SALOSCross})` }}
+              style={{ backgroundImage: `url(${LuminaCross})` }}
             />
         )}
         <LuminaCard.Footer className="w-full max-h-52 flex items-end gap-4 lg:max-h-96">

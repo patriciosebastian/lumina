@@ -265,7 +265,7 @@ export default function PrivacyPolicy() {
                 <div className="space-y-4">
                     <div className="flex justify-center items-center gap-10">
                         <a
-                            href="https://x.com/salos_ai"
+                            href="https://x.com/lumina_ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -277,7 +277,7 @@ export default function PrivacyPolicy() {
                             />
                         </a>
                         <a
-                            href="https://instagram.com/salos.ai"
+                            href="https://instagram.com/lumina.ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -289,7 +289,7 @@ export default function PrivacyPolicy() {
                             />
                         </a>
                         <a
-                            href="https://tiktok.com/@salos.ai"
+                            href="https://tiktok.com/@lumina.ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

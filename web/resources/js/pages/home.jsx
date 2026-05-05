@@ -12,7 +12,7 @@ import testimonials from '@/data/fake/testimonials/testimonials';
 import pricingCards from '@/data/static/pricingCards';
 import PricingCard from '@/components/pricingCard';
 import handPhone from '../../images/hand_phone_1.png';
-import SalosODove from '../../images/SALOS_Dove_O_Group_1.svg';
+import LuminaODove from '../../images/SALOS_Dove_O_Group_1.svg';
 import DownloadOnAppStore from '../../images/download_on_app_store.svg';
 import { useIsMobile } from '@/hooks/use-mobile';
 import xtwitterLogo from '../../images/X_Twitter.svg';
@@ -137,10 +137,10 @@ export default function Home() {
                 <div className="border-y" />
                 <div className="text-primary-400 text-2xl text-center text-pretty leading-[128%] -tracking-[2%] border px-4 py-10 space-y-8 lg:px-8 lg:py-14 lg:space-y-10 xl:text-[2.25rem]">
                     <p>
-                        Inspired by the wisdom of Solomon, guided by The Word, and powered by AI. Salos helps you discover God&apos;s truth, realign your purpose, and supplement your spiritual journey.
+                        Inspired by the wisdom of Solomon, guided by The Word, and powered by AI. Lumina helps you discover God&apos;s truth, realign your purpose, and supplement your spiritual journey.
                     </p>
                     <p>
-                        By integrating the timeless truth of Scripture with the convenience of artificial intelligence, Salos seeks to inspire, guide, and uplift individuals in their pursuit of purpose and spiritual direction through cutting edge AI chat features, robust journaling mechanics, and purposeful habit formation.
+                        By integrating the timeless truth of Scripture with the convenience of artificial intelligence, Lumina seeks to inspire, guide, and uplift individuals in their pursuit of purpose and spiritual direction through cutting edge AI chat features, robust journaling mechanics, and purposeful habit formation.
                     </p>
                 </div>
                 <div className="border-y" />
@@ -414,7 +414,7 @@ export default function Home() {
                                     className="size-[2rem] p-[0.61rem] top-1/2 -translate-y-8 left-1/2 ml-[0.125rem] -translate-x-1/2 bg-black shadow-none rounded-[0.61rem] max-h-none lg:rounded-[1.125rem] lg:p-4.5 lg:size-[4.375rem] before:rounded-[0.61rem] lg:before:rounded-[1.125rem]"
                                 >
                                     <img
-                                        src={SalosODove}
+                                        src={LuminaODove}
                                         width={isMobile ? 18.44 : 34}
                                         height={isMobile ? 18.44 : 34}
                                         alt="Lumina abbreviated logo"
@@ -485,7 +485,7 @@ export default function Home() {
                 <div className="space-y-4">
                     <div className="flex justify-center items-center gap-10">
                         <a
-                            href="https://x.com/salos_ai"
+                            href="https://x.com/lumina_ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -498,7 +498,7 @@ export default function Home() {
                             />
                         </a>
                         <a
-                            href="https://instagram.com/salos.ai"
+                            href="https://instagram.com/lumina.ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -511,7 +511,7 @@ export default function Home() {
                             />
                         </a>
                         <a
-                            href="https://tiktok.com/@salos.ai"
+                            href="https://tiktok.com/@lumina.ai"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
