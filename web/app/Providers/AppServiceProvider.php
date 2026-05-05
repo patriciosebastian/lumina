@@ -47,6 +47,6 @@ class AppServiceProvider extends ServiceProvider
 
         Cashier::calculateTaxes();
 
-        Event::listen(Registered::class, HandleUserRegistered::class);
+        // Event::listen(Registered::class, HandleUserRegistered::class);
     }
 }

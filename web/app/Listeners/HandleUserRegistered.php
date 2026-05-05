@@ -25,10 +25,8 @@ class HandleUserRegistered implements ShouldQueue
         $user = $event->user;
 
         $response = Http::withHeaders([
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer '.env('GO_HIGH_LEVEL_KEY'),
-            'location-id' => env('GO_HIGH_LEVEL_LOCATION_ID'),
-        ])->post(env('GO_HIGH_LEVEL_URL'), [
+            //
+        ])->post(config('services.some_service.url'), [
             'name' => $user->name,
             'email' => $user->email,
         ]);
