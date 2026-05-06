@@ -1,6 +1,6 @@
 export default function MidPainting() {
     return (
-        <section className="py-[60px] pb-20 bg-bg">
+        <section className="pt-[60px] pb-20 bg-bg">
             <figure className="m-0">
                 <img
                     src="/images/paintings/painting-mid.png"

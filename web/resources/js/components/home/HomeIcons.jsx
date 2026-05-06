@@ -1,6 +1,6 @@
 export function SunRayIcon({ size = 22 }) {
     return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" aria-hidden="true">
             <circle cx="12" cy="12" r="3.4"/>
             <line x1="12" y1="2" x2="12" y2="5.5"/>
             <line x1="12" y1="18.5" x2="12" y2="22"/>
@@ -16,9 +16,9 @@ export function SunRayIcon({ size = 22 }) {
 
 export function FleuronDivider() {
     return (
-        <div className="flex items-center justify-center gap-[18px] text-gold my-0 mx-auto">
+        <div className="flex items-center justify-center gap-[18px] text-gold my-0 mx-auto" aria-hidden="true">
             <span className="flex-1 max-w-[160px] h-px bg-current opacity-55" />
-            <svg width="42" height="14" viewBox="0 0 42 14" fill="none" stroke="currentColor" strokeWidth="1">
+            <svg width="42" height="14" viewBox="0 0 42 14" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                 <path d="M21 1 Q15 7 9 7 Q3 7 1 4"/>
                 <path d="M21 1 Q27 7 33 7 Q39 7 41 4"/>
                 <path d="M21 1 V13"/>

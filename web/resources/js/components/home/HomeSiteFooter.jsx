@@ -12,7 +12,7 @@ export default function HomeSiteFooter() {
                 <div className="mb-12">
                     <div className="flex items-center justify-center gap-[18px] text-gold">
                         <span className="flex-1 h-px bg-current opacity-55" />
-                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" strokeWidth="1">
+                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                             <circle cx="10" cy="6" r="1.6" fill="currentColor"/>
                             <path d="M10 6 L2 6"/><path d="M10 6 L18 6"/>
                         </svg>

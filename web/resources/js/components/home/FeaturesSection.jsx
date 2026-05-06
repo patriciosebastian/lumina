@@ -17,7 +17,7 @@ export default function FeaturesSection() {
 
                     <div className="p-14 md:p-[56px_36px] border-b md:border-b-0 md:border-r border-border text-left relative">
                         <span className="absolute top-6 right-[30px] font-ui text-[11px] tracking-[0.22em] text-ink-2 opacity-60">i.</span>
-                        <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                        <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                             <path d="M8 22 Q20 18 32 22 Q44 18 56 22 L56 50 Q44 46 32 50 Q20 46 8 50 Z"/>
                             <path d="M32 22 V50"/>
                             <line x1="14" y1="28" x2="26" y2="27"/><line x1="14" y1="32" x2="26" y2="31"/>
@@ -36,7 +36,7 @@ export default function FeaturesSection() {
 
                     <div className="p-14 md:p-[56px_36px] border-b md:border-b-0 md:border-r border-border text-left relative">
                         <span className="absolute top-6 right-[30px] font-ui text-[11px] tracking-[0.22em] text-ink-2 opacity-60">ii.</span>
-                        <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                        <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                             <path d="M32 6 V12"/>
                             <rect x="22" y="12" width="20" height="6" rx="1"/>
                             <path d="M22 18 L18 22 L18 50 L46 50 L46 22 L42 18"/>
@@ -53,7 +53,7 @@ export default function FeaturesSection() {
 
                     <div className="p-14 md:p-[56px_36px] text-left relative">
                         <span className="absolute top-6 right-[30px] font-ui text-[11px] tracking-[0.22em] text-ink-2 opacity-60">iii.</span>
-                        <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                        <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                             <path d="M10 54 Q24 40 32 30 Q40 18 54 10"/>
                             <ellipse cx="20" cy="44" rx="6" ry="3" transform="rotate(-30 20 44)"/>
                             <ellipse cx="28" cy="36" rx="6" ry="3" transform="rotate(-40 28 36)"/>

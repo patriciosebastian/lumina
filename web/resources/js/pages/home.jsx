@@ -23,7 +23,7 @@ function SiteNav() {
     }, []);
 
     return (
-        <nav className={`fixed top-0 inset-x-0 z-50 flex items-center justify-between px-10 transition-all duration-500 border-b ${
+        <nav aria-label="Main navigation" className={`fixed top-0 inset-x-0 z-50 flex items-center justify-between px-10 transition-all duration-500 border-b ${
             scrolled
                 ? 'py-3.5 bg-bg/95 backdrop-saturate-[1.2] border-border'
                 : 'py-[22px] bg-transparent border-transparent'

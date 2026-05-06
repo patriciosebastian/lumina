@@ -69,7 +69,7 @@ export default function PricingSection() {
                     </div>
 
                     <div className="bg-bg border border-border rounded-[5px] p-[48px_44px] relative transition-[border-color] duration-[450ms] hover:border-gold">
-                        <svg className="absolute top-7 right-7 text-gold" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1">
+                        <svg className="absolute top-7 right-7 text-gold" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                             <path d="M11 2 L13 9 L20 11 L13 13 L11 20 L9 13 L2 11 L9 9 Z"/>
                         </svg>
                         <div className="font-ui text-[11px] tracking-[0.28em] uppercase text-ink-2 mb-3.5">The Companion</div>
