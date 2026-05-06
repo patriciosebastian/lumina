@@ -49,7 +49,7 @@ export default function HeroSection() {
                             alt="A sunlit study with an open manuscript on a wooden desk, a brass candlestick, leather-bound books, and a leaded arched window looking out onto a tiled rooftop and church spire."
                             width={1659}
                             height={948}
-                            className="block w-full h-auto aspect-video object-cover border border-amber/40 rounded-[3px] max-md:aspect-[16/10]"
+                            className="block w-full h-auto aspect-[16/10] object-cover border border-amber/40 rounded-[3px]"
                         />
                         <figcaption className="mt-5 font-ui text-[11px] tracking-[0.26em] uppercase text-ink-2 text-center">
                             Plate I &middot; The Sunlit Study, after a Flemish master

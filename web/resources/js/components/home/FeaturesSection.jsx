@@ -1,11 +1,11 @@
 export default function FeaturesSection() {
     return (
-        <section className="py-[120px] relative" id="what">
+        <section className="py-[140px] relative" id="what">
             <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">
 
                 <div className="text-center mb-20">
                     <span className="block font-ui font-normal text-[12px] uppercase tracking-[0.22em] text-ink-2 mb-[18px]">§ I — What Lumina does</span>
-                    <h2 className="font-serif font-normal italic text-[clamp(40px,4.6vw,56px)] leading-[1.1] mx-auto max-w-[18ch] text-ink">
+                    <h2 className="font-serif font-normal italic text-[clamp(46px,5.2vw,64px)] leading-[1.1] mx-auto max-w-[18ch] text-ink">
                         <span className="not-italic">A companion for </span>reading <span className="not-italic">and</span> wondering<span className="not-italic">.</span>
                     </h2>
                     <p className="mt-[22px] font-book text-[18px] text-ink-2 max-w-[36em] mx-auto leading-[1.75]">
@@ -15,7 +15,7 @@ export default function FeaturesSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-border">
 
-                    <div className="p-14 md:p-[56px_36px] border-b md:border-b-0 md:border-r border-border text-left relative">
+                    <div className="p-16 md:p-[64px_40px] border-b md:border-b-0 md:border-r border-border text-left relative">
                         <span className="absolute top-6 right-[30px] font-ui text-[11px] tracking-[0.22em] text-ink-2 opacity-60">i.</span>
                         <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                             <path d="M8 22 Q20 18 32 22 Q44 18 56 22 L56 50 Q44 46 32 50 Q20 46 8 50 Z"/>
@@ -34,7 +34,7 @@ export default function FeaturesSection() {
                         <p className="font-book text-[16px] leading-[1.75] text-ink-2">Open any passage and Lumina sits beside it — offering historical context, cross-references, and the questions a good study partner would ask. Verses stay primary. Commentary stays secondary.</p>
                     </div>
 
-                    <div className="p-14 md:p-[56px_36px] border-b md:border-b-0 md:border-r border-border text-left relative">
+                    <div className="p-16 md:p-[64px_40px] border-b md:border-b-0 md:border-r border-border text-left relative">
                         <span className="absolute top-6 right-[30px] font-ui text-[11px] tracking-[0.22em] text-ink-2 opacity-60">ii.</span>
                         <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                             <path d="M32 6 V12"/>
@@ -51,7 +51,7 @@ export default function FeaturesSection() {
                         <p className="font-book text-[16px] leading-[1.75] text-ink-2">When scholars disagree, Lumina says so. When a question is contested, you'll see the traditions side-by-side — Catholic, Orthodox, Protestant — without being nudged toward any of them.</p>
                     </div>
 
-                    <div className="p-14 md:p-[56px_36px] text-left relative">
+                    <div className="p-16 md:p-[64px_40px] text-left relative">
                         <span className="absolute top-6 right-[30px] font-ui text-[11px] tracking-[0.22em] text-ink-2 opacity-60">iii.</span>
                         <svg className="w-16 h-16 text-gold mb-8" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                             <path d="M10 54 Q24 40 32 30 Q40 18 54 10"/>

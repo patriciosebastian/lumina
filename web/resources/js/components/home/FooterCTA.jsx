@@ -13,7 +13,7 @@ export default function FooterCTA() {
                         alt="An intimate close-up: folded hands resting on the open pages of a Bible, soft daylight from a leaded window catching the cuffs of a linen shirt and warm woolen sleeve."
                         width={480}
                         height={480}
-                        className="block w-full h-auto aspect-square object-cover border border-border rounded-[3px]"
+                        className="block w-full h-auto aspect-square object-cover object-[center_60%] border border-border rounded-[3px]"
                     />
                 </figure>
 

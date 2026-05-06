@@ -1,6 +1,6 @@
 export default function MidPainting() {
     return (
-        <section className="pt-[60px] pb-20 bg-bg">
+        <section className="bg-bg">
             <figure className="m-0">
                 <img
                     src="/images/paintings/painting-mid.png"
@@ -9,7 +9,7 @@ export default function MidPainting() {
                     height={500}
                     className="block w-full h-auto aspect-[16/7] object-cover object-[center_30%] max-md:aspect-[2/1]"
                 />
-                <figcaption className="mt-[22px] font-ui text-[11px] tracking-[0.26em] uppercase text-ink-2 text-center">
+                <figcaption className="mt-[22px] font-ui text-[11px] tracking-[0.26em] uppercase text-ink-2 text-center sr-only">
                     Plate II &middot; The Scriptorium at First Light
                 </figcaption>
             </figure>
