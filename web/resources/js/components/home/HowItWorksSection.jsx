@@ -26,8 +26,8 @@ export default function HowItWorksSection() {
 
                 <div className="text-center mb-20">
                     <span className="block font-ui font-normal text-[12px] uppercase tracking-[0.22em] text-ink-2 mb-[18px]">§ II — How it works</span>
-                    <h2 className="font-serif font-normal italic text-[clamp(40px,4.6vw,56px)] leading-[1.1] mx-auto max-w-[18ch] text-ink">
-                        <span className="not-italic">Three small movements.</span>
+                    <h2 className="font-serif font-normal italic text-[clamp(46px,5.2vw,64px)] leading-[1.1] mx-auto max-w-[18ch] text-ink">
+                        <span className="not-italic">Three small</span> movements.
                     </h2>
                     <p className="mt-[22px] font-book text-[18px] text-ink-2 max-w-[36em] mx-auto leading-[1.75]">
                         No onboarding flow, no quiz to take. Open a window. Type a question. Read what comes back, and read it again.
