@@ -7,13 +7,13 @@ export default function FooterCTA() {
     return (
         <section className="pt-[160px] pb-[120px] text-center bg-bg relative">
             <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">
-                <figure className="mx-auto mb-[72px] max-w-[480px] w-full">
+                <figure className="mx-auto mb-[72px] max-w-[650px] w-full">
                     <img
                         src="/images/paintings/painting-footer.png"
                         alt="An intimate close-up: folded hands resting on the open pages of a Bible, soft daylight from a leaded window catching the cuffs of a linen shirt and warm woolen sleeve."
-                        width={480}
-                        height={480}
-                        className="block w-full h-auto aspect-square object-cover object-[center_60%] border border-border rounded-[3px]"
+                        width={600}
+                        height={600}
+                        className="block w-full h-auto aspect-[16/9] object-cover object-[center_60%] border border-border rounded-[3px]"
                     />
                 </figure>
 
