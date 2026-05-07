@@ -5,7 +5,7 @@ export default function HeroSection() {
     const route = useRoute();
 
     return (
-        <section className="pt-[200px] pb-[160px] relative text-center max-md:pt-[140px] max-md:pb-20">
+        <section className="pt-[150px] pb-[160px] relative text-center max-md:pt-[140px] max-md:pb-20">
             <div className="max-w-[1100px] mx-auto px-10">
                 <div className="max-w-[880px] mx-auto">
 
