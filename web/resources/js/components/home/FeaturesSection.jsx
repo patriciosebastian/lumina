@@ -1,6 +1,9 @@
 export default function FeaturesSection() {
     return (
-        <section className="py-[140px] relative" id="what">
+        <section
+            className="py-[140px] relative"
+            id="what"
+        >
             <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">
 
                 <div className="text-center mb-20">

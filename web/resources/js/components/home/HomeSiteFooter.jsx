@@ -22,8 +22,13 @@ export default function HomeSiteFooter() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-14">
                     <div>
-                        <Link href={route('home')} className="flex items-center gap-2.5 font-serif text-[26px] tracking-[0.04em] text-ink mb-2.5">
-                            <span className="text-gold"><SunRayIcon size={22} /></span>
+                        <Link
+                            href={route('home')}
+                            className="flex items-center gap-2.5 font-serif text-[26px] tracking-[0.04em] text-ink mb-2.5"
+                        >
+                            <span className="text-gold">
+                                <SunRayIcon size={22} />
+                            </span>
                             Lumina
                         </Link>
                         <p className="font-book italic text-[15px] text-ink-2 leading-[1.7] mt-[18px] max-w-[30ch]">
@@ -38,23 +43,55 @@ export default function HomeSiteFooter() {
                             { label: 'How it works', href: '#how' },
                             { label: 'Pricing', href: '#pricing' },
                         ].map(({ label, href }) => (
-                            <a key={label} href={href} className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]">{label}</a>
+                            <a
+                                key={label}
+                                href={href}
+                                className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
+                            >
+                                {label}
+                            </a>
                         ))}
                     </div>
 
                     <div>
                         <h4 className="font-ui font-medium text-[11px] tracking-[0.28em] uppercase text-ink mb-5">The Library</h4>
                         {['Sources & scholars', 'Translations', 'Method', 'Changelog'].map(label => (
-                            <a key={label} href="#" className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]">{label}</a>
+                            <a
+                                key={label}
+                                href="#"
+                                className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
+                            >
+                                {label}
+                            </a>
                         ))}
                     </div>
 
                     <div>
                         <h4 className="font-ui font-medium text-[11px] tracking-[0.28em] uppercase text-ink mb-5">The Studio</h4>
-                        <Link href={route('about')} className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]">About</Link>
-                        <a href="mailto:info@chatwithlumina.com" className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]">Contact</a>
-                        <Link href={route('privacy-policy')} className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]">Privacy</Link>
-                        <Link href={route('terms')} className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]">Terms</Link>
+                        <Link
+                            href={route('about')}
+                            className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
+                        >
+                            About
+                        </Link>
+                        <a
+                            href="mailto:info@chatwithlumina.com"
+                            className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
+                        >
+                            Contact
+                        </a>
+                        <Link
+                            href={route('privacy-policy')}
+                            className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
+                        >
+                            Privacy
+                        </Link>
+                        <Link
+                            href={route('terms')}
+                            className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
+                        >
+                            Terms
+                        </Link>
                     </div>
                 </div>
 

@@ -1,54 +1,49 @@
 const pricingCards = [
     {
-        badgeText: "Basic Access",
-        title: "Free",
-        subtitle: "Basic functions with no commitment.",
+        tier: 'basic',
+        title: 'The Reader',
+        description: 'Open the door. A generous taste — enough to read with Lumina each morning if you\'d like.',
         features: [
-            "Limited AI interactions per day (3 messages per day).",
-            "Session based conversations with limited memory recall.",
-            "Limited access to all features."
+            'Unlimited reading of any passage',
+            'Twenty conversations each month',
+            'Three saved notebooks',
+            'Cross-translation comparison',
         ],
-        monthlyPrice: 0.00,
-        yearlyPrice: 0.00,
-        monthlyPriceId: 'free',
-        yearlyPriceId: 'free',
-        buttonText: "Get Started Now",
-        popular: false
+        monthlyPrice: 0,
+        cta: 'Begin reading',
+        recommended: false,
     },
     {
-        badgeText: "General Access",
-        title: "Standard",
-        subtitle: "Essential features without limitations.",
+        tier: 'pro',
+        title: 'The Companion',
+        description: 'For the slow reader. The one who keeps a journal, returns to passages, and asks the longer kind of question.',
         features: [
-            "Unlimited interactions and messages.",
-            "Memory Recall For personalized responses.",
-            "Open-ended spiritual journaling tool.",
-            "Complimentary Custom Bible."
+            'Everything in basic',
+            'Unlimited conversations and notebooks',
+            'Greek and Hebrew lexical lookups',
+            'Daily lectionary, sent at first light',
+            'A small thanks to the scholars cited',
         ],
-        monthlyPrice: 7.49,
-        yearlyPrice: 84.99,
-        monthlyPriceId: import.meta.env.VITE_STRIPE_STANDARD_MONTHLY_PRICE_ID,
-        yearlyPriceId: import.meta.env.VITE_STRIPE_STANDARD_YEARLY_PRICE_ID,
-        buttonText: "Get Started Now",
-        popular: true
+        monthlyPrice: 9,
+        monthlyPriceId: import.meta.env.VITE_STRIPE_PRO_MONTHLY_PRICE_ID,
+        cta: 'Begin a free month',
+        recommended: true,
     },
-    {
-        badgeText: "VIP Access",
-        title: "Premium",
-        subtitle: "Unlimited functionality and features.",
-        features: [
-            "All features in the standard package.",
-            "Advanced Memory Recall for deeper and evolving conversations.",
-            "Lumina Overflow community.",
-            "Complimentary Custom Bible."
-        ],
-        monthlyPrice: 12.49,
-        yearlyPrice: 124.99,
-        monthlyPriceId: import.meta.env.VITE_STRIPE_PREMIUM_MONTHLY_PRICE_ID,
-        yearlyPriceId: import.meta.env.VITE_STRIPE_PREMIUM_YEARLY_PRICE_ID,
-        buttonText: "Get Started Now",
-        popular: false
-    }
+    // {
+    //     tier: 'premium',
+    //     title: 'The Scholar',
+    //     description: 'For the dedicated reader. The one who engages deeply with the text and seeks advanced insights.',
+    //     features: [
+    //         'Everything in pro',
+    //         'Priority access to new features and improvements',
+    //         'Direct line for feedback and suggestions',
+    //         'A small thanks to the scholars cited',
+    //     ],
+    //     monthlyPrice: 15,
+    //     monthlyPriceId: import.meta.env.VITE_STRIPE_PREMIUM_MONTHLY_PRICE_ID,
+    //     cta: 'Begin a free month',
+    //     recommended: false,
+    // },
 ];
 
 export default pricingCards;
