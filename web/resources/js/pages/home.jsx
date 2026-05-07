@@ -14,9 +14,7 @@ export default function Home() {
         <div className="relative min-h-screen bg-bg text-ink font-book antialiased overflow-x-hidden">
             <Nav />
             <HeroSection />
-            <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">
-                <FleuronDivider />
-            </div>
+            <FleuronDivider className="max-w-[1100px] mx-auto px-10 relative z-[2]" />
             <FeaturesSection />
             <HowItWorksSection />
             <MidPainting />
