@@ -1,6 +1,7 @@
-import LuminaLogo from '@/components/ui/luminaLogo';
+import { SunRayIcon } from '@/components/home/HomeIcons';
 import { Link } from '@inertiajs/react';
 import { type PropsWithChildren } from 'react';
+import { useRoute } from 'ziggy-js';
 
 interface AuthLayoutProps {
     name?: string;
@@ -9,25 +10,40 @@ interface AuthLayoutProps {
 }
 
 export default function AuthSimpleLayout({ children, title, description }: PropsWithChildren<AuthLayoutProps>) {
-    return (
-        <div className="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
-            <div className="w-full max-w-sm">
-                <div className="flex flex-col gap-8">
-                    <div className="flex flex-col items-center gap-4">
-                        <Link href={route('home')} className="flex flex-col items-center gap-2 font-medium">
-                            <div className="mb-1 flex items-center justify-center rounded-md">
-                                <LuminaLogo />
-                            </div>
-                            <span className="sr-only">{title}</span>
-                        </Link>
+    const route = useRoute();
 
-                        <div className="space-y-2 text-center">
-                            <h1 className="text-xl font-medium">{title}</h1>
-                            <p className="text-muted-foreground text-center text-sm">{description}</p>
-                        </div>
-                    </div>
-                    {children}
-                </div>
+    return (
+        <div className="flex min-h-screen flex-col items-center justify-center bg-bg px-6 py-12">
+            {/* Logo mark */}
+            <Link
+                href={route('home')}
+                className="flex flex-col items-center gap-2 no-underline"
+            >
+                <span className="text-gold">
+                    <SunRayIcon size={28} />
+                </span>
+                <span className="font-serif text-[28px] tracking-[0.04em] text-ink" style={{ fontStyle: 'normal' }}>
+                    Lumina
+                </span>
+            </Link>
+
+            {/* Gold rule */}
+            <div className="mx-auto my-8 h-px w-[60px] bg-gold" />
+
+            {/* Form card */}
+            <div className="w-full max-w-[420px] rounded-[6px] border border-border bg-bg" style={{ padding: '48px 44px' }}>
+                {title && (
+                    <h1 className="mb-2 text-center font-serif text-[28px] font-light italic text-ink">
+                        {title}
+                    </h1>
+                )}
+                {description && (
+                    <p className="mb-8 text-center font-book text-[15px] leading-[1.7] text-ink-2">
+                        {description}
+                    </p>
+                )}
+
+                {children}
             </div>
         </div>
     );
