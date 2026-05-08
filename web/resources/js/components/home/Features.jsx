@@ -1,4 +1,4 @@
-export default function FeaturesSection() {
+export default function Features() {
     return (
         <section
             className="py-[140px] relative"

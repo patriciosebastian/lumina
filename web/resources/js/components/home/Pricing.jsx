@@ -3,7 +3,7 @@ import { useRoute } from 'ziggy-js';
 import { CheckIcon } from './HomeIcons';
 import pricingCards from '@/data/static/pricingCards';
 
-export default function PricingSection() {
+export default function Pricing() {
     const route = useRoute();
 
     return (

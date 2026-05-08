@@ -1,6 +1,6 @@
 import STEPS from '@/data/static/howItWorksSteps';
 
-export default function HowItWorksSection() {
+export default function HowItWorks() {
     return (
         <section
             className="py-[120px] bg-surface border-t border-b border-border relative"

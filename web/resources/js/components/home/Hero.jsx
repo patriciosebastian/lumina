@@ -1,7 +1,7 @@
 import { Link } from '@inertiajs/react';
 import { useRoute } from 'ziggy-js';
 
-export default function HeroSection() {
+export default function Hero() {
     const route = useRoute();
 
     return (
