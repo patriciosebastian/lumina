@@ -1,4 +1,4 @@
-export default function AboutHeroSection() {
+export default function AboutHeader() {
     return (
         <section className="pt-[150px] pb-[120px] relative text-center max-md:pt-[140px] max-md:pb-20">
             <div className="max-w-[1100px] mx-auto px-10">

@@ -1,4 +1,4 @@
-export default function AboutPhilosophySection() {
+export default function Philosophy() {
     return (
         <section className="py-[140px] relative" id="philosophy">
             <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">

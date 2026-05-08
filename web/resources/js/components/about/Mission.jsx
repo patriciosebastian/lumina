@@ -1,4 +1,4 @@
-export default function AboutMissionSection() {
+export default function Mission() {
     return (
         <section className="py-[140px] relative" id="mission">
             <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">

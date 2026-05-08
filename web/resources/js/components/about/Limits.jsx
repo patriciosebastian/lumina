@@ -21,7 +21,7 @@ const boundaries = [
     },
 ];
 
-export default function AboutNotSection() {
+export default function Limits() {
     return (
         <section className="py-[140px] relative" id="what-we-are-not">
             <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">
