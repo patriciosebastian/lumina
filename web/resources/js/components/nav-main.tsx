@@ -17,26 +17,17 @@ import { useState } from 'react';
 
 export function NavMain({ items = [], sidebarState }: { items: []; sidebarState?: "expanded" | "collapsed" }) {
     const route = useRoute();
-    const isChatRoute = route().current('chat.*');
-    const isJournalRoute = route().current('journal.*');
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
-    const getSidebarLabel = (): string => {
-        return isChatRoute || !isJournalRoute ? 'Chats' : 'Journals';
-    }
-
-    const getRouteName = (): string => {
-        return isChatRoute || !isJournalRoute ? 'chat.show' : 'journal.show';
-    }
+    const sidebarLabel = 'Chats';
+    const routeName = 'chat.show';
 
     const getItemId = (item: object) => {
         if (item.id) return item.id;
         if (item.chat_id) return item.chat_id;
-        if (item.journal_id) return item.journal_id;
     }
 
     const handleDelete = (itemId: number) => {
-        const routeName = isChatRoute || !isJournalRoute ? 'chat.destroy' : 'journal.destroy';
+        const routeName = 'chat.destroy';
 
         router.delete(route(routeName, { id: itemId }), {
             onBefore: () => window.confirm('Are you sure? This cannot be undone.'),
@@ -48,7 +39,7 @@ export function NavMain({ items = [], sidebarState }: { items: []; sidebarState?
 
     return (
         <SidebarGroup className="px-2 py-0">
-            <SidebarGroupLabel>{getSidebarLabel()}</SidebarGroupLabel>
+            <SidebarGroupLabel>{sidebarLabel}</SidebarGroupLabel>
             <SidebarMenu>
                 {items.map((item) => (
                     <SidebarMenuItem
@@ -57,11 +48,11 @@ export function NavMain({ items = [], sidebarState }: { items: []; sidebarState?
                     >
                         <SidebarMenuButton
                             asChild
-                            isActive={route().current(getRouteName(), { id: getItemId(item) })}
+                            isActive={route().current(routeName, { id: getItemId(item) })}
                             className="hover:bg-primary-950/70"
                         >
                             <Link
-                                href={route(getRouteName(), getItemId(item))}
+                                href={route(routeName, { id: getItemId(item) })}
                                 prefetch
                             >
                                 <span className="text-foreground">{item.name}</span>

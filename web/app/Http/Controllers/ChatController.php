@@ -31,7 +31,7 @@ class ChatController extends Controller
 
         $chatboxMessage = $request->input('message');
 
-        return Inertia::render('mainApp', [
+        return Inertia::render('mainChatApp', [
             'initialMode' => 'chat',
             'data' => $data,
             'chatboxMessage' => $chatboxMessage,

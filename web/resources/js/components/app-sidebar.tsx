@@ -35,17 +35,6 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
     const isMobile = useIsMobile();
     const { state } = useSidebar();
     const route = useRoute();
-    const isChatRoute = route().current('chat.*');
-    const isJournalRoute = route().current('journal.*');
-    const useChatRoute = isChatRoute || !isJournalRoute;
-
-    const getRouteName = (): string => {
-        return useChatRoute ? 'chat.index' : 'journal.index';
-    }
-
-    const getLabel = (): string => {
-        return useChatRoute ? 'New Chat' : 'New Journal';
-    }
 
     return (
         <div className="relative">
@@ -77,12 +66,12 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                             className="w-auto pl-2 my-2 mx-2 hover:text-foreground hover:bg-primary-950/70"
                         >
                             <Link
-                                href={route(getRouteName())}
+                                href={route('chat.index')}
                                 prefetch
                                 className="flex items-center gap-4 px-2 mx-2"
                             >
                                 <Edit className="text-primary-500" />
-                                <span>{getLabel()}</span>
+                                <span>New Chat</span>
                             </Link>
                         </SidebarMenuButton>
                         <NavMain

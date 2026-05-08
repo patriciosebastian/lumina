@@ -1,21 +1,14 @@
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { Breadcrumbs } from '@/components/breadcrumbs';
-import LuminaSwitch from './ui/luminaSwitch';
 import { type BreadcrumbItem as BreadcrumbItemType } from '@/types';
-import { useRoute } from 'ziggy-js';
 import Announcement from './ui/announcement';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 interface AppSidebarHeaderProps {
     breadcrumbs?: BreadcrumbItemType[];
-    enabled?: boolean;
-    onCheckedChange?: (updatedMode: boolean) => void;
 }
 
-export function AppSidebarHeader({ breadcrumbs = [], enabled, onCheckedChange, ...props }: AppSidebarHeaderProps) {
-    const route = useRoute();
-    const currentRoute = route().current();
-    const isHidden = ! currentRoute?.includes('chat.') && ! currentRoute?.includes('journal.');
+export function AppSidebarHeader({ breadcrumbs = [], ...props }: AppSidebarHeaderProps) {
     const isMobile = useIsMobile();
 
     return (
@@ -28,9 +21,6 @@ export function AppSidebarHeader({ breadcrumbs = [], enabled, onCheckedChange, .
                     </Announcement>
                 }
                 <Breadcrumbs breadcrumbs={breadcrumbs} />
-                <div>
-                    <LuminaSwitch checked={enabled} onCheckedChange={onCheckedChange} hidden={isHidden} />
-                </div>
             </div>
         </header>
     );
