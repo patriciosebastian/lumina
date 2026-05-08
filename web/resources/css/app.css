@@ -116,6 +116,77 @@
 }
 
 @layer components {
+    .lumina-prose {
+        font-family: var(--font-book);
+        font-size: 17px;
+        line-height: 1.8;
+        color: var(--color-ink);
+    }
+
+    .lumina-prose h2 {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 28px;
+        color: var(--color-ink);
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .lumina-prose h3 {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 22px;
+        color: var(--color-ink-2);
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .lumina-prose h4 {
+        font-family: var(--font-ui);
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-ink);
+        margin-top: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .lumina-prose p {
+        margin-bottom: 1.25rem;
+    }
+
+    .lumina-prose a {
+        color: var(--color-gold);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .lumina-prose a:hover {
+        color: var(--color-gold-deep);
+    }
+
+    .lumina-prose strong {
+        color: var(--color-ink);
+        font-weight: 600;
+    }
+
+    .lumina-prose ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .lumina-prose li {
+        margin-bottom: 0.5rem;
+    }
+
+    .lumina-prose li > p {
+        margin-bottom: 0.35rem;
+    }
+
     .transparent-scrollbar {
       scrollbar-width: none;
       -ms-overflow-style: none;
