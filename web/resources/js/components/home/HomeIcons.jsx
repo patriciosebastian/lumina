@@ -16,7 +16,7 @@ export function SunRayIcon({ size = 22 }) {
 
 export function FleuronDivider({ className = '' }) {
     return (
-        <div className={`flex items-center justify-center gap-[18px] text-gold my-0 mx-auto ${className}`} aria-hidden="true">
+        <div className={`flex items-center justify-center gap-[18px] text-gold px-10 my-0 max-w-[1100px] mx-auto relative z-[2] ${className}`} aria-hidden="true">
             <span className="flex-1 max-w-[160px] h-px bg-current opacity-55" />
             <svg width="42" height="14" viewBox="0 0 42 14" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
                 <path d="M21 1 Q15 7 9 7 Q3 7 1 4"/>

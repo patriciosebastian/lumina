@@ -12,13 +12,13 @@ export default function About() {
         <div className="relative min-h-screen bg-bg text-ink font-book antialiased overflow-x-hidden">
             <Nav />
             <AboutHeader />
-            <FleuronDivider className="max-w-[1100px] mx-auto px-10 relative z-[2]" />
+            <FleuronDivider />
             <Mission />
-            <FleuronDivider className="max-w-[1100px] mx-auto px-10 relative z-[2]" />
+            <FleuronDivider />
             <Philosophy />
-            <FleuronDivider className="max-w-[1100px] mx-auto px-10 relative z-[2]" />
+            <FleuronDivider />
             <Limits />
-            <FleuronDivider className="max-w-[1100px] mx-auto px-10 relative z-[2]" />
+            <FleuronDivider />
             <AboutCTA />
             <HomeSiteFooter />
         </div>
