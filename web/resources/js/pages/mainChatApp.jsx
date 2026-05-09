@@ -8,7 +8,7 @@ export default function MainChatApp({ data, chatboxMessage }) {
             data={data.chats || []}
         >
             <Head title="Chat with Lumina" />
-            <div className="flex h-full flex-1 flex-col justify-center gap-4 rounded-xl p-1">
+            <div className="flex flex-1 flex-col min-h-0">
                 <Chat initialMessages={data.messages} chatboxMessage={chatboxMessage} />
             </div>
         </AppLayout>

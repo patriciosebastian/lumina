@@ -1,7 +1,5 @@
 import { SidebarTrigger } from '@/components/ui/sidebar';
-import { Breadcrumbs } from '@/components/breadcrumbs';
 import { type BreadcrumbItem as BreadcrumbItemType } from '@/types';
-import Announcement from './ui/announcement';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 interface AppSidebarHeaderProps {
@@ -10,17 +8,30 @@ interface AppSidebarHeaderProps {
 
 export function AppSidebarHeader({ breadcrumbs = [], ...props }: AppSidebarHeaderProps) {
     const isMobile = useIsMobile();
+    const title = breadcrumbs.length > 0 ? breadcrumbs[breadcrumbs.length - 1].title : '';
 
     return (
-        <header className="border-sidebar-border/50 flex h-16 shrink-0 items-center gap-2 px-6 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-16 md:px-4">
-            <div className="w-full flex justify-between items-center gap-2">
-                <SidebarTrigger className="-ml-1 hover:bg-primary-950 hover:text-foreground cursor-pointer" />
-                {!isMobile &&
-                    <Announcement className="w-fit bg-transparent absolute left-1/2 -translate-x-1/2 text-primary-800">
-                        Lumina is in Beta. Help us make it better. Report feedback or bugs to <a href="mailto:info@chatwithlumina.com" className="underline">info@chatwithlumina.com</a>
-                    </Announcement>
-                }
-                <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <header className="flex h-[52px] shrink-0 items-center gap-2 px-4 border-b border-border bg-bg transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-[52px]">
+            <div className="w-full flex justify-between items-center gap-3">
+                <div className="flex items-center gap-3 min-w-0">
+                    <SidebarTrigger className="-ml-0.5 w-[30px] h-[30px] flex-shrink-0 hover:bg-[rgba(184,146,42,.08)] hover:text-ink text-ink-2 rounded-[4px] transition-colors cursor-pointer" />
+                    {title && (
+                        <span className="font-serif italic text-[18px] text-ink leading-[1.2] tracking-[.005em] truncate">
+                            {title}
+                        </span>
+                    )}
+                </div>
+                {!isMobile && (
+                    <span className="font-ui text-[11px] text-ink-3 tracking-[.04em] italic flex-shrink-0">
+                        Beta ·{' '}
+                        <a
+                            href="mailto:info@chatwithlumina.com"
+                            className="underline underline-offset-2 hover:text-ink-2 transition-colors"
+                        >
+                            feedback
+                        </a>
+                    </span>
+                )}
             </div>
         </header>
     );
