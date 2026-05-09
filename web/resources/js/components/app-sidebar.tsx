@@ -1,6 +1,7 @@
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
+import AppLogoIcon from '@/components/app-logo-icon';
 import {
     Sidebar,
     SidebarContent,
@@ -46,7 +47,7 @@ export function AppSidebar({ data = [] }: { data?: [] }) {
                                 prefetch
                             >
                                 {isCollapsed ? (
-                                    <span className="font-serif text-[22px] italic text-gold leading-none">L</span>
+                                    <AppLogoIcon className="size-[22px] text-[#B8922A]" />
                                 ) : (
                                     <LuminaLogo />
                                 )}
