@@ -1,5 +1,10 @@
 <x-pulse>
-    <a href="/">Go Home</a>
+    <a
+        href="/"
+        class="text-white text-sm"
+    >
+        Go Home
+    </a>
 
     <livewire:pulse.servers cols="full" />
 
