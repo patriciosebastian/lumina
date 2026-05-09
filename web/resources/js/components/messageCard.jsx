@@ -1,40 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { useIsMobile } from '@/hooks/use-mobile';
 import ContentBubble from '@/components/ui/contentBubble';
 import { useRoute } from 'ziggy-js';
 import { Streamdown } from 'streamdown';
 import { Plus, Globe, BookOpen } from 'lucide-react';
+import { THINKING_STEPS, SUGGESTED_PROMPTS } from '@/data/static/chat';
+import { CheckIcon, LuminaStarMark } from './chat/ChatIcons';
 
-const LuminaStarMark = () => (
-    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-        <path
-            d="M5 1L6.12 3.62L9 3.84L6.94 5.68L7.62 8.5L5 7L2.38 8.5L3.06 5.68L1 3.84L3.88 3.62L5 1Z"
-            stroke="currentColor"
-            strokeWidth="0.8"
-            fill="none"
-        />
-    </svg>
-);
-
-const CheckIcon = () => (
-    <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-        <path d="M1.5 4L3 5.5L6.5 2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-);
-
-const THINKING_STEPS = [
-    { label: 'Located relevant passages', state: 'done' },
-    { label: 'Cross-referencing scripture', state: 'active' },
-    { label: 'Consulting commentaries', state: 'pending' },
-    { label: 'Drafting response', state: 'pending' },
-];
-
-const SUGGESTED_PROMPTS = [
-    'What does Paul mean by "the peace that passes understanding"?',
-    'Walk me slowly through the Sermon on the Mount.',
-    'Why are there four gospels, and what do they each see?',
-    "I'm sitting with a hard week. Where might I read?",
-];
 const ROMAN_NUMERALS = ['i', 'ii', 'iii', 'iv'];
 
 export default function MessageCard({
@@ -56,7 +27,6 @@ export default function MessageCard({
 }) {
     const textareaRef = useRef(null);
     const toolsRef = useRef(null);
-    const isMobile = useIsMobile();
     const chatMessages = Object.values(messages);
     const route = useRoute();
     const [showTools, setShowTools] = useState(false);
