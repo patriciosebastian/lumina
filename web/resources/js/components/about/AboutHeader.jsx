@@ -11,11 +11,11 @@ export default function AboutHeader() {
                     </div>
 
                     <h1 className="font-serif font-light italic text-[clamp(48px,6.5vw,84px)] leading-[1.04] tracking-[-0.005em] text-ink mx-auto mb-8 max-w-[22ch]">
-                        A small studio at the margin of a very long conversation.
+                        At the margin of a very long conversation.
                     </h1>
 
                     <p className="font-book text-[18px] leading-[1.75] text-ink-2 max-w-[36em] mx-auto">
-                        Lumina exists because people are already turning to AI with their deepest questions. We'd rather be the version that actually listens — and points back to the text.
+                        Built for scripture and the questions faith raises. Christian in perspective, grounded in the actual text.
                     </p>
 
                 </div>

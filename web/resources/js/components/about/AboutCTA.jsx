@@ -12,7 +12,7 @@ export default function AboutCTA() {
                     <span className="not-italic font-light">Bring your </span>questions<span className="not-italic font-light">.</span>
                 </h2>
                 <p className="font-book text-[18px] text-ink-2 leading-[1.75] max-w-[32em] mx-auto mb-11">
-                    Lumina will bring the lamp. No account required to begin — start reading and wondering today.
+                    Lumina will bring the lamp. No account required to begin.
                 </p>
                 <Link
                     href={route('chat.index')}
@@ -20,7 +20,7 @@ export default function AboutCTA() {
                     cacheFor="1m"
                     className="inline-flex items-center gap-[0.6em] font-ui font-normal text-[13px] tracking-[0.18em] uppercase px-8 py-3.5 rounded-[4px] bg-gold text-bg border border-gold hover:bg-gold-deep hover:border-gold-deep transition-all duration-[450ms] cursor-pointer group"
                 >
-                    Begin a conversation
+                    Ask your first question
                     <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
                 </Link>
 

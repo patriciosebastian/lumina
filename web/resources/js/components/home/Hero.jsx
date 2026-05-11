@@ -22,7 +22,7 @@ export default function Hero() {
                     </h1>
 
                     <p className="font-book text-[18px] leading-[1.75] text-ink-2 max-w-[34em] mx-auto mb-12">
-                        Lumina is an AI companion built for scripture. Ask anything — about a passage, a doctrine, a doubt — and receive an answer drawn directly from the Bible, offered with a Christian perspective.
+                        Lumina is an AI built for scripture. Ask anything — about a passage, a doctrine, a doubt — and receive an answer drawn directly from the Bible, offered with a Christian perspective.
                     </p>
 
                     <div className="flex gap-4 items-center flex-wrap justify-center">

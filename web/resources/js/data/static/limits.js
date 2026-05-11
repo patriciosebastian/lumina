@@ -13,11 +13,7 @@ const limits = [
     },
     {
         label: 'Lumina will not replace your community',
-        description: 'Your pastor, your church, your table of friends — these cannot be replaced. Lumina is a companion, not a congregation.',
-    },
-    {
-        label: 'Lumina will not nudge you toward any tradition',
-        description: 'We hold no denominational brief. The texts belong to the whole church, and we treat them that way.',
+        description: 'Your pastor, your church, your table of friends — these cannot be replaced. Lumina is a margin, not a congregation.',
     },
 ];
 
