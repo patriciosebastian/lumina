@@ -13,10 +13,10 @@ export default function Pricing() {
                 <div className="text-center mb-20">
                     <span className="block font-ui font-normal text-[12px] uppercase tracking-[0.22em] text-ink-2 mb-[18px]">§ III — A modest pricing</span>
                     <h2 className="font-serif font-normal italic text-[clamp(40px,4.6vw,56px)] leading-[1.1] mx-auto max-w-[18ch] text-ink">
-                        <span className="not-italic">Free to read. </span>A small sum<span className="not-italic"> for the rest.</span>
+                        <span className="not-italic">Free to begin. </span>A small sum<span className="not-italic"> for more.</span>
                     </h2>
                     <p className="mt-[22px] font-book text-[18px] text-ink-2 max-w-[36em] mx-auto leading-[1.75]">
-                        No tiers named after gemstones. Pay what's fair, support the writers and theologians whose work informs Lumina, and never see an ad.
+                        Two plans. No ads. Your conversations stay yours.
                     </p>
                 </div>
 

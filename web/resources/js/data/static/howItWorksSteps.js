@@ -2,20 +2,20 @@ const STEPS = [
     {
         numeral: 'i',
         label: 'Ask',
-        heading: 'Begin where you are.',
-        body: "Type a verse, a doubt, a half-formed thought. \"Why does Job's friend speak that way?\" \"What does it mean to abide?\" Plain language, no need to perform.",
+        heading: 'Start with what\'s on your mind.',
+        body: "A verse you've never understood. A doctrine that's always confused you. A question you've been carrying for years. Type it out — plain language, no performance required.",
     },
     {
         numeral: 'ii',
-        label: 'Explore',
-        heading: 'Sit with the answer.',
-        body: "Lumina returns the relevant passages, the historical setting, and the threads worth pulling on. References are linked; you can step back into the text whenever you'd like.",
+        label: 'Read',
+        heading: 'Receive an answer from the text.',
+        body: "Lumina searches the Bible before it responds — surfacing what scripture actually says about your question and offering it with a thoughtful, Christian voice. Read the answer slowly. Sit with it a while.",
     },
     {
         numeral: 'iii',
-        label: 'Discover',
-        heading: 'Let one question lead.',
-        body: 'Good reading begets more questions. Each conversation can become a notebook — saved, returned to, slowly added to over months and years.',
+        label: 'Return',
+        heading: 'One question opens another.',
+        body: "Good questions multiply. Come back tomorrow with a new one. The Bible doesn't run out of depth, and Lumina will be here when the next thing surfaces.",
     },
 ];
 

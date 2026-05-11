@@ -18,10 +18,10 @@ export default function FooterCTA() {
                 </figure>
 
                 <h2 className="font-serif italic font-light text-[clamp(44px,5.2vw,68px)] leading-[1.08] mb-[22px] max-w-[18ch] mx-auto text-ink">
-                    <span className="not-italic font-light">Come and</span> read awhile<span className="not-italic font-light">.</span>
+                    The question<span className="not-italic font-light"> won't ask </span>itself<span className="not-italic font-light">.</span>
                 </h2>
                 <p className="font-book text-[18px] text-ink-2 leading-[1.75] max-w-[32em] mx-auto mb-11">
-                    The first month is on us. No card, no commitment. Bring your questions and Lumina will bring the lamp.
+                    Bring it here. The Bible has an answer, and Lumina will help you find it.
                 </p>
                 <Link
                     href={route('chat.index')}
@@ -29,7 +29,7 @@ export default function FooterCTA() {
                     cacheFor="1m"
                     className="inline-flex items-center gap-[0.6em] font-ui font-normal text-[13px] tracking-[0.18em] uppercase px-8 py-3.5 rounded-[4px] bg-gold text-bg border border-gold hover:bg-gold-deep hover:border-gold-deep transition-all duration-[450ms] cursor-pointer group"
                 >
-                    Begin a conversation
+                    Ask your first question
                     <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
                 </Link>
             </div>

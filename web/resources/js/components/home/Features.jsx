@@ -7,12 +7,12 @@ export default function Features() {
             <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">
 
                 <div className="text-center mb-20">
-                    <span className="block font-ui font-normal text-[12px] uppercase tracking-[0.22em] text-ink-2 mb-[18px]">§ I — What Lumina does</span>
+                    <span className="block font-ui font-normal text-[12px] uppercase tracking-[0.22em] text-ink-2 mb-[18px]">§ I — What makes it different</span>
                     <h2 className="font-serif font-normal italic text-[clamp(46px,5.2vw,64px)] leading-[1.1] mx-auto max-w-[18ch] text-ink">
-                        <span className="not-italic">A companion for </span>reading <span className="not-italic">and</span> wondering<span className="not-italic">.</span>
+                        <span className="not-italic">Every other AI </span>hedges <span className="not-italic">about faith.</span>
                     </h2>
                     <p className="mt-[22px] font-book text-[18px] text-ink-2 max-w-[36em] mx-auto leading-[1.75]">
-                        Three things Lumina does well — and a few it deliberately doesn't. It will not pray for you, preach at you, or pretend to know the unknowable.
+                        Most AI tools treat your faith as a subject to stay carefully neutral about. Lumina was built to be inside the conversation — not watching from the outside.
                     </p>
                 </div>
 
@@ -33,8 +33,8 @@ export default function Features() {
                                 <line x1="46" y1="20" x2="52" y2="16"/>
                             </g>
                         </svg>
-                        <h3 className="font-serif italic font-normal text-[30px] leading-[1.15] mb-4 text-ink">Read with you, not at you</h3>
-                        <p className="font-book text-[16px] leading-[1.75] text-ink-2">Open any passage and Lumina sits beside it — offering historical context, cross-references, and the questions a good study partner would ask. Verses stay primary. Commentary stays secondary.</p>
+                        <h3 className="font-serif italic font-normal text-[30px] leading-[1.15] mb-4 text-ink">It reads the Bible before it answers you</h3>
+                        <p className="font-book text-[16px] leading-[1.75] text-ink-2">When you ask a question, Lumina searches the actual text of scripture — verse by verse, passage by passage — before it responds. Its answers are built from what the Bible says, not from what a model might half-remember about it. Where scripture is the subject, that difference matters more than almost anywhere else.</p>
                     </div>
 
                     <div className="p-16 md:p-[64px_40px] border-b md:border-b-0 md:border-r border-border text-left relative">
@@ -50,8 +50,8 @@ export default function Features() {
                             <ellipse cx="32" cy="35" rx="3" ry="5" fill="currentColor" opacity=".25"/>
                             <path d="M32 32 Q30 35 32 38 Q34 35 32 32 Z" fill="currentColor"/>
                         </svg>
-                        <h3 className="font-serif italic font-normal text-[30px] leading-[1.15] mb-4 text-ink">Honest about what it doesn't know</h3>
-                        <p className="font-book text-[16px] leading-[1.75] text-ink-2">When scholars disagree, Lumina says so. When a question is contested, you'll see the traditions side-by-side — Catholic, Orthodox, Protestant — without being nudged toward any of them.</p>
+                        <h3 className="font-serif italic font-normal text-[30px] leading-[1.15] mb-4 text-ink">Christian, not neutral</h3>
+                        <p className="font-book text-[16px] leading-[1.75] text-ink-2">Ask a general AI about the Bible and you'll receive a careful answer designed to offend no one. Lumina answers from within the faith — the one that reads the Old Testament as pointing toward Christ, takes the incarnation seriously, and does not treat the resurrection as one interpretive option among many.</p>
                     </div>
 
                     <div className="p-16 md:p-[64px_40px] text-left relative">
@@ -66,8 +66,8 @@ export default function Features() {
                             <line x1="20" y1="44" x2="22" y2="48" opacity=".6"/>
                             <line x1="36" y1="26" x2="38" y2="30" opacity=".6"/>
                         </svg>
-                        <h3 className="font-serif italic font-normal text-[30px] leading-[1.15] mb-4 text-ink">Rooted in the long tradition</h3>
-                        <p className="font-book text-[16px] leading-[1.75] text-ink-2">Two thousand years of theologians, mystics, and ordinary readers have wrestled with these texts. Lumina draws on that conversation — Augustine and Julian of Norwich and your grandmother's marginalia, all welcome at the table.</p>
+                        <h3 className="font-serif italic font-normal text-[30px] leading-[1.15] mb-4 text-ink">No question is too simple — or too large</h3>
+                        <p className="font-book text-[16px] leading-[1.75] text-ink-2">"Why did God command that?" "What does this passage actually mean?" "I've never understood Revelation." Lumina doesn't make you feel like you should already know. Bring what's on your mind. Ask in plain language. There's no wrong way to begin.</p>
                     </div>
                 </div>
             </div>

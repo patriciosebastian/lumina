@@ -16,13 +16,13 @@ export default function Hero() {
                     </div>
 
                     <h1 className="font-serif font-light italic text-[clamp(56px,7vw,96px)] leading-[1.02] tracking-[-0.005em] text-ink mx-auto mb-8 max-w-[14ch]">
-                        A quiet place<br/>
-                        to think through<br/>
-                        <span className="not-italic font-normal">what you</span> believe.
+                        The question<br/>
+                        you've been<br/>
+                        <span className="not-italic font-normal">carrying.</span>
                     </h1>
 
                     <p className="font-book text-[18px] leading-[1.75] text-ink-2 max-w-[34em] mx-auto mb-12">
-                        Lumina is a thoughtful companion for reading scripture and sitting with the questions that don't have easy answers. Ask anything. Find responses rooted in the text, in tradition, and in the long conversation of the church.
+                        Lumina is an AI companion built for scripture. Ask anything — about a passage, a doctrine, a doubt — and receive an answer drawn directly from the Bible, offered with a Christian perspective.
                     </p>
 
                     <div className="flex gap-4 items-center flex-wrap justify-center">
@@ -32,7 +32,7 @@ export default function Hero() {
                             cacheFor="1m"
                             className="inline-flex items-center gap-[0.6em] font-ui font-normal text-[13px] tracking-[0.18em] uppercase px-8 py-3.5 rounded-[4px] bg-gold text-bg border border-gold hover:bg-gold-deep hover:border-gold-deep transition-all duration-[450ms] cursor-pointer group"
                         >
-                            Begin a conversation
+                            Ask your first question
                             <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
                         </Link>
                         <a
@@ -57,7 +57,7 @@ export default function Hero() {
                     </figure>
 
                     <div className="mt-12 flex gap-8 items-center text-ink-2 font-ui text-[12px] tracking-[0.18em] uppercase justify-center flex-wrap">
-                        <span>No account to read</span>
+                        <span>No account required</span>
                         <span className="w-[3px] h-[3px] bg-gold rounded-full" />
                         <span>Free to begin</span>
                         <span className="w-[3px] h-[3px] bg-gold rounded-full" />
