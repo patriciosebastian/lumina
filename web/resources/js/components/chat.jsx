@@ -53,6 +53,7 @@ export default function Chat({ initialMessages = [], chatboxMessage = null }) {
 
                     switch (evt.type) {
                         case 'start': {
+                            setLoading(false);
                             const id = `ai-${Date.now()}`;
                             aiMsgIdRef.current = id;
                             setMessages(prev => [

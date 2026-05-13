@@ -3,8 +3,10 @@ import ContentBubble from '@/components/ui/contentBubble';
 import { useRoute } from 'ziggy-js';
 import { Streamdown } from 'streamdown';
 import { Plus, Globe, BookOpen } from 'lucide-react';
-import { THINKING_STEPS, SUGGESTED_PROMPTS } from '@/data/static/chat';
-import { CheckIcon, LuminaStarMark } from './chat/ChatIcons';
+import { SUGGESTED_PROMPTS } from '@/data/static/chat';
+import { LuminaStarMark } from './chat/ChatIcons';
+import SearchingIndicator from './searchingIndicator';
+import SearchThinkingSteps from './searchThinkingSteps';
 
 const ROMAN_NUMERALS = ['i', 'ii', 'iii', 'iv'];
 
@@ -30,6 +32,7 @@ export default function MessageCard({
     const chatMessages = Object.values(messages);
     const route = useRoute();
     const [showTools, setShowTools] = useState(false);
+    const [searchingWithTools, setSearchingWithTools] = useState(false);
 
     const chatRoute =
         route().current() === 'chat.index' || route().current() === 'chat.show';
@@ -67,6 +70,11 @@ export default function MessageCard({
     const handlePromptClick = (prompt) => {
         onMessageChange?.({ target: { value: prompt } });
     };
+
+    const handleSetSearchingWithTools = () => {
+        setSearchingWithTools(true);
+        setShowTools(false);
+    }
 
     return (
         <div className={`flex flex-1 flex-col min-h-0 bg-bg ${className}`}>
@@ -215,62 +223,16 @@ export default function MessageCard({
                                     )}
                                 </ContentBubble>
                             </div>
-                        ))}
+                        ))
+                    }
 
                     {/* thinking / loading state */}
-                    {isLoading && (
-                        <div className="mb-10">
-                            {/* meta */}
-                            <div className="flex items-center gap-[10px] mb-3 font-ui text-[11px] tracking-[.24em] uppercase text-ink-2">
-                                <span className="inline-flex w-[22px] h-[22px] items-center justify-center border-2 border-gold rounded-full text-gold flex-shrink-0">
-                                    <LuminaStarMark />
-                                </span>
-                                <span className="text-ink tracking-[.22em]">Lumina</span>
-                            </div>
-
-                            {/* dashed left border body */}
-                            <div className="border-l-2 border-dashed border-gold pl-[22px] py-1">
-                                <div className="flex items-center gap-[14px] mb-[18px]">
-                                    <div className="lum-thinking-dots inline-flex items-center gap-[6px]">
-                                        <i /><i /><i />
-                                    </div>
-                                    <span className="font-serif italic text-[18px] text-ink tracking-[.005em]">
-                                        Considering
-                                    </span>
-                                </div>
-                                <ul className="flex flex-col border-t border-b-2 border-border/60">
-                                    {THINKING_STEPS.map(({ label, state: stepState }, i) => (
-                                        <li
-                                            key={i}
-                                            className={[
-                                                'flex items-center gap-[14px] py-[11px]',
-                                                'border-b border-border/60 last:border-b-0',
-                                                'font-book text-[14.5px] leading-[1.4]',
-                                                stepState === 'pending' ? 'text-ink-3 italic' : 'text-ink',
-                                            ].join(' ')}
-                                        >
-                                            <span
-                                                className={[
-                                                    'w-[18px] h-[18px] inline-flex items-center justify-center',
-                                                    'rounded-full flex-shrink-0 font-ui text-[11px] border',
-                                                    stepState === 'done'
-                                                        ? 'bg-gold text-bg border-gold'
-                                                        : stepState === 'active'
-                                                        ? 'border-gold text-gold'
-                                                        : 'border-border text-ink-3',
-                                                ].join(' ')}
-                                            >
-                                                {stepState === 'done' && <CheckIcon />}
-                                                {stepState === 'active' && (
-                                                    <span className="lum-thinking-spin" />
-                                                )}
-                                            </span>
-                                            {label}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
+                    {isLoading && searchingWithTools ? (
+                        <SearchThinkingSteps />
+                    ) : (
+                        isLoading && ! searchingWithTools && (
+                            <SearchingIndicator />
+                        )
                     )}
 
                     <div ref={bottomSentinelRef} className="h-[1px] w-[1px] invisible" aria-hidden="true" />
@@ -348,7 +310,7 @@ export default function MessageCard({
                                             },
                                             {
                                                 icon: <BookOpen size={14} />,
-                                                name: 'Deep Research',
+                                                name: 'Extended Search',
                                                 desc: 'Thorough multi-step research on a topic',
                                             },
                                         ].map(({ icon, name, desc }) => (
@@ -356,6 +318,7 @@ export default function MessageCard({
                                                 key={name}
                                                 type="button"
                                                 className="flex items-start gap-[10px] w-full px-3 py-[10px] rounded-[3px] text-left font-ui text-[13px] text-ink tracking-[.03em] hover:bg-surface transition-colors"
+                                                onClick={handleSetSearchingWithTools}
                                             >
                                                 <span className="text-ink-2 mt-[3px] flex-shrink-0">
                                                     {icon}

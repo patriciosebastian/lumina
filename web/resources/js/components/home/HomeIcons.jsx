@@ -1,6 +1,6 @@
-export function SunRayIcon({ size = 22 }) {
+export function SunRayIcon({ size = 22, className = '' }) {
     return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" aria-hidden="true">
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" aria-hidden="true" className={className}>
             <circle cx="12" cy="12" r="3.4"/>
             <line x1="12" y1="2" x2="12" y2="5.5"/>
             <line x1="12" y1="18.5" x2="12" y2="22"/>
