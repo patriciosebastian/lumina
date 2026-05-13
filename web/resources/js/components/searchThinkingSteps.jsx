@@ -15,7 +15,7 @@ export default function SearchThinkingSteps() {
 
             {/* dashed left border body */}
             <div className="border-l-2 border-dashed border-gold pl-[22px] py-1">
-                <SearchingIndicator showLuminaIcon={false} />
+                <SearchingIndicator />
                 <ul className="flex flex-col border-t border-b-2 border-border/60">
                     {THINKING_STEPS.map(({ label, state: stepState }, i) => (
                         <li

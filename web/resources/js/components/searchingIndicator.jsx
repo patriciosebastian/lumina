@@ -1,9 +1,6 @@
-import { SunRayIcon } from './home/HomeIcons';
-
-export default function SearchingIndicator({ showLuminaIcon = true }) {
+export default function SearchingIndicator() {
     return (
         <div className="flex items-center gap-3.5 mb-4.5">
-            <SunRayIcon className={`${showLuminaIcon ? ' ' : 'hidden'}`} />
             <div className="lum-thinking-dots inline-flex items-center gap-1.5">
                 <i /><i /><i />
             </div>
