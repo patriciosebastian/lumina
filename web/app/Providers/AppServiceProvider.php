@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
     {
         RateLimiter::for('guest_messages', function (Request $request) {
             if (!$request->user()) {
-                return Limit::perDay(3)->by($request->ip());
+                return Limit::perDay(10)->by($request->ip());
             }
         });
 
