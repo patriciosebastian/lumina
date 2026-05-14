@@ -31,11 +31,8 @@ class MigrateGuestMessagesToUser
                 $allSessionMessages = collect(session('guest_messages', []));
                 $chatMessages = $allSessionMessages->whereNotNull('chat_id')->sortBy('session_created_at');
                 $chatIds = $chatMessages->pluck('chat_id')->unique();
-                $journalMessages = $allSessionMessages->whereNotNull('journal_id')->sortBy('session_created_at');
-                $journalIds = $journalMessages->pluck('journal_id')->unique();
 
                 $chatIdMap = [];
-                $journalIdMap = [];
 
                 if ($chatIds->isNotEmpty()) {
                     foreach ($chatIds as $sessionChatId) {
@@ -56,30 +53,6 @@ class MigrateGuestMessagesToUser
                             'content' => $message['content'],
                             'role' => MessageRole::from($message['role']),
                             'chat_id' => $chatIdMap[$message['chat_id']],
-                            'user_id' => $user->id,
-                        ]);
-                    }
-                }
-
-                if ($journalIds->isNotEmpty()) {
-                    foreach ($journalIds as $sessionJournalId) {
-                        $messagesInJournal = $journalMessages->where('journal_id', $sessionJournalId);
-                        if ($messagesInJournal->isNotEmpty()) {
-                            $newJournal = $user->journals()->create([
-                                'name' => $messagesInJournal->first()['name'] ?? "Journal-$sessionJournalId",
-                                'user_id' => $user->id,
-                            ]);
-                            $journalIdMap[$sessionJournalId] = $newJournal->id;
-                        }
-                    }
-                }
-
-                if ($journalMessages->isNotEmpty()) {
-                    foreach ($journalMessages as $message) {
-                        $user->journalEntries()->create([
-                            'title' => $message['name'] ?? 'Untitled Entry',
-                            'content' => $message['content'],
-                            'journal_id' => $journalIdMap[$message['journal_id']],
                             'user_id' => $user->id,
                         ]);
                     }
