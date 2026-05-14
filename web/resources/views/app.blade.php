@@ -22,8 +22,8 @@
         <meta name="apple-mobile-web-app-title" content="Lumina" />
         <link rel="manifest" href="/site.webmanifest" />
 
-        {{-- Plausible Analytics --}}
-        <script defer data-domain="chatwithlumina.com" src="https://plausible.io/js/script.hash.tagged-events.js"></script>
+        {{-- Umami Analytics --}}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="b7fe67f5-baba-41c1-bb0f-d44649327883"></script>
 
         @routes
         @viteReactRefresh
