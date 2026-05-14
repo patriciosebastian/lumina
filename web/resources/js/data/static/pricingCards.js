@@ -1,7 +1,7 @@
 const pricingCards = [
     {
         tier: 'basic',
-        title: 'The Reader',
+        title: 'Free',
         description: 'Open the door. Bring your first questions and see what the Bible says.',
         features: [
             'Bible-grounded AI chat',
@@ -14,7 +14,7 @@ const pricingCards = [
     },
     {
         tier: 'pro',
-        title: 'The Companion',
+        title: 'Pro',
         description: 'For the slow reader. The one who comes back. The one with more questions than one month can hold.',
         features: [
             'Everything in free',
