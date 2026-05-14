@@ -186,7 +186,7 @@ class ChatController extends Controller
     {
         $openaiKey = config('services.openai.key');
         $embeddingModel = config('services.openai.embedding_model');
-        $embeddingDimension = config('services.openai.embedding_dimension', 1024);
+        $embeddingDimension = config('services.openai.embedding_dimension', 3072);
         $pineconeApiKey = config('services.pinecone.default_api_key');
         $pineconeIndexUrl = config('services.pinecone.index_url');
 
@@ -448,7 +448,6 @@ class ChatController extends Controller
             ['level' => 'verse', 'topK' => 5],
             ['level' => 'section', 'topK' => 5],
             ['level' => 'chapter', 'topK' => 3],
-            ['level' => 'theological_resource', 'topK' => 3],
         ];
 
         try {

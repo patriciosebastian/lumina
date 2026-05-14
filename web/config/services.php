@@ -39,7 +39,7 @@ return [
         'key' => env('OPENAI_KEY'),
         'model' => env('OPENAI_MODEL', 'gpt-5-nano'),
         'embedding_model' => env('OPENAI_EMBEDDING_MODEL', 'text-embedding-3-small'),
-        'embedding_dimension' => env('OPENAI_EMBEDDING_DIMENSION', 1024),
+        'embedding_dimension' => env('OPENAI_EMBEDDING_DIMENSION', 3072),
     ],
 
     'pinecone' => [
