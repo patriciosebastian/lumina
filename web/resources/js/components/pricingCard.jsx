@@ -15,7 +15,7 @@ export default function PricingCard({
     monthly = false,
     yearly = false,
     price = 0.00,
-    priceId = 'price_1S7hy23UT84VygR6bTB6XPN3',
+    priceId = 'price_1TWicmCFH0UrX19iQwBh3KGF',
     buttonText = 'Get Started Now',
     popular = false,
 }) {

@@ -8,7 +8,7 @@ use Inertia\Response;
 
 class StripeCheckoutController extends Controller
 {
-    public function __invoke(Request $request, string $priceId = 'price_1SGK5w3UT84VygR6xphL1a6j'): Response
+    public function __invoke(Request $request, string $priceId = 'price_1TWicmCFH0UrX19iQwBh3KGF'): Response
     {
         $checkout = $request->user()
             ->newSubscription('default', $priceId)

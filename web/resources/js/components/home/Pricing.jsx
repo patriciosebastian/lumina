@@ -1,10 +1,18 @@
-import { Link } from '@inertiajs/react';
+import { router } from '@inertiajs/react';
 import { useRoute } from 'ziggy-js';
 import { CheckIcon } from './HomeIcons';
 import pricingCards from '@/data/static/pricingCards';
 
 export default function Pricing() {
     const route = useRoute();
+
+    const handleCta = (item) => {
+        if (item.monthlyPriceId) {
+            router.visit(route('checkout.embedded', { priceId: item.monthlyPriceId }));
+        } else {
+            router.visit(route('register'));
+        }
+    };
 
     return (
         <section className="py-[120px] bg-bg" id="pricing">
@@ -51,12 +59,12 @@ export default function Pricing() {
                                     </li>
                                 ))}
                             </ul>
-                            <Link
-                                href={route('register')}
+                            <button
+                                onClick={() => handleCta(item)}
                                 className={`w-full inline-flex justify-center items-center gap-[0.6em] font-ui font-normal text-[13px] tracking-[0.18em] uppercase px-8 py-3.5 rounded-[4px] ${item.recommended ? 'bg-gold text-bg hover:bg-gold-deep hover:border-gold-deep' : 'text-gold bg-transparent hover:bg-gold/10'} border border-gold transition-all duration-[450ms] cursor-pointer`}
                             >
                                 {item.cta}
-                            </Link>
+                            </button>
                         </div>
                     ))}
                 </div>

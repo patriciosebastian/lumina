@@ -23,7 +23,7 @@ const pricingCards = [
         ],
         monthlyPrice: 9,
         monthlyPriceId: import.meta.env.VITE_STRIPE_PRO_MONTHLY_PRICE_ID,
-        cta: 'Begin a free month',
+        cta: 'Go deeper',
         recommended: true,
     },
 ];
