@@ -279,7 +279,7 @@ export default function MessageCard({
                         {/* toolbar row */}
                         <div className="flex items-center justify-between gap-4">
                             {/* plus / tools */}
-                            <div className="relative" ref={toolsRef}>
+                            {/* <div className="relative" ref={toolsRef}>
                                 <button
                                     type="button"
                                     aria-label="Open tools"
@@ -333,13 +333,13 @@ export default function MessageCard({
                                         ))}
                                     </div>
                                 )}
-                            </div>
+                            </div> */}
 
                             {/* send */}
                             {showSendButton && (
                                 <button
                                     type="button"
-                                    className="lum-send"
+                                    className="lum-send ml-auto"
                                     onClick={onSendMessage}
                                     disabled={!currentMessage.trim() || isLoading}
                                 >
