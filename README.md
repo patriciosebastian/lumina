@@ -4,7 +4,7 @@
 
 ---
 
-Lumina is a RAG powered Bible based AI chat application for working through faith questions, sitting with scripture, and thinking more carefully about what the Bible says. It responds like a wise, unhurried friend who knows the Bible deeply. Not a generic AI wrapper.
+Lumina is a RAG-powered, Bible-based AI chat application for working through faith questions, sitting with scripture, and thinking more carefully about what the Bible says. It responds like a wise, unhurried friend who knows the Bible deeply. Not a generic AI wrapper.
 
 The whole thesis is that sensitive questions regarding the Bible should not be given to an LLM that has to remember the data it was trained on with the possiblity of some kind of mistake or hallucination.
 
