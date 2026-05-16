@@ -15,10 +15,17 @@ export default function Nav() {
     }, []);
 
     const navItems = [
-        { label: 'What it does', href: '#what' },
-        { label: 'How it works', href: '#how' },
-        { label: 'Pricing', href: '#pricing' },
+        { label: 'What it does', href: '/#what', id: 'what' },
+        { label: 'How it works', href: '/#how', id: 'how' },
+        { label: 'Pricing', href: '/#pricing', id: 'pricing' },
     ];
+
+    function handleSectionLink(e, id) {
+        if (window.location.pathname === '/') {
+            e.preventDefault();
+            document.getElementById(id)?.scrollIntoView();
+        }
+    }
 
     return (
         <nav
@@ -40,15 +47,16 @@ export default function Nav() {
             </Link>
 
             <div className="hidden md:flex items-center gap-9">
-                {navItems.map(({ label, href }, index) => (
-                    <Link
+                {navItems.map(({ label, href, id }, index) => (
+                    <a
                         key={index}
-                        href={`${route('home')}${href}`}
+                        href={href}
+                        onClick={(e) => handleSectionLink(e, id)}
                         className="font-ui text-[12px] tracking-[0.22em] uppercase text-ink-2 hover:text-ink relative py-1 group transition-colors duration-[450ms]"
                     >
                         {label}
                         <span className="absolute inset-x-0 -bottom-0.5 h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-[450ms] origin-left" />
-                    </Link>
+                    </a>
                 ))}
             </div>
 
