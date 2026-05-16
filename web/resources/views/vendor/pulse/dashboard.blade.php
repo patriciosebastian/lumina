@@ -1,7 +1,7 @@
 <x-pulse>
     <a
         href="/"
-        class="text-white text-sm"
+        style="color: #B8922A;"
     >
         Go Home
     </a>
