@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="web/public/brand/lumina-horizontal.svg" alt="Lumina" width="200" />
+  <img src="web/public/brand/lumina-horizontal.svg#gh-light-mode-only" alt="Lumina" width="200" />
+  <img src="web/public/brand/lumina-horizontal-reversed.svg#gh-dark-mode-only" alt="Lumina" width="200" />
 </div>
 
 ---
