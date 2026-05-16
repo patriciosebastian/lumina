@@ -14,7 +14,7 @@ export default function HowItWorks() {
                         <span className="not-italic">Three small</span> movements.
                     </h2>
                     <p className="mt-[22px] font-book text-[18px] text-ink-2 max-w-[36em] mx-auto leading-[1.75]">
-                        No onboarding. No quiz. Open the window, type what's on your mind, and read what the Bible says about it.
+                        Go to the chat, type what's on your mind, and read what the Bible says about it.
                     </p>
                 </div>
 

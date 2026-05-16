@@ -32,7 +32,7 @@ export default function HomeSiteFooter() {
                             Lumina
                         </Link>
                         <p className="font-book italic text-[15px] text-ink-2 leading-[1.7] mt-[18px] max-w-[30ch]">
-                            Scripture, illuminated. A small studio in the tradition of slow reading.
+                            Scripture, faithfully. A small studio in the tradition of slow reading.
                         </p>
                     </div>
 

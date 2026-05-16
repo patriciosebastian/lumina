@@ -11,7 +11,7 @@ export default function Hero() {
 
                     <div className="inline-flex items-center gap-3.5 mb-9 justify-center">
                         <span className="w-[42px] h-px bg-gold" />
-                        <span className="font-ui font-normal text-[12px] uppercase tracking-[0.22em] text-ink-2">Scripture, illuminated</span>
+                        <span className="font-ui font-normal text-[12px] uppercase tracking-[0.22em] text-ink-2">Scripture, faithfully</span>
                         <span className="w-[42px] h-px bg-gold" />
                     </div>
 
