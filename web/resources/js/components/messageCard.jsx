@@ -87,10 +87,10 @@ export default function MessageCard({
             >
                 {/* chat route: empty / new conversation state — fills container, no scroll */}
                 {chatRoute && chatMessages.length === 0 && !isLoading ? (
-                    <div className="h-full flex items-center justify-center px-14 py-6 max-md:px-9 max-sm:px-4">
+                    <div className="h-full max-sm:min-h-full flex items-center justify-center px-14 py-6 max-md:px-9 max-sm:px-5 max-sm:py-4">
                         <div className="text-center max-w-[560px] w-full mx-auto">
                             {/* botanical branch icon */}
-                            <div className="w-[108px] h-[108px] mx-auto mb-6 text-gold" style={{ opacity: 0.85 }}>
+                            <div className="w-[108px] h-[108px] mx-auto mb-6 text-gold max-sm:w-[72px] max-sm:h-[72px] max-sm:mb-4" style={{ opacity: 0.85 }}>
                                 <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14 82 Q34 64 48 50 Q62 36 82 18" />
                                     <ellipse cx="28" cy="68" rx="9" ry="4" transform="rotate(-30 28 68)" />
@@ -106,20 +106,20 @@ export default function MessageCard({
                             </div>
 
                             {/* eyebrow */}
-                            <div className="inline-flex items-center gap-[14px] font-ui text-[11px] tracking-[.28em] uppercase text-ink-2 mb-6">
+                            <div className="inline-flex items-center gap-[14px] font-ui text-[11px] tracking-[.28em] uppercase text-ink-2 mb-6 max-sm:mb-4">
                                 <span className="lum-rule" />
                                 A new conversation
                                 <span className="lum-rule" />
                             </div>
 
                             {/* title */}
-                            <h1 className="font-serif font-light text-[56px] leading-[1.06] text-ink tracking-[-0.005em] mb-[22px] max-md:text-[44px] max-sm:text-[36px]">
+                            <h1 className="font-serif font-light text-[56px] leading-[1.06] text-ink tracking-[-0.005em] mb-[22px] max-md:text-[44px] max-sm:text-[30px] max-sm:mb-3">
                                 <em className="italic text-gold font-normal">Begin</em>{' '}
                                 where you are.
                             </h1>
 
                             {/* lede */}
-                            <p className="font-book text-base leading-[1.78] text-ink-2 max-w-[38em] mx-auto mb-4 max-sm:text-[15px]">
+                            <p className="font-book text-base leading-[1.78] text-ink-2 max-w-[38em] mx-auto mb-4 max-sm:text-[13px] max-sm:leading-[1.6] max-sm:mb-3">
                                 Type a verse, a doubt, a half-formed thought. Lumina will sit with you and reply with care, in plain language, with the references kept open beside the text.
                             </p>
 
@@ -132,7 +132,7 @@ export default function MessageCard({
                                     {SUGGESTED_PROMPTS.map((prompt, i) => (
                                         <li
                                             key={i}
-                                            className="flex items-baseline gap-[18px] px-2 py-4 border-b-2 border-border/60 last:border-b-0 font-book text-[15.5px] leading-[1.55] text-ink cursor-pointer hover:text-gold-deep transition-colors duration-250"
+                                            className={`flex items-baseline gap-[18px] px-2 py-4 border-b-2 border-border/60 last:border-b-0 font-book text-[15.5px] leading-[1.55] text-ink cursor-pointer hover:text-gold-deep transition-colors duration-250 max-sm:py-3 max-sm:text-[14px]${i >= 2 ? ' max-sm:hidden' : ''}${i === 1 ? ' max-sm:border-b-0' : ''}`}
                                             onClick={() => handlePromptClick(prompt)}
                                         >
                                             <span className="font-serif italic text-[18px] text-gold min-w-[22px] flex-shrink-0">
