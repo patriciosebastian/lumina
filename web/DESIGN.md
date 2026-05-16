@@ -4,7 +4,7 @@
 
 **Lumina** is a Christian AI chat application — a warm, intelligent spiritual companion that helps users think through faith questions and explore scripture together. The experience should feel like sitting with a wise, trusted friend who knows the Bible deeply: unhurried, thoughtful, deeply human. Not a church app. Not a tech product with a cross on it. Something genuinely its own.
 
-**Tagline:** Scripture, illuminated.
+**Tagline:** Scripture, faithfully.
 
 **Domain:** chatwithlumina.com
 
@@ -31,6 +31,7 @@
 The interface should feel like a beautifully designed book or journal — cream pages, elegant type, generous margins, and art that rewards close looking. Think a museum gift shop book on Renaissance painting, designed by someone who also loves modern editorial design.
 
 This is *not*:
+
 - A generic SaaS landing page
 - A church website
 - A dark-mode AI product
@@ -67,6 +68,7 @@ No blues, purples, or greys unless deeply warm.
 **UI / Labels / Captions:** `Jost` — clean, geometric, modern enough to balance the classical serifs without fighting them.
 
 **Type Scale:**
+
 - Hero headline: 56–96px (clamp), Cormorant Garamond, light italic, tight tracking
 - Section headings: 40–56px, Cormorant Garamond italic
 - Subheadings / step titles: 30–34px, Cormorant Garamond italic
@@ -75,6 +77,7 @@ No blues, purples, or greys unless deeply warm.
 - UI labels: 11–13px, Jost, uppercase, `.18–.28em` tracking
 
 **Rules:**
+
 - Headings may be italic — lean into it
 - Mix italic and roman within a single headline by wrapping roman words in `.roman` — this is part of the typographic voice (e.g. *"A quiet place to* think *through what you* believe.*"*)
 - Never use bold headings in a heavy weight; let the serif carry the elegance
@@ -93,6 +96,7 @@ The product uses two recurring numbering systems, lifted from book typography:
 Two distinct visual layers that work together:
 
 **1. Renaissance-style paintings** (hero, mid-page, footer CTA)
+
 - Full, rich, painterly illustrations in the tradition of Raphael, Rembrandt, or Fra Angelico
 - Subject matter: figures in contemplation, light breaking through windows, open scriptures, quiet gardens, candlelit studies
 - Treatment: displayed with reverence — large, given room to breathe
@@ -103,6 +107,7 @@ Two distinct visual layers that work together:
   - **Footer-CTA plate** — small intimate 1:1 square (≤480px), bordered, centred above the closing headline
 
 **2. Fine line illustrations** (icons, dividers, decorative elements)
+
 - Delicate, hand-drawn quality linework, hairline to 1px strokes
 - Think illuminated manuscript borders, botanical illustration, 19th-century engraving
 - Used for: feature icons (open book with rays, lantern, olive branch, etc.), section dividers, ornamental corners, empty-state art
@@ -134,6 +139,7 @@ A small fleuron — three curved strokes meeting in a dot — paired with hairli
 ### Buttons
 
 **Primary CTA:**
+
 - Background: `--gold`
 - Text: `--bg` (cream-on-gold)
 - Font: Jost, uppercase, `.18em` tracking
@@ -142,6 +148,7 @@ A small fleuron — three curved strokes meeting in a dot — paired with hairli
 - Hover: deepen to `--gold-deep`; arrow icon translates 4px right
 
 **Secondary / Ghost:**
+
 - Border: 1px solid `--gold`
 - Text: `--gold`
 - Background: transparent
@@ -166,41 +173,48 @@ Two tiers. A third premium tier may be added. Featured tier inverts: cream `--bg
 
 The primary authenticated screen. Two-column layout: 296px sidebar + main column.
 
-**Sidebar**
+**Sidebar:**
+
 - Background: `--surface`, right border 1px `--border`
 - "New conversation" button: gold-bordered card with a circular `+` mark and Jost uppercase label
 - Search field: bordered, transparent, Jost
 - Chat list: grouped under tracking-set Jost labels (`TODAY`, `THIS WEEK`, etc.) with a tiny gold `lum-rule` line; active item gets a 2px inset gold rule on the left and `--bg` background (this is to be confirmed)
 - Profile card at the bottom: gold circular avatar (initial set in serif italic), name in Jost, plan in Jost uppercase gold
 
-**Top bar**
+**Top bar:**
+
 - 52px tall, 1px bottom border, holds the current conversation's title in Cormorant Garamond italic 18px
 
-**Thread**
+**Thread:**
+
 - Centered column, max 760px, padded 40/56
 - Folio header: italic gold "Folio xxiv" on the left, dated label on the right, separated by a hairline rule
 
-**Messages**
+**Messages:**
+
 - **User messages** are NOT right-aligned bubbles. They're full-width blocks with `--surface` background, `--border`, 5px radius, 18/22 padding — like a quoted note in a journal.
 - **Lumina (AI) messages** are transparent with a 1px gold left rule and 22px left padding — like marginalia.
 - Each message is preceded by a tiny meta line: a 22px circular gold-bordered mark, role label (`LUMINA` / `READER`), and a time, all Jost uppercase `.22–.24em` tracked.
 - Streaming state: the gold left rule shifts to amber, with a blinking gold caret at the cursor.
 - Thinking state: the rule turns dashed; an italic serif label "Considering…" sits above a list of step-rows with circle-stamped status marks (open / spinner / filled gold). ("Considering..." may change in the future).
 
-**Scripture pull-quote** (used inline within Lumina's responses)
+**Scripture pull-quote:** (used inline within Lumina's responses)
+
 - Card: `--surface` bg, `--border`, 4px radius, 22/28 padding
 - A 32×1px gold rule above the quote
 - Blockquote: Cormorant Garamond italic, 22px, 1.32 line-height
 - Caption row in Jost uppercase: book reference in `--gold`, separator dot in `--ink-3`, translation in `--ink-2`
 
-**Composer**
+**Composer:**
+
 - White (`--white`) shell, 1px `--border`, 5px radius
 - Field has no inner border; placeholder is italic `--ink-3`
 - Plus-button on the left opens a Tools menu (popover with itemised tool list, name in Jost + italic Libre Baskerville description)
 - Send button on the right: gold pill-shaped Jost uppercase, deepens on hover, fades to `--surface-2` when disabled
 - Foot helper text in Jost italic, very small, `--ink-3`
 
-**Empty state**
+**Empty state:**
+
 - Centred, 560px max
 - Fine-line gold artwork at top
 - Eyebrow + huge serif headline (italic gold accent on a key word)
@@ -219,6 +233,7 @@ The primary authenticated screen. Two-column layout: 296px sidebar + main column
 ## Page Sections (Homepage)
 
 ### 1. Hero
+
 - Eyebrow: `— scripture, illuminated`
 - Large Cormorant Garamond headline, italic, generous, with mixed roman/italic words
 - Subheadline in Libre Baskerville, secondary
@@ -228,33 +243,40 @@ The primary authenticated screen. Two-column layout: 296px sidebar + main column
 - Painting captioned `Plate I · …` in Jost
 
 ### 2. § I — What Lumina does
+
 - Three features in a flat 3-column grid bordered top and bottom
 - Each: tiny Roman ordinal (`i.`, `ii.`, `iii.`) top-right, hairline gold icon, italic serif title, body copy
 - Section divided from neighbours by a fleuron ornament
 
 ### 3. § II — How it works
+
 - Three steps on a `--surface` band (top + bottom border)
 - Each step has a giant 22% gold italic Roman numeral behind it, a tiny `Ask` / `Explore` / `Discover` Jost label with a hairline underline, italic serif headline, and short Libre body
 
 ### 4. Mid plate (Plate II)
+
 - Full content-width 16:7 painting, captioned
 
 ### 5. Pull Quote
+
 - `--surface` panel, top + bottom borders
 - 140×1px gold rule with bookend dots above and below the quote
 - Cormorant italic 46–72px scripture (or evocative line), gold curly quotes
 - Attribution in Jost uppercase tracked
 
 ### 6. § III — Pricing
+
 - Two tiers, "The Reader" + "The Companion"
 - 4–6px radius cards, hover shifts border to gold
 - Featured tier flips background to cream
 
 ### 7. Footer CTA
+
 - Centred 1:1 painting (Plate III), bordered
 - Italic serif headline, short Libre lede, primary gold CTA
 
 ### 8. Footer
+
 - Four-column grid (brand blurb + The Reader / The Library / The Studio link columns)
 - Topped by a fleuron divider, ended with a hairline-ruled bottom row showing the domain and `© MMXXVI · Lumina` in Jost uppercase
 

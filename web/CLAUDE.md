@@ -15,13 +15,12 @@ Lumina is a full-stack application combining Laravel (PHP) backend with React/Ty
 ### Backend (Laravel)
 
 - **Framework**: Laravel 12.x with PHP 8.2+
-- **Database**: Uses Eloquent ORM with models for User, Chat, Message, Journal, JournalEntry, Testimonial
+- **Database**: Uses Eloquent ORM with models for User, Chat, Message, Testimonial
 - **Authentication**: Laravel Breeze with Inertia.js integration
 - **Payments**: Laravel Cashier with Stripe integration
 - **Queue System**: Built-in Laravel queues for background processing
 - **Key Controllers**:
   - `ChatController` - AI chat functionality with guest/authenticated users
-  - `JournalController` - Personal journaling with AI interaction  
   - `StripeCheckoutController` - Subscription/payment handling
 
 ### Frontend (React + TypeScript)
@@ -32,15 +31,13 @@ Lumina is a full-stack application combining Laravel (PHP) backend with React/Ty
 - **State Management**: Uses Inertia page props and React state
 - **Key Features**:
   - AI chat interface with guest session support
-  - Journal writing interface with AI assistance
   - User authentication and settings
   - Stripe checkout integration
   - Mobile-responsive design with custom hooks (`use-mobile`, `use-appearance`)
 
 ### Key Application Features
 
-- **AI Chat**: Interactive chat with theological AI assistant, supports guest users
-- **Journal**: Personal journaling with AI-powered insights and responses
+- **AI Chat**: Interactive chat with bible/theological AI assistant, supports guest users
 - **User Management**: Registration, authentication, profile settings
 - **Subscription**: Stripe-based billing for premium features
 - **Responsive Design**: Mobile-first approach with custom responsive hooks
@@ -118,7 +115,7 @@ composer dev:ssr         # Start with SSR support
 
 ### Important Notes
 
-- Guest users can access chat/journal features with session-based storage
+- Guest users can access chat features with session-based storage
 - The application handles both authenticated and guest user flows
 - Stripe integration requires proper environment configuration
 - Database migrations should be run carefully in production environments

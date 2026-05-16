@@ -1,9 +1,3 @@
-/*
- * DESIGN SYSTEM TRANSITION IN PROGRESS
- * Old tokens removed. Other pages pending redesign.
- * See: Lumina editorial design system (DESIGN.md)
- */
-
 @import 'tailwindcss';
 
 @plugin '@tailwindcss/typography';
