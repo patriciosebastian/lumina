@@ -2,6 +2,13 @@ import { Link } from '@inertiajs/react';
 import { useRoute } from 'ziggy-js';
 import { SunRayIcon } from './HomeIcons';
 
+function handleSectionLink(e, id) {
+    if (window.location.pathname === '/') {
+        e.preventDefault();
+        document.getElementById(id)?.scrollIntoView();
+    }
+}
+
 export default function HomeSiteFooter() {
     const route = useRoute();
 
@@ -47,13 +54,14 @@ export default function HomeSiteFooter() {
                             About
                         </Link>
                         {[
-                            { label: 'What it does', href: '#what' },
-                            { label: 'How it works', href: '#how' },
-                            { label: 'Pricing', href: '#pricing' },
-                        ].map(({ label, href }) => (
+                            { label: 'What it does', href: '/#what', id: 'what' },
+                            { label: 'How it works', href: '/#how', id: 'how' },
+                            { label: 'Pricing', href: '/#pricing', id: 'pricing' },
+                        ].map(({ label, href, id }) => (
                             <a
                                 key={label}
                                 href={href}
+                                onClick={(e) => handleSectionLink(e, id)}
                                 className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
                             >
                                 {label}
