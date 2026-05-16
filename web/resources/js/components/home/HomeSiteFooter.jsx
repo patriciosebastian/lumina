@@ -20,7 +20,7 @@ export default function HomeSiteFooter() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-14">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-14">
                     <div>
                         <Link
                             href={route('home')}
@@ -36,8 +36,16 @@ export default function HomeSiteFooter() {
                         </p>
                     </div>
 
+                    <div className="block md:hidden" />
+
                     <div>
-                        <h4 className="font-ui font-medium text-[11px] tracking-[0.28em] uppercase text-ink mb-5">The Reader</h4>
+                        <h4 className="font-ui font-medium text-[11px] tracking-[0.28em] uppercase text-ink mb-5">Lumina</h4>
+                        <Link
+                            href={route('about')}
+                            className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
+                        >
+                            About
+                        </Link>
                         {[
                             { label: 'What it does', href: '#what' },
                             { label: 'How it works', href: '#how' },
@@ -54,26 +62,7 @@ export default function HomeSiteFooter() {
                     </div>
 
                     <div>
-                        <h4 className="font-ui font-medium text-[11px] tracking-[0.28em] uppercase text-ink mb-5">The Library</h4>
-                        {['Sources & scholars', 'Translations', 'Method', 'Changelog'].map(label => (
-                            <a
-                                key={label}
-                                href="#"
-                                className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
-                            >
-                                {label}
-                            </a>
-                        ))}
-                    </div>
-
-                    <div>
-                        <h4 className="font-ui font-medium text-[11px] tracking-[0.28em] uppercase text-ink mb-5">The Studio</h4>
-                        <Link
-                            href={route('about')}
-                            className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
-                        >
-                            About
-                        </Link>
+                        <h4 className="font-ui font-medium text-[11px] tracking-[0.28em] uppercase text-ink mb-5">Legal</h4>
                         <a
                             href="mailto:info@chatwithlumina.com"
                             className="block font-ui text-[14px] text-ink-2 py-1.5 hover:text-gold transition-colors duration-[350ms]"
