@@ -9,7 +9,7 @@ export default function FooterCTA() {
             <div className="max-w-[1100px] mx-auto px-10 relative z-[2]">
                 <figure className="mx-auto mb-[72px] max-w-[650px] w-full">
                     <img
-                        src="/images/paintings/painting-footer.png"
+                        src="/images/paintings/painting-footer.webp"
                         alt="An intimate close-up: folded hands resting on the open pages of a Bible, soft daylight from a leaded window catching the cuffs of a linen shirt and warm woolen sleeve."
                         width={600}
                         height={600}

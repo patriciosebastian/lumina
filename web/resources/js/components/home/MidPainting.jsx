@@ -3,7 +3,7 @@ export default function MidPainting() {
         <section className="bg-bg">
             <figure className="m-0">
                 <img
-                    src="/images/paintings/painting-mid.png"
+                    src="/images/paintings/painting-mid.webp"
                     alt="Two robed figures conversing in a long, gilded library hall at dusk, vaulted ceilings overhead, leaded windows on the left and tall bookcases on the right, golden light pooling on the stone floor between them."
                     width={1500}
                     height={500}

@@ -45,7 +45,7 @@ export default function Hero() {
 
                     <figure className="mt-20 max-w-[1000px] w-full mx-auto max-md:mt-14">
                         <img
-                            src="/images/paintings/painting-hero.png"
+                            src="/images/paintings/painting-hero.webp"
                             alt="A sunlit study with an open manuscript on a wooden desk, a brass candlestick, leather-bound books, and a leaded arched window looking out onto a tiled rooftop and church spire."
                             width={1659}
                             height={948}
