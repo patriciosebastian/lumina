@@ -19,7 +19,7 @@ class ChatController extends Controller
     public function index(Request $request): Response
     {
         if ($request->user()) {
-            $data = $request->user()->load('chats');
+            $data = ['chats' => $request->user()->chats()->orderByDesc('created_at')->get()];
         } else {
             $guestMessages = collect($request->session()->get('guest_messages', []))
                 ->whereNotNull('chat_id')
@@ -32,7 +32,6 @@ class ChatController extends Controller
         $chatboxMessage = $request->input('message');
 
         return Inertia::render('mainChatApp', [
-            'initialMode' => 'chat',
             'data' => $data,
             'chatboxMessage' => $chatboxMessage,
         ]);
@@ -41,9 +40,11 @@ class ChatController extends Controller
     public function show(Request $request, int $id): Response
     {
         if ($request->user()) {
-            $chat = $request->user()->chats()->find($id);
-            $messages = $chat ? $chat->load('messages')->messages->sortBy('created_at') : collect();
-            $allChats = $request->user()->chats()->get();
+            $allChats = $request->user()->chats()->orderByDesc('created_at')->get();
+            $chat = $allChats->find($id);
+            $messages = $chat ?
+                $chat->load('messages')->messages->sortBy('created_at') :
+                collect();
         } else {
             $messages = collect($request->session()->get('guest_messages', []))
                 ->filter(function ($message) {
@@ -76,8 +77,7 @@ class ChatController extends Controller
                 ->values();
         }
 
-        return Inertia::render('mainApp', [
-            'initialMode' => 'chat',
+        return Inertia::render('mainChatApp', [
             'data' => [
                 'chats' => $allChats,
                 'messages' => $messages,
