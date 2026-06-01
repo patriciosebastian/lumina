@@ -47,10 +47,7 @@ class ChatController extends Controller
                 collect();
         } else {
             $messages = collect($request->session()->get('guest_messages', []))
-                ->filter(function ($message) {
-                    return isset($message['chat_id']);
-                })
-                ->where('chat_id',$id)
+                ->where('chat_id', $id)
                 ->map(function ($message) {
                     return array_merge($message, [
                         'id' => $message['id'],
@@ -62,9 +59,7 @@ class ChatController extends Controller
                 ->values();
 
             $allChats = collect($request->session()->get('guest_messages', []))
-                ->filter(function ($message) {
-                    return isset($message['chat_id']);
-                })
+                ->whereNotNull('chat_id')
                 ->groupBy('chat_id')
                 ->map(function ($messages, $chatId) {
                     return (object) [
