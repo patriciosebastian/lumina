@@ -20,26 +20,6 @@
         <meta name="apple-mobile-web-app-title" content="Lumina" />
         <link rel="manifest" href="/site.webmanifest" />
 
-        {{-- Referrer override for Umami --}}
-        <script defer>
-            const queryParams = new URLSearchParams(window.location.search);
-            function normalizeHostname(input) {
-                let hostname = input.replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0];
-                hostname = hostname.replace(/[^a-zA-Z0-9.-]/g, '');
-                hostname = hostname.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, '');
-                return hostname ? 'http://' + hostname : '';
-            }
-
-            const initialRef = document.referrer;
-            Object.defineProperty(document, "referrer", {
-                get: function () {
-                    let refFromQuery = queryParams.get('ref') || queryParams.get('referer') || queryParams.get('referrer') || queryParams.get('utm_source');
-                    refFromQuery = normalizeHostname(refFromQuery);
-                    return refFromQuery || initialRef;
-                }
-            });
-        </script>
-
         {{-- Umami Analytics --}}
         <script defer src="https://cloud.umami.is/script.js" data-website-id="b7fe67f5-baba-41c1-bb0f-d44649327883"></script>
 
