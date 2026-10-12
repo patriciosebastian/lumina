@@ -4,3 +4,6 @@
 /.vscode
 .DS_Store
 web/.vite/
+
+# Private notes repo, linked in locally (see patriciosebastian/notes)
+.notes
